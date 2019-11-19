@@ -1,0 +1,52 @@
+img{ max-width: 100%; }
+body{
+    background: #f1f1f1;
+}
+
+/* Header section */
+#htop{
+    padding: 15px 0;
+}
+.dropdown-lang {
+    
+}
+.social-header ul{
+    margin: 0;
+}
+.social-header ul li{
+    margin-left: -5px;
+}
+.social-header ul li a{
+    margin-top: 2px;
+    transition: 0.3s ease-in;
+    background: #999;
+    color: #fff;
+    display: block;
+    text-align: center;
+    width: 30px; height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 13px;
+}
+.social-header ul li a:hover{
+    background: #777;
+    color: #fff;
+}
+
+
+/* Top Navbar Section */
+.search-bar-menu-top{
+    
+}
+.search-bar-menu-top input{
+    border-radius: 500px 0 0 500px;
+}
+.search-bar-menu-top input:focus{
+    box-shadow: none;
+}
+.search-bar-menu-top .btn-outline-secondary{
+    border-radius: 0 500px 500px 0;
+}
+.search-bar-menu-top .btn-outline-secondary:active{
+    box-shadow: none;
+}
