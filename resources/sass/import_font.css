@@ -1,0 +1,46 @@
+@font-face{
+  src: url('/fonts/roboto/Roboto-Regular.ttf');
+  font-family: 'roboto_r';
+}
+
+/*Khmer Font*/
+@font-face{
+  src: url('/fonts/khmer/KhmerOSbattambang.ttf');
+  font-family: 'khmerbtb';
+}
+@font-face{
+  src: url('/fonts/khmer/KhmerOSKoulen.ttf');
+  font-family: 'khmerkuolen';
+}
+@font-face{
+  src: url('/fonts/khmer/KhmerOSmuollight_0.ttf');
+  font-family: 'khmeros_moul_light';
+}
+
+@font-face{
+  src: url('/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf');
+  font-family: 'fa_brand';
+}
+@font-face{
+  src: url('/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf');
+  font-family: 'fa_regular';
+}
+@font-face{
+  src: url('/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf');
+  font-family: 'fa_solid';
+}
+
+body *{
+  font-family: 'roboto_r','khmerbtb','fa_brand','fa_regular','fa_solid';
+}
+
+.KHOSMoulLight{
+  font-family: 'roboto_r','khmeros_moul_light','fa_brand','fa_regular','fa_solid' !important;
+}
+
+.KHKuolen{
+  font-family: 'roboto_r','khmerkuolen','fa_brand','fa_regular','fa_solid' !important;
+}
+.KHBTB{
+  font-family: 'roboto_r','khmerbtb','fa_brand','fa_regular','fa_solid' !important;
+}
