@@ -13,6 +13,9 @@
 
   Route::get('/', 'HomeController@index')->name('home');
 
+  Route::group(['namespace' => 'Frontend'], function () {
+    Route::get('about-us', 'AboutUsController@index')->name('about-us');
+  });
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
 
