@@ -53,7 +53,7 @@ body{
 
 /* Footer Section */
 #top-footer{
-    box-shadow: 0 0 5px rgba(000, 000, 000, 0.1);
+    box-shadow: 1px 1px 5px rgba(000, 000, 000, 0.2);
     padding: 25px 30px;
     background: #fff;
     margin-top: 30px;
@@ -275,7 +275,6 @@ body{
     position: relative;
     border-bottom: 2px solid #EA0000;
     padding: 3px 0;
-    margin-bottom: 3px;
 }
 .block-content .title-block .title{
     margin: 0;
@@ -288,7 +287,6 @@ body{
 }
 .block-content .title-block .corner{
     position: absolute;
-    /* border: 1px solid blue; */
     width: 100px;
     height: 41px;
     top: 0;
@@ -311,9 +309,74 @@ body{
     font-size: 15px;
     position: absolute;
     right: 15px;
-    top: 9px;
+    top: 5px;
+    color: #333;
+    transition: 0.5s ease-in-out;
 }
 .block-content .title-block a.show-all:hover{
     text-decoration: none;
+    color: darkblue;
+}
+.block-content .content{
+    box-shadow: 1px 1px 5px rgba(000, 000, 000, 0.2);
+    background: #fff;
+    padding: 20px 20px;
+}
+.block-content .content .big-article{
 
 }
+.block-content .content .big-article .img{
+    height: 180px;
+}
+.block-content .content .big-article footer h4{
+    background: #EA0000;
+    margin: 0;
+    padding: 10px 15px;
+    height: 79px;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+    transition: 0.5s ease-in-out;
+}
+.block-content .content .big-article footer h4:after{
+    content: '';
+    background: #EA0000;
+    position: absolute;
+    left: 0;
+    top: 69px;
+    width: 100%;
+    height: 15px;
+    transition: 0.5s ease-in-out;
+}
+.block-content .content .big-article:hover footer h4,
+.block-content .content .big-article:hover footer h4:after{
+    background: #d60000;
+}
+.block-content .content .big-article a:hover{
+    text-decoration: none;
+}
+.block-content .content .small-article{
+    /* margin-bottom: 13px; */
+}
+.block-content .content .small-article .img{
+    height: 80px;
+}
+.block-content .content .small-article a footer h6{
+    font-size: 14px;
+    height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding-top: 6px;
+    color: #555;
+    transition: 0.5s ease-in-out;
+}
+.block-content .content .small-article a:hover,
+.block-content .content .small-article a:hover h6{
+    color: #d60000;
+    text-decoration: none;
+}
+
+#block-right-side{
+
+}
+

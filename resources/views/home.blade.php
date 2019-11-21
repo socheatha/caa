@@ -1,21 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-{{-- <a href="{{ route('locale', 'kh') }}">Khmer</a>
-<a href="{{ route('locale', 'en') }}">English</a>
-<div class="container">
-	<div class="row justify-content-center">
-		<div class="col-md-8">
-			<div class="card">
-				<h1>{{ __('home.welcome') }}</h1>
-			</div>
-		</div>
-	</div>
-</div> --}}
 
 	<div class="container">
-
 		{{-- Block slider --}}
 		<section id="block-front-slider">
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -45,143 +32,101 @@
 				</a>
 			</div>
 		</section>
-=======
-
-    <div class="container">
-        {{-- Block slider --}}
-        <section id="block-front-slider">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/images/sliders/1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/sliders/2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/sliders/3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </section>
->>>>>>> 89265696450dbe3c2dd59dfa2704d328e954ea9e
 
 
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-12">
+				<section id="block-front-welcome" class="text-center mt-5 mb-3">
+					<h2 class="mb-4">Welcome to C.A.A</h2>
+					<div class="row justify-content-md-center">
+						<div class="col-sm-10">
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum nulla ipsum aliquid eligendi quia rem consequatur doloribus quas, quod voluptatem accusantium quibusdam numquam laudantium vero laborum, vitae, obcaecati quis deleniti.</p>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<div class="col-sm-8">
 				<section id="block-front-latest-news" class="block-content">
 					<div class="title-block">
-						<h3 class="title">
+						<h4 class="title">
 							<span class="text">
 								Schools
 								<span class="corner"></span>
 							</span>
 							
-						</h3>
+						</h4>
 							<a href="#" class="show-all">Show all</a>
 						
 					</div>
 					<div class="content">
 						<div class="row">
-							<div class="col-sm-3">
+							<div class="col-sm-5">
 								<div class="big-article">
 									<a href="#">
-										<img src="/images/contents/1.jpg" alt="..."/>
+										<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
 										<footer>
-											<h4>lorem title testing for website</h4>
+											<h4>lorem title testing for website lorem title testing for website</h4>
 										</footer>
 									</a>
 								</div>
 							</div>
-							<div class="col-sm-9">
+							<div class="col-sm-7">
 								<div class="row">
-									<div class="col-sm-3">
-										<div class="small-article">
+									<div class="col-sm-4">
+										<div class="small-article mb-2">
 											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
+												<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
+												<footer>
+													<h6>lorem title testing for website lorem title testing for website</h6>
+												</footer>
+											</a>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="small-article mb-2">
+											<a href="#">
+												<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
+												<footer>
+													<h6>lorem title testing for website lorem title testing for website</h6>
+												</footer>
+											</a>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="small-article mb-2">
+											<a href="#">
+												<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
+												<footer>
+													<h6>lorem title testing for website lorem title testing for website</h6>
+												</footer>
+											</a>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="small-article mt-1">
+											<a href="#">
+												<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
 												<footer>
 													<h6>lorem title testing for website</h6>
 												</footer>
 											</a>
 										</div>
 									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
+									<div class="col-sm-4">
+										<div class="small-article mt-1">
 											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
+												<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
 												<footer>
-													<h6>lorem title testing for website</h6>
+													<h6>lorem title testing for website lorem title testing for website</h6>
 												</footer>
 											</a>
 										</div>
 									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
+									<div class="col-sm-4">
+										<div class="small-article mt-1">
 											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
-												<footer>
-													<h6>lorem title testing for website</h6>
-												</footer>
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
-											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
-												<footer>
-													<h6>lorem title testing for website</h6>
-												</footer>
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
-											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
-												<footer>
-													<h6>lorem title testing for website</h6>
-												</footer>
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
-											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
-												<footer>
-													<h6>lorem title testing for website</h6>
-												</footer>
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
-											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
-												<footer>
-													<h6>lorem title testing for website</h6>
-												</footer>
-											</a>
-										</div>
-									</div>
-									<div class="col-sm-3">
-										<div class="small-article">
-											<a href="#">
-												<img src="/images/contents/1.jpg" alt="..."/>
+												<div class="img" style="background: url('/images/contents/1.jpg') center center; background-size: cover;"></div>
 												<footer>
 													<h6>lorem title testing for website</h6>
 												</footer>
@@ -195,8 +140,35 @@
 
 				</section>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-4">
+				<section class="block-right-side">
 
+					<section class="block-content">
+						<div class="title-block">
+							<h4 class="title">
+								<span class="text">
+									Schools
+									<span class="corner"></span>
+								</span>
+								
+							</h4>
+								<a href="#" class="show-all">Show all</a>
+							
+						</div>
+						<div class="content">
+							<div class="big-article">
+								<a href="#">
+									<div class="img" style="background: url('/images/contents/2.jpg') center center; background-size: cover;"></div>
+									<footer>
+										<h4>lorem title testing for website lorem title testing for website</h4>
+									</footer>
+								</a>
+							</div>
+						</div>
+	
+					</section>
+
+				</section>
 			</div>
 		</div>
 
