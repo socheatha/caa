@@ -6,3 +6,4 @@
 
 require('./bootstrap');
 
+window.slick = require('slick-carousel');

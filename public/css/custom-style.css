@@ -51,6 +51,149 @@ body{
     transition: 0.3s ease-in;
 }
 
+/* Footer Section */
+#top-footer{
+    box-shadow: 0 0 5px rgba(000, 000, 000, 0.1);
+    padding: 25px 30px;
+    background: #fff;
+    margin-top: 30px;
+}
+#top-footer h3{
+    text-transform: uppercase;
+    margin: 8px 0 25px;
+    text-align: center;
+}
+.slick-slide {
+    margin: 0px 20px;
+}
+.slick-slide img {
+    width: 100%;
+    border: 1px solid #f1f1f1;
+}
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+#bottom-footer{
+    padding: 22px 5px 19px 5px;
+}
+#bottom-footer .footer-menu li a{
+    transition: 0.3s ease-in-out;
+    display: block;
+    margin-left: 8px;
+    color: darkblue;
+}
+#bottom-footer .dev-by a{
+    color: #000;
+}
+#bottom-footer .dev-by a:hover,
+#bottom-footer .footer-menu li a:hover{
+    text-decoration: none;
+    color: blue;
+}
+
 
 /* Top Navbar Section */
 .navbar-main-top{
@@ -68,17 +211,25 @@ body{
     padding: 18px 0px !important;
     min-width: 150px;
     text-align: center;
-    /* border: 1px solid red; */
     position: relative;
 }
-.navbar-main-top .navbar-item-list li.active a::before{
+.navbar-main-top .navbar-item-list:hover li.active a::before,
+.navbar-main-top .navbar-item-list li.active a::before,
+.navbar-main-top .navbar-item-list li a::before{
+    transition: 0.26s ease-in-out;
     content: '';
     position: absolute;
     background: #EA0000;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 5px;
+}
+
+.navbar-main-top .navbar-item-list li:hover a::before,
+.navbar-main-top .navbar-item-list li.active:hover a::before,
+.navbar-main-top .navbar-item-list li.active a::before{
+    width: 100%;
 
 }
 .search-bar-menu-top {
@@ -122,26 +273,45 @@ body{
 }
 .block-content .title-block{
     position: relative;
-    border: 1px solid red;
-    padding: 0;
+    border-bottom: 2px solid #EA0000;
+    padding: 3px 0;
+    margin-bottom: 3px;
 }
 .block-content .title-block .title{
-    background: #EA0000;
-    padding: 2px 20px;
     margin: 0;
-    /* overflow: hidden; */
+}
+.block-content .title-block .text{
+    background: #EA0000;
+    padding: 2px 0px 2px 15px;
+    position: relative;
+    color: #fff;
 }
 .block-content .title-block .corner{
-    background: blue;
-    padding: 2px 20px;
-    margin: 0;
-    /* overflow: hidden; */
+    position: absolute;
+    /* border: 1px solid blue; */
+    width: 100px;
+    height: 41px;
+    top: 0;
+    right: -40px;
+    overflow: hidden;
+}
+.block-content .title-block .corner::after{
+    position: absolute;
+    content: '';
+    background: #EA0000;
+    z-index: -2;
+    transform: rotate(50deg);
+    width: 88px;
+    height: 41px;
+    top: -1px;
+    /* right: -33px; */
+    right: 0;
 }
 .block-content .title-block a.show-all{
     font-size: 15px;
     position: absolute;
     right: 15px;
-    top: 10px;
+    top: 9px;
 }
 .block-content .title-block a.show-all:hover{
     text-decoration: none;
