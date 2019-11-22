@@ -1,6 +1,7 @@
 img{ max-width: 100%; }
 h1,h2,h3,h4,h5,h6{ margin: 0; }
-body{ background: #f9f9f9; }
+p{font-weight: 200 !important; line-height: 30px;}
+body{ background: #f9f9f9;}
 
 
 
