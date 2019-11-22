@@ -38,4 +38,10 @@ $(window).bind('scroll', function () {
 		});
 	}
 
+	if ($(window).scrollTop() > 480) {
+		$('#navbar-2').addClass('sticky-top fadeInDown').removeClass('sr-only');
+	}else{
+		$('#navbar-2').removeClass('sticky-top fadeInDown').addClass('sr-only');
+	}
+
 });
