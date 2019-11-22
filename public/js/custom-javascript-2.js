@@ -24,8 +24,6 @@ $(document).ready(function(){
 
 $(window).bind('scroll', function () {
 	var sliderHeight = $('#block-front-slider').height();
-
-
 	var wScroll = $(this).scrollTop();
 
 	//========= slider Parallax img and caption
@@ -39,9 +37,18 @@ $(window).bind('scroll', function () {
 	}
 
 	if ($(window).scrollTop() > 480) {
-		$('#navbar-2').addClass('sticky-top fadeInDown').removeClass('sr-only');
+		$('#navbar-2').addClass('sticky-top fadeInDown');
+		$('#navbar-2 .navbar-brand').removeClass('sr-only');
+		$('#navbar-2 .navbar-item-list').addClass('ml-auto').removeClass('mr-auto');
+		$('#navbar-2 .navbar-item-list .search').removeClass('sr-only');
+		$('#navbar-2 .search-bar-menu-top').addClass('sr-only');
 	}else{
-		$('#navbar-2').removeClass('sticky-top fadeInDown').addClass('sr-only');
+		$('#navbar-2').removeClass('sticky-top fadeInDown');
+		$('#navbar-2 .navbar-brand').removeClass('sr-only');
+		$('#navbar-2 .navbar-brand').addClass('sr-only');
+		$('#navbar-2 .navbar-item-list').removeClass('ml-auto').addClass('mr-auto');
+		$('#navbar-2 .navbar-item-list .search').addClass('sr-only');
+		$('#navbar-2 .search-bar-menu-top').removeClass('sr-only');
 	}
 
 });
