@@ -86,13 +86,13 @@
 						<a class="nav-link" href="#">Projects &nbsp;<i class="fa fa-angle-down"></i></a>
 						<ul class="list-unstyled">
 							<li>
-								<a href="#">Mujammak</a>
+								<a href="{{ route('project.mujammak') }}">Mujammak</a>
 							</li>
 							<li>
-								<a href="#">Halaqah</a>
+								<a href="{{ route('project.halaqah') }}">Halaqah</a>
 							</li>
 							<li>
-								<a href="#">សាលាបឋមសិក្សា</a>
+								<a href="{{ route('project.primary-school') }}">សាលាបឋមសិក្សា</a>
 							</li>
 						</ul>
 					</li>
