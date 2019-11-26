@@ -22,6 +22,8 @@ $(document).ready(function(){
 });
 
 
+
+
 $(window).bind('scroll', function () {
 	var sliderHeight = $('#block-front-slider').height();
 	var wScroll = $(this).scrollTop();

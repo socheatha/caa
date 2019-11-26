@@ -1,0 +1,90 @@
+Admin:
+1. Main and Sub MENU
+2. Create Table About Us{
+	- title
+	- detail
+	- index
+}
+3. Create Table Projects and Categories{
+	- Categories[
+		. name
+		. color
+		. index
+		. (language)
+	]
+	- project[
+		. title
+		. detail
+		. thumbnail
+		. view
+		. short_descript
+		. status
+	]
+}
+
+4. Create Table Config{
+	- Logo
+	- Header, Footer, Body, Menu, menu active and Text color
+	- email
+	- phone
+	- address
+	- copyright
+	- social (Long Text)
+	- facebook page url
+	- map location
+	- welcome_message
+}
+
+5. Create Table Activties and Categories{
+	- Categories[
+		. name
+		. color
+		. index
+		. (language)
+	]
+	- Active[
+		. title
+		. detail
+		. thumbnail
+		. view
+		. short_descript
+		. status
+	]
+}
+
+6. Create Other Menu Table{
+	- name
+	- detail
+}
+
+7. Create Slide Show Table{
+	- title
+	- short_desc
+	- detail
+	- image
+}
+
+8. Create Documents Table{
+	- name
+	- detail
+	- soft
+}
+
+9. Create Partners Table{
+	- name
+	- thumbnail
+	- link
+	- index
+	- status
+}
+
+
+
+All fields need to be long text, to use for languages
+{
+	'en':'Title in english',
+	'kh':'Title in Khmer',
+	'malay':'Title in Malaysia',
+}
+	- created and updated by
+	- timestamp
