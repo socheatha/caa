@@ -33,7 +33,7 @@
     <div class="box-body">
 			
 			<!-- Form -->
-			@include('admin.business_objective.form')
+			@include('admin.main_menu.form')
 
 		  {{ csrf_field() }}
 

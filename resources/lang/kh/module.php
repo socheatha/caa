@@ -23,10 +23,27 @@ return [
 		],
 	],
 
+	'general' => [
+		'table' => [
+			'action' => 'Action',
+		],
+	],
+
 	'main_menu' => [
 		'table' => [
 			'no' => 'N&deg;',
-			'name' => 'Name',
+			'name_kh' => 'ឈ្មោះភាសាខ្មែរ',
+			'name_en' => 'ឈ្មោះភាសាអង់គ្លេស',
+			'index' => 'Index Sort',
+			'url' => 'URL',
+		],
+	],
+
+	'about_us' => [
+		'table' => [
+			'no' => 'N&deg;',
+			'name_kh' => 'ឈ្មោះភាសាខ្មែរ',
+			'name_en' => 'ឈ្មោះភាសាអង់គ្លេស',
 			'detail' => 'Detail',
 		],
 	],

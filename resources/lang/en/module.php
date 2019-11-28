@@ -23,10 +23,27 @@ return [
 		],
 	],
 
+	'general' => [
+		'table' => [
+			'action' => 'Action',
+		],
+	],
+
 	'main_menu' => [
 		'table' => [
 			'no' => 'N&deg;',
-			'name' => 'Name',
+			'name_kh' => 'Khmer Name',
+			'name_en' => 'English Name',
+			'index' => 'Index Sort',
+			'url' => 'URL',
+		],
+	],
+
+	'about_us' => [
+		'table' => [
+			'no' => 'N&deg;',
+			'name_kh' => 'Khmer Name',
+			'name_en' => 'English Name',
 			'detail' => 'Detail',
 		],
 	],

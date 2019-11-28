@@ -14,6 +14,7 @@ try {
     window.dtbs = require('admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js');
     window.select2 = require('admin-lte/bower_components/select2/dist/js/select2.full.min.js');
     window.fastclick = require('admin-lte/bower_components/fastclick/lib/fastclick.js');
+    window.icheck = require('admin-lte/plugins/iCheck/icheck.min.js');
     window.pace = require('admin-lte/plugins/pace/pace.min.js');
     window.Swal = require('sweetalert2');
     window.adminlte = require('admin-lte');

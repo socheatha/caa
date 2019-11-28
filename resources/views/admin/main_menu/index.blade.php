@@ -46,11 +46,11 @@
         <thead>
 	        <tr>
 	          <th width="5%">{!! __('module.main_menu.table.no') !!}</th>
-	          <th>{{ __('module.main_menu.table.name') }}</th>
+	          <th>{{ __('module.main_menu.table.name_kh') }}</th>
 	          <th>{{ __('module.main_menu.table.name_en') }}</th>
-	          <th>{{ __('module.main_menu.table.description') }}</th>
-	          <th class="text-center">{{ __('module.main_menu.table.client') }}</th>
-	          <th width="10%">{{ __('module.main_menu.table.action') }}</th>
+	          <th>{{ __('module.main_menu.table.index') }}</th>
+	          <th>{{ __('module.main_menu.table.url') }}</th>
+	          <th width="10%">{{ __('module.general.table.action') }}</th>
 	        </tr>
         </thead>
         <tbody>

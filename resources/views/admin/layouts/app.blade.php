@@ -8,12 +8,10 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<title>{{ config('app.name', 'Laravel') }}</title>
-
-	<!-- Scripts -->
-	<script src="{{ asset('admin_asset/js/app.js') }}"></script>
-
+	
 	<!-- Styles -->
 	<link href="{{ asset('admin_asset/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('admin_asset/css/custom-style.css') }}" rel="stylesheet">
 
 	{{-- Custom Style Css --}}
 	@yield('css')
@@ -138,7 +136,14 @@
 				 immediately after the control sidebar -->
 		<div class="control-sidebar-bg"></div>
 	</div>
+
+
+	<!-- Scripts -->
+	<script src="{{ asset('admin_asset/js/app.js') }}"></script>
+	<script src="{{ asset('admin_asset/js/custom-javascript.js') }}"></script>
+
 	{{-- Custom Javascript --}}
 	@yield('js')
+
 </body>
 </html>
