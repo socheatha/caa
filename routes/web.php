@@ -31,9 +31,24 @@
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
 
-      Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index')->name('home');
 
-      Route::resource('content', 'ContentController');
+    Route::resource('main-menu', 'MainMenuController');
+    Route::resource('sub-menu', 'SubMenuController');
+    Route::resource('other-menu', 'OtherMenuController');
+
+    Route::resource('config', 'ConfigController');
+    Route::resource('abou-us', 'SubMenuController');
+    Route::resource('slide-shows', 'SlideShowController');
+    Route::resource('documents', 'SubMenuController');
+    Route::resource('partners', 'PartnersController');
+
+    Route::resource('project-categories', 'ProjectCategoryController');
+    Route::resource('projects', 'ProjectsController');
+
+    Route::resource('activity-categories', 'ActivityCategoryController');
+    Route::resource('activities', 'ActivitiesController');
+
 
   });
 
