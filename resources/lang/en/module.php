@@ -7,19 +7,40 @@ return [
 	'sidebar' => [
 			
 		'header' => [
+			'data' => 'Data',
 			'setting' => 'Setting',
+			'other' => 'Other',
 		],
 
 		'dashboard' => 'Dashboard',
 		
-		'user' => [
-			'main' => 'User Management',
-			'sub' => [
-				'member' => 'Members',
-				'user' => 'Users',
-				'permission' => 'Permissions',
-				'role' => 'User Roles',
-			],
+		'main' => [
+			'main-menu' => 'Main Menu',
+			'project' => 'Project',
+			'activity-category' => 'Activity Category',
+		],
+		'sub' => [
+			
+			'main-menu' => 'Main Menu',
+			'sub-menu' => 'Sub Menu',
+			'other-menu' => 'Other Menu',
+
+			'project-category' => 'Project Category',
+			'project' => 'Project',
+
+			'activity-category' => 'Activity Category',
+			'activity' => 'Activity',
+
+			'user' => 'Users',
+			'permission' => 'Permissions',
+			'role' => 'User Roles',
+
+			'config' => 'Config',
+			'contact-us' => 'Contact Us',
+			'about-us' => 'About Us',
+			'slide-show' => 'Slide Show',
+			'document' => 'Document',
+			'partner' => 'Partner',
 		],
 	],
 

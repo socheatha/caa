@@ -15,7 +15,6 @@ class CreateProjectCategoryTable extends Migration
     {
         Schema::create('project_category', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('name');
             $table->string('color');
             $table->integer('index');
             $table->unsignedInteger('created_by');

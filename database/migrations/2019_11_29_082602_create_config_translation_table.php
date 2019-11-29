@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivityTable extends Migration
+class CreateConfigTranslationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,20 @@ class CreateActivityTable extends Migration
      */
     public function up()
     {
-        Schema::create('activity', function (Blueprint $table) {
+        Schema::create('config_translation', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('thumbnail');
-            $table->integer('view');
-            $table->integer('index');
-            $table->integer('status')->default(1);
-            $table->unsignedInteger('category_id');
+            $table->string('language');
+            $table->string('phone');
+            $table->string('address', 255);
+            $table->string('copyright', 255);
+            $table->text('welcome_message', 255);
+            $table->unsignedInteger('config_id');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->timestamps();
 
-            $table->foreign('category_id')
-                ->references('id')->on('activity_category')
+            $table->foreign('config_id')
+                ->references('id')->on('config')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -48,6 +49,6 @@ class CreateActivityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity');
+        Schema::dropIfExists('config_translation');
     }
 }

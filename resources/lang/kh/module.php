@@ -6,21 +6,44 @@ return [
 
 	'sidebar' => [
 			
+			
 		'header' => [
-			'setting' => 'Setting',
+			'data' => 'ទិន្ន័យ',
+			'setting' => 'ការកំណត់',
+			'other' => 'ផ្សេងៗ',
 		],
 
-		'dashboard' => 'Dashboard',
+		'dashboard' => 'ផ្ទាំងដើម',
 		
-		'user' => [
-			'main' => 'User Management',
-			'sub' => [
-				'member' => 'Members',
-				'user' => 'Users',
-				'permission' => 'Permissions',
-				'role' => 'User Roles',
-			],
+		'main' => [
+			'main-menu' => 'ម៉េនុយមេ',
+			'project' => 'គ្រប់គ្រងគម្រោង',
+			'activity-category' => 'ប្រភេទសកម្មភាព',
 		],
+		'sub' => [
+			
+			'main-menu' => 'ម៉េនុយមេ',
+			'sub-menu' => 'ម៉េនុយកូន',
+			'other-menu' => 'ម៉េនុយផ្សេងទៀត',
+
+			'project-category' => 'ប្រភេទគម្រោង',
+			'project' => 'គម្រោង',
+
+			'activity-category' => 'ប្រភេទសកម្មភាព',
+			'activity' => 'កម្មភាព',
+
+			'user' => 'អ្នកគ្រប់គ្រង',
+			'permission' => 'សិទ្ធិអ្នកគ្រប់គ្រង',
+			'role' => 'ឋានៈអ្នកគ្រប់គ្រង',
+
+			'config' => 'ការកំណត់',
+			'contact-us' => 'ទំនាក់ទំនងយើង',
+			'about-us' => 'អំពីយើង',
+			'slide-show' => 'Slide Show',
+			'document' => 'Document',
+			'partner' => 'Partner',
+		],
+		
 	],
 
 	'general' => [

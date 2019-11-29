@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\ProjectCategory;
+use App\Models\BaseModel;
 
-class Project extends Model
+class Project extends BaseModel
 {
 	protected $table = 'project';
 

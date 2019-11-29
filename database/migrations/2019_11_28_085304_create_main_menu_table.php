@@ -15,8 +15,7 @@ class CreateMainMenuTable extends Migration
     {
         Schema::create('main_menu', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('name');
-            $table->string('url');
+            $table->string('url', 255);
             $table->integer('index');
             $table->integer('status')->default(1);
             $table->unsignedInteger('created_by');

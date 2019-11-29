@@ -5,24 +5,39 @@
   <section class="sidebar">
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="treeview">
-        <a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+      <li class="{{ ((Auth::user()->sidebarActive() == 'admin' )? 'active':'') }}">
+        <a href="{{ route('admin.home') }}"><i class="fa fa-home"></i> <span>{{ __('module.sidebar.dashboard') }}</span></a>
       </li>
 
-      <li class="header">MAIN NAVIGATION</li>
+      <li class="header">{{ __('module.sidebar.header.data') }}</li>
 
-      <li class="treeview">
+      <li class="treeview {{ ((strpos('main-menu sub-menu other-menu', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
-          <i class="fa fa-circle"></i> <span> {{ __('module.sidebar.main.main-menu') }}</span>
+          <i class="fas fa-bars"></i> <span> {{ __('module.sidebar.main.main-menu') }}</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="active"><a href="index.html"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.main-menu') }}</a></li>
-          <li><a href="index2.html"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.sub-menu') }}</a></li>
+        <li class="{{ ((Auth::user()->sidebarActive() == 'main-menu' )? 'active':'') }}"><a href="{{ route('admin.main-menu.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.main-menu') }}</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'sub-menu' )? 'active':'') }}"><a href="{{ route('admin.sub-menu.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.sub-menu') }}</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'other-menu' )? 'active':'') }}"><a href="{{ route('admin.other-menu.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.other-menu') }}</a></li>
         </ul>
       </li>
+
+      <li class="treeview {{ ((strpos('project-category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+        <a href="#">
+          <i class="fa fa-project-diagram"></i> <span> {{ __('module.sidebar.main.project') }}</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class="{{ ((Auth::user()->sidebarActive() == 'project-category' )? 'active':'') }}"><a href="{{ route('admin.project-categories.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.project-category') }}</a></li>
+        <li class="{{ ((Auth::user()->sidebarActive() == 'project' )? 'active':'') }}"><a href="{{ route('admin.projects.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.project') }}</a></li>
+        </ul>
+      </li>
+
 
       <li class="header">LABELS</li>
       <li><a href="#"><i class="far fa-circle text-red"></i> <span>Important</span></a></li>

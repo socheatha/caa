@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\BaseModel;
 
-class Partner extends Model
+class Partner extends BaseModel
 {
 	protected $table = 'partner';
 

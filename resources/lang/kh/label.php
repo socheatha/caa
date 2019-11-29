@@ -20,7 +20,9 @@ return [
   'routename' => [
   	'home' => 'Dashboard',
     'list' => 'List',
-    'main-menu' => 'Main Menu',
+    'main-menu' => 'ម៉េនុយមេ',
+    'sub-menu' => 'ម៉េនុយកូន',
+    'other-menu' => 'ម៉េនុយផ្សេងទៀត',
     
   ],
 
@@ -41,6 +43,8 @@ return [
       'home' => 'ផ្ទះដើម',
       
       'main-menu' => 'ម៉េនុយមេ',
+      'sub-menu' => 'ម៉េនុយកូន',
+      'other-menu' => 'ម៉េនុយផ្សេងទៀត',
 
       'province' => 'ខេត្ត/ក្រុង',
       'district' => 'ស្រុក/ខណ្ឌ',

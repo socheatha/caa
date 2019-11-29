@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivityTable extends Migration
+class CreateDocumentTranslationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateActivityTable extends Migration
      */
     public function up()
     {
-        Schema::create('activity', function (Blueprint $table) {
+        Schema::create('document_translation', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('thumbnail');
-            $table->integer('view');
-            $table->integer('index');
-            $table->integer('status')->default(1);
-            $table->unsignedInteger('category_id');
+            $table->string('language');
+            $table->string('name');
+            $table->text('detail');
+            $table->unsignedInteger('document_id');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->timestamps();
 
-            $table->foreign('category_id')
-                ->references('id')->on('activity_category')
+            $table->foreign('document_id')
+                ->references('id')->on('document')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -48,6 +47,6 @@ class CreateActivityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity');
+        Schema::dropIfExists('document_translation');
     }
 }

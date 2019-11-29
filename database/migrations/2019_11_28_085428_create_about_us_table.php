@@ -15,8 +15,6 @@ class CreateAboutUsTable extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('name');
-            $table->longText('detail');
             $table->integer('index');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');

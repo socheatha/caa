@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\BaseModel;
 
-class SlideShow extends Model
+class SlideShow extends BaseModel
 {
 	protected $table = 'slide_show';
 

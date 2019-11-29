@@ -15,9 +15,6 @@ class CreateSlideShowTable extends Migration
     {
         Schema::create('slide_show', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('name');
-            $table->longText('short_desc');
-            $table->longText('detail');
             $table->string('image');
             $table->integer('index');
             $table->unsignedInteger('created_by');

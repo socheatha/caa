@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\MainMenu;
+use App\Models\BaseModel;
 
-class SubMenu extends Model
+class SubMenu extends BaseModel
 {
 	protected $table = 'sub_menu';
 

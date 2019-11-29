@@ -19,8 +19,11 @@ return [
 
   'routename' => [
   	'home' => 'Dashboard',
+  	'admin' => 'Administrator',
     'list' => 'List',
     'main-menu' => 'Main Menu',
+    'sub-menu' => 'Sub Menu',
+    'other-menu' => 'Other Menu',
     
   ],
 
@@ -41,6 +44,8 @@ return [
       'home' => 'Dashboard',
       
       'main-menu' => 'Main Menu',
+      'sub-menu' => 'Sub Menu',
+      'other-menu' => 'Other Menu',
 
       'province' => 'Provinces',
       'district' => 'Districts',
@@ -87,6 +92,20 @@ return [
     'male' => 'Male',
     'female' => 'Female',
     'other' => 'Others',
+
+    'main-menu' => [
+      'name' => 'Name',
+      'name_kh' => 'Name in Khmer',
+      'name_my' => 'Name in Malay',
+      'name_sa' => 'Name in Arab',
+      'detail_en' => 'Detail English',
+      'detail_kh' => 'Detail Khmer',
+      'detail_my' => 'Detail Malay',
+      'detail_sa' => 'Detail Arab',
+      'index' => 'Index',
+      'status' => 'Status',
+      'url' => 'URL',
+    ], 
 
     'user' => [
       'name' => 'Name',

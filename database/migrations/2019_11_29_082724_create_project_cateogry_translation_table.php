@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivityTable extends Migration
+class CreateProjectCateogryTranslationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,17 @@ class CreateActivityTable extends Migration
      */
     public function up()
     {
-        Schema::create('activity', function (Blueprint $table) {
+        Schema::create('project_cateogry_translation', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('thumbnail');
-            $table->integer('view');
-            $table->integer('index');
-            $table->integer('status')->default(1);
-            $table->unsignedInteger('category_id');
+            $table->string('language');
+            $table->longText('name');
+            $table->unsignedInteger('project_category_id');
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->timestamps();
 
-            $table->foreign('category_id')
-                ->references('id')->on('activity_category')
+            $table->foreign('project_category_id')
+                ->references('id')->on('project_category')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -48,6 +46,6 @@ class CreateActivityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity');
+        Schema::dropIfExists('project_cateogry_translation');
     }
 }

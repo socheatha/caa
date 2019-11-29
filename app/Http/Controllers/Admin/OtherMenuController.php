@@ -8,77 +8,51 @@ use App\Http\Controllers\Controller;
 
 class OtherMenuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $this->data = [
+            'other_menus' => OtherMenu::orderBy('index', 'asc')->get(),
+        ];
+    
+        return view('admin.other_menu.index', $this->data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        return view('admin.other_menu.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\OtherMenu  $otherMenu
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(OtherMenu $otherMenu)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\OtherMenu  $otherMenu
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(OtherMenu $otherMenu)
     {
-        //
+        $this->data = [
+            'other_menu' => $otherMenu,
+        ];
+    
+        return view('admin.other_menu.edit', $this->data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\OtherMenu  $otherMenu
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, OtherMenu $otherMenu)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\OtherMenu  $otherMenu
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(OtherMenu $otherMenu)
     {
         //

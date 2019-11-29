@@ -22,7 +22,7 @@
 						<!-- Action Dropdown -->
 						@component('admin.components.action')
 							@slot('btnCreate')
-								{{route('admin.main-menu.create')}}
+								{{route('admin.sub-menu.create')}}
 							@endslot
 						@endcomponent
 
@@ -42,29 +42,29 @@
 
 
     <div class="box-body">
-      <table id="dataTable{{ ((!session('locale'))? '': ((session('locale')=='kh')? '-kh':'' )) }}" class="table table-bordered table-hover">
+      <table id="dataTable{{ ((!session('locale'))? '-kh': ((session('locale')=='km')? '-kh':'' )) }}" class="table table-bordered table-hover">
         <thead>
 	        <tr>
-	          <th width="5%">{!! __('module.main_menu.table.no') !!}</th>
-	          <th>{{ __('module.main_menu.table.name_kh') }}</th>
-	          <th>{{ __('module.main_menu.table.name_en') }}</th>
-	          <th>{{ __('module.main_menu.table.index') }}</th>
-	          <th>{{ __('module.main_menu.table.url') }}</th>
+	          <th width="5%">{!! __('module.sub_menu.table.no') !!}</th>
+	          <th>{{ __('module.sub_menu.table.name_kh') }}</th>
+	          <th>{{ __('module.sub_menu.table.name_en') }}</th>
+	          <th>{{ __('module.sub_menu.table.index') }}</th>
+	          <th>{{ __('module.sub_menu.table.url') }}</th>
 	          <th width="10%">{{ __('module.general.table.action') }}</th>
 	        </tr>
         </thead>
         <tbody>
-        	@foreach($main_menus as $i => $main_menu)
+        	@foreach($sub_menus as $i => $sub_menu)
 						<tr>
 							<td>{{ ++$i }}</td>
-							<td>{{ $main_menu->name }}</td>
-							<td>{{ $main_menu->name_en }}</td>
-							<td>{{ $main_menu->description}}</td>
-							<td class="text-center"><span class="label label-primary">{{ $main_menu->client->count()}}</span></td>
+							<td>{{ $sub_menu->name }}</td>
+							<td>{{ $sub_menu->name_en }}</td>
+							<td>{{ $sub_menu->description}}</td>
+							<td class="text-center"><span class="label label-primary">{{ $sub_menu->client->count()}}</span></td>
 							<td class="td-action text-right">
 
 								{{-- Edit Button --}}
-								<a href="{{ route('admin.main-menu.edit',$main_menu->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
+								<a href="{{ route('admin.sub-menu.edit',$sub_menu->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 
 							</td>
 						</tr>

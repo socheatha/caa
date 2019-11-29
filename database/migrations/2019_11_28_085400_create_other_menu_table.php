@@ -14,9 +14,8 @@ class CreateOtherMenuTable extends Migration
     public function up()
     {
         Schema::create('other_menu', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->longText('name');
-            $table->string('url');
+            $table->increments('id');
+            $table->string('url', 255);
             $table->integer('index');
             $table->integer('status')->default(1);
             $table->unsignedInteger('created_by');

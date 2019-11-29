@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\BaseModel;
 
-class OtherMenu extends Model
+class OtherMenu extends BaseModel
 {
 	protected $table = 'other_menu';
 

@@ -14,16 +14,12 @@ class CreateConfigTable extends Migration
     public function up()
     {
         Schema::create('config', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('logo', 255);
             $table->string('email');
-            $table->string('phone');
-            $table->longText('address');
-            $table->longText('copyright');
             $table->longText('social');
             $table->string('fb_url', 255);
             $table->string('map_location', 255);
-            $table->text('welcome_message', 255);
             $table->text('header_color', 255);
             $table->text('footer_color', 255);
             $table->text('body_color', 255);
