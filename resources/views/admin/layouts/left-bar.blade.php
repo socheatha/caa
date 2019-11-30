@@ -33,14 +33,43 @@
           </span>
         </a>
         <ul class="treeview-menu">
-        <li class="{{ ((Auth::user()->sidebarActive() == 'project-category' )? 'active':'') }}"><a href="{{ route('admin.project-categories.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.project-category') }}</a></li>
-        <li class="{{ ((Auth::user()->sidebarActive() == 'project' )? 'active':'') }}"><a href="{{ route('admin.projects.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.project') }}</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'project-category' )? 'active':'') }}"><a href="{{ route('admin.project-categories.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.project-category') }}</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'project' )? 'active':'') }}"><a href="{{ route('admin.projects.index') }}"><i class="far fa-circle"></i> {{ __('module.sidebar.sub.project') }}</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview {{ ((strpos('project-category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+        <a href="#">
+          <i class="fa fa-project-diagram"></i> <span> Activty</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class=""><a href="#"><i class="far fa-circle"></i> Activty Category</a></li>
+          <li class=""><a href="#"><i class="far fa-circle"></i> Activty List</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview {{ ((strpos('project-category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+        <a href="#">
+          <i class="fa fa-project-diagram"></i> <span> Setting</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class=""><a href="#"><i class="far fa-circle"></i> Website Config</a></li>
+          <li class=""><a href="#"><i class="far fa-circle"></i> Slide Show</a></li>
+          <li class=""><a href="#"><i class="far fa-circle"></i> Our Parthner</a></li>
+          <li class=""><a href="#"><i class="far fa-circle"></i> Extra Menu</a></li>
+          <li class=""><a href="#"><i class="far fa-circle"></i> Document</a></li>
         </ul>
       </li>
 
 
       <li class="header">LABELS</li>
-      <li><a href="#"><i class="far fa-circle text-red"></i> <span>Important</span></a></li>
+      <li><a href="#"><i class="far fa-circle text-red"></i> <span>Logout</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
