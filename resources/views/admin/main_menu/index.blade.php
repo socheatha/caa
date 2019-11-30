@@ -65,8 +65,24 @@
 							<td class="text-center"><span class="label label-primary">{{ $main_menu->SubMenu->count()}}</span></td>
 							<td class="td-action text-right">
 
+
 								{{-- Edit Button --}}
-								<a href="{{ route('admin.main-menu.edit',$main_menu->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
+								<a href="{{ route('admin.main-menu.edit',$main_menu->id) }}" class="btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
+
+								{{-- Dropdown Lang Button --}}
+								<div class="dropdown">
+									<button id="dLabel" class="btn btn-info btn-flat" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<i class="fa fa-globe-americas"></i>
+											<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
+										@foreach($main_menu->AllLanguages() as $l => $lang)
+											<li>
+												<a href="#{{ $lang->language }}" data-lang="{{ $lang->nationality }}" data-id="{{ $main_menu->id }}" class="editBtn">{{ $lang->language }}</a>
+											</li>
+										@endforeach
+									</ul>
+								</div>
 
 							</td>
 						</tr>
@@ -76,12 +92,92 @@
     </div>
     <!-- ./box-body -->
   </div>
-  <!-- /.box -->
+	<!-- /.box -->
+	
+	
+	<!-- New main_menu Modal -->
+	<div class="modal fade" id="editMainMenuModal" tabindex="-1" role="dialog" aria-labelledby="main_menuModalLabel">
+		<div class="modal-dialog" role="document" style="width: 60%;">
+			<div class="modal-content" style="margin-top: 80px;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
+					<h4 class="modal-title" id="main_menuModalLabel">{{ __('alert.modal.title.edit_main_menu') }}</h4>
+				</div>
+				<div class="modal-body">
+
+					{!! Form::text('lang', '', ['class' => 'form-control']) !!}
+					
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								{!! Html::decode(Form::label('name', __('label.form.main-menu.name')." <small>*</small>")) !!}
+								{!! Form::text('name', '', ['class' => 'form-control name_main_menu','placeholder' => 'name','required']) !!}
+							</div>
+						</div>
+						{{-- / .col --}}
+					</div>
+					{{-- / .row --}}
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">{{ __('alert.swal.button.no') }}</button>
+					<button type="button" class="btn btn btn-success" id="update_lang_main_menu">{{ __('alert.swal.button.yes') }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 @endsection
 
 @section('js')
 	<script type="text/javascript">
+
+		$('.editBtn').click(function (e) {
+  		e.preventDefault();
+
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$.ajax({
+				url: "{{ route('admin.main-menu.edit') }}",
+				method: 'post',
+				data: {
+					id: $(this).data('id'),
+					lang: $(this).data('lang'),
+				},
+				success: function(data){
+					console.log(data);
+					$('[name="lang"]').val($(this).data('lang'));
+					$('#editMainMenuModal').modal();
+				}
+			});
+		});
+
+		$('#update_lang_main_menu').click(function (e) {
+  		e.preventDefault();
+
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$.ajax({
+				url: "{{ route('admin.main-menu.edit') }}",
+				method: 'post',
+				data: {
+					id: $(this).data('id'),
+					lang: $(this).data('lang'),
+				},
+				success: function(data){
+					console.log(data);
+					$('[name="lang"]').val($(this).data('lang'));
+					$('#editMainMenuModal').modal();
+				}
+			});
+			
+		});
 
 	</script>
 @endsection

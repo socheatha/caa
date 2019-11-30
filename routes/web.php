@@ -33,7 +33,9 @@
 
     Route::get('/', 'HomeController@index')->name('home');
 
-    Route::resource('main-menu', 'MainMenuController');
+    Route::resource('main-menu', 'MainMenuController')->except(['update', 'show']);
+    Route::post('main-menu/update', 'MainMenuController@update')->name('main-menu.update');
+    Route::post('main-menu/edit', 'MainMenuController@edit')->name('main-menu.edit');
     Route::resource('sub-menu', 'SubMenuController');
     Route::resource('other-menu', 'OtherMenuController');
 

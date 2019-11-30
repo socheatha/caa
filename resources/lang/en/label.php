@@ -61,6 +61,7 @@ return [
     'pdf' => 'PDF', 
     'print' => 'Print',
     'import' => 'Import',
+    'language' => 'Language',
 
     'list' => 'Listing',
     'select' => 'Select',

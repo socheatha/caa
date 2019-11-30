@@ -130,7 +130,7 @@ return [
 
   'modal' => [
     'title' => [
-      'add_business_objective' => 'Create new Business Objective',
+      'edit_main_menu' => 'Edit Main Menu',
       'add_user' => 'Create new User',
       'change_password' => 'Change Password',
       'password_confirm' => 'Confirm-Password',

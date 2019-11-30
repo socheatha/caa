@@ -63,13 +63,12 @@ class MainMenuController extends Controller
     }
 
     
-    public function edit(MainMenu $mainMenu)
+    public function edit(Request $request)
     {
-        $this->data = [
-            'main_menu' => $mainMenu,
-        ];
-    
-        return view('admin.main_menu.edit', $this->data);
+        $main_menu = MainMenu::find($request->id)->translation($request->lang);
+
+        return $main_menu;
+
     }
 
     
