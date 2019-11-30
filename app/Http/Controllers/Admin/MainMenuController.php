@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Language;
 use App\Models\MainMenu;
+use App\Models\MainMenuTranslation;
+use App\Http\Requests\MainMenuRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class MainMenuController extends Controller
 {
@@ -24,49 +28,32 @@ class MainMenuController extends Controller
         return view('admin.main_menu.create');
     }
     
-    public function store(Request $request)
+    public function store(MainMenuRequest $request)
     {
-        
-        $validator = \Validator::make($request->all(), [
-            'name' => ['required', 'string', 'max:225'],
-            'email' => ['required', 'email', 'string', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6'],
-            'password_confirmation' => ['min:6', 'same:password'],
-            'gender' => ['required'],
-        ]);
-        
-        if ($validator->fails())
-        {
-            return response()->json(['errors'=>$validator->errors()]);
+        // return $request->all();
+        $languages = Language::where('status', '1')->orderBy('index', 'asc')->get();
+
+        $main_menu = MainMenu::create([
+                                        'url' => $request->url,
+                                        'index' => $request->index,
+                                        'status' => $request->status,
+                                        'created_by' => Auth::user()->id,
+                                        'updated_by' => Auth::user()->id,
+                                        ]);
+
+        foreach ($languages as $key => $lang) {
+            MainMenuTranslation::create([
+                            'name' => $request->name,
+                            'language' => $lang->nationality,
+                            'main_menu_id' => $main_menu->id,
+                            'created_by' => Auth::user()->id,
+                            'updated_by' => Auth::user()->id,
+                            ]);
         }
 
-        return response()->json(['success'=>'success', 'member' => $member->create($request)]);
-
-        return Client::create([
-                    'name' => $request->name,
-                    'name_en' => $request->name_en,
-                    'owner_name' => $request->owner_name,
-                    'language' => $request->language,
-                    'vat_tin' => $request->vat_tin,
-                    'tax_type_id' => $request->tax_type_id,
-                    'business_objective_id' => $request->business_objective_id,
-                    'controlled_by' => $request->controlled_by,
-                    'merge' => (($request->merge==null)? 0 : 1),
-                    'quickbook' => (($request->quickbook==null)? 0 : 1),
-                    'inv_digit' => $request->inv_digit,
-                    'phone' => $request->phone,
-                    'email' => $request->email,
-                    'address' => $request->address,
-                    'house' => $request->house,
-                    'street' => $request->street,
-                    'group' => $request->group,
-                    'village' => $request->village,
-                    'commune' => $request->commune,
-                    'district_id' => $request->district_id,
-                    'province_id' => $request->province_id,
-                    'created_by' => Auth::user()->id,
-                    'updated_by' => Auth::user()->id,
-        ]);
+        // Redirect
+        return redirect()->route('admin.main-menu.index')
+            ->with('success', __('alert.crud.success.create', ['name' => Auth::user()->module()]));
     }
 
     

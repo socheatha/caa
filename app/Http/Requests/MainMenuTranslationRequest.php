@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MainMenuRequest extends FormRequest
+class MainMenuTranslationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class MainMenuRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,10 +24,10 @@ class MainMenuRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:main_menu_translation,name,'.$this->route('main-menu'),
-            'index' => 'required|unique:main_menu,index,'.$this->route('main-menu'),
-            'url' => 'required|unique:main_menu,url,'.$this->route('main-menu'),
-            'status' => 'required',
+            'name' => 'required|unique:main_menu_translation,name,'.$this->route('main_menu'),
+            'index' => 'required|unique:main_menu,index,'.$this->route('main_menu'),
+            'url' => 'required|unique:main_menu,url,'.$this->route('main_menu'),
+            'language' => 'required',
         ];
     }
 }

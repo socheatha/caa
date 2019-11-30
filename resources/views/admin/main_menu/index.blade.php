@@ -46,10 +46,11 @@
         <thead>
 	        <tr>
 	          <th width="5%">{!! __('module.main_menu.table.no') !!}</th>
-	          <th>{{ __('module.main_menu.table.name_kh') }}</th>
-	          <th>{{ __('module.main_menu.table.name_en') }}</th>
+	          <th>{{ __('module.main_menu.table.name') }}</th>
 	          <th>{{ __('module.main_menu.table.index') }}</th>
 	          <th>{{ __('module.main_menu.table.url') }}</th>
+	          <th>{{ __('module.main_menu.table.status') }}</th>
+	          <th>{{ __('module.main_menu.table.sub-menu') }}</th>
 	          <th width="10%">{{ __('module.general.table.action') }}</th>
 	        </tr>
         </thead>
@@ -57,10 +58,11 @@
         	@foreach($main_menus as $i => $main_menu)
 						<tr>
 							<td>{{ ++$i }}</td>
-							<td>{{ $main_menu->name }}</td>
-							<td>{{ $main_menu->name_en }}</td>
-							<td>{{ $main_menu->description}}</td>
-							<td class="text-center"><span class="label label-primary">{{ $main_menu->client->count()}}</span></td>
+							<td>{{ $main_menu->translation('en')->name }}</td>
+							<td>{{ $main_menu->index}}</td>
+							<td>{{ $main_menu->url}}</td>
+							<td>{{ $main_menu->status}}</td>
+							<td class="text-center"><span class="label label-primary">{{ $main_menu->SubMenu->count()}}</span></td>
 							<td class="td-action text-right">
 
 								{{-- Edit Button --}}

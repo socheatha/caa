@@ -53,10 +53,11 @@ return [
 	'main_menu' => [
 		'table' => [
 			'no' => 'N&deg;',
-			'name_kh' => 'Khmer Name',
-			'name_en' => 'English Name',
+			'name' => 'Name',
 			'index' => 'Index Sort',
 			'url' => 'URL',
+			'status' => 'Status',
+			'sub-menu' => 'Sub Menu',
 		],
 	],
 
