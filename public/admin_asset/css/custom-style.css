@@ -94,6 +94,13 @@ font-family: 'roboto_r','khmerkuolen' !important;
 .box-tools .dropdown-menu{
   border-radius: 0;
 }
+.box-tools .dropdown{
+  display: inline;
+}
+.box-tools .dropdown ul{
+  margin-top: 7px;
+  min-width: 100%;
+}
 .dataTables_paginate .pagination li a{
   border-radius: 0 !important;
   padding: 3px 8px;

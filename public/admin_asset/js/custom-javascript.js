@@ -112,20 +112,14 @@ $('#dataTable-no-sorting-kh').DataTable( {
     // buttons: true,
     "fnDrawCallback": function( oSettings ) {
     	$('.BtnDelete').click(function () {
-				const swalWithBootstrapButtons = Swal.mixin({
-				  confirmButtonClass: 'btn btn-success ml-2',
-				  cancelButtonClass: 'btn btn-danger mr-2',
-				  buttonsStyling: false,
-				})
-
-				swalWithBootstrapButtons.fire({
-				  title: $('#deleteAlert').data('title'),
-				  text: $('#deleteAlert').data('text'),
-				  type: 'warning',
-				  showCancelButton: true,
-				  confirmButtonText: $('#deleteAlert').data('btnyes'),
-				  cancelButtonText: $('#deleteAlert').data('btnno'),
-				  reverseButtons: true
+				Swal.fire({
+					title: 'Are you sure?',
+					text: "You won't be able to revert this!",
+					icon: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Yes, delete it!'
 				}).then((result) => {
   				if (result.value) {
 						$( "form" ).submit(function( event ) {
@@ -169,50 +163,38 @@ $( document ).ready(function() {
 	    // buttons: true,
 	    "fnDrawCallback": function( oSettings ) {
 	    	$('.BtnDelete').click(function () {
-					const swalWithBootstrapButtons = Swal.mixin({
-					  confirmButtonClass: 'btn btn-success ml-2',
-					  cancelButtonClass: 'btn btn-danger mr-2',
-					  buttonsStyling: false,
-					})
-
-					swalWithBootstrapButtons.fire({
-					  title: $('#deleteAlert').data('title'),
-					  text: $('#deleteAlert').data('text'),
-					  type: 'warning',
-					  showCancelButton: true,
-					  confirmButtonText: $('#deleteAlert').data('btnyes'),
-					  cancelButtonText: $('#deleteAlert').data('btnno'),
-					  reverseButtons: true
+					Swal.fire({
+						title: 'Are you sure?',
+						text: "You won't be able to revert this!",
+						icon: 'warning',
+						showCancelButton: true,
+						confirmButtonColor: '#3085d6',
+						cancelButtonColor: '#d33',
+						confirmButtonText: 'Yes, delete it!'
 					}).then((result) => {
-	  				if (result.value) {
+						if (result.value) {
 							$( "form" ).submit(function( event ) {
 								$('button').attr('disabled','disabled');
 							});
-
+	
 							$("#form-item-"+$(this).val()).submit();
-
+	
 						}
 					})
-	    	});
+				});
 	    },
 	});
 
 
 	$('.BtnDelete').click(function () {
-		const swalWithBootstrapButtons = Swal.mixin({
-		  confirmButtonClass: 'btn btn-success ml-2',
-		  cancelButtonClass: 'btn btn-danger mr-2',
-		  buttonsStyling: false,
-		})
-
-		swalWithBootstrapButtons.fire({
-		  title: $('#deleteAlert').data('title'),
-		  text: $('#deleteAlert').data('text'),
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonText: $('#deleteAlert').data('btnyes'),
-		  cancelButtonText: $('#deleteAlert').data('btnno'),
-		  reverseButtons: true
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
 		}).then((result) => {
 			if (result.value) {
 				$( "form" ).submit(function( event ) {

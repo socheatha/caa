@@ -64,25 +64,27 @@
 							<td>{{ $main_menu->status}}</td>
 							<td class="text-center"><span class="label label-primary">{{ $main_menu->SubMenu->count()}}</span></td>
 							<td class="td-action text-right">
-
-
-								{{-- Edit Button --}}
-								<a href="{{ route('admin.main-menu.edit',$main_menu->id) }}" class="btn btn-primary"><i class="fa fa-pencil-alt"></i></a>
-
 								{{-- Dropdown Lang Button --}}
 								<div class="dropdown">
 									<button id="dLabel" class="btn btn-info btn-flat" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<i class="fa fa-globe-americas"></i>
-											<span class="caret"></span>
+										<i class="fa fa-pencil-alt"></i>
 									</button>
 									<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
 										@foreach($main_menu->AllLanguages() as $l => $lang)
 											<li>
-												<a href="#{{ $lang->language }}" data-lang="{{ $lang->nationality }}" data-id="{{ $main_menu->id }}" class="editBtn">{{ $lang->language }}</a>
+												{{-- <a href="#{{ $lang->language }}" data-lang="{{ $lang->nationality }}" data-id="{{ $main_menu->id }}" class="editBtn">{{ $lang->language }}</a> --}}
+												<a href="{{ route('admin.main-menu.edit',[$main_menu->id, $lang->nationality]) }}" class="">{{ $lang->language }}</a>
 											</li>
 										@endforeach
 									</ul>
 								</div>
+								{{-- Edit Button --}}
+								{{-- <a href="{{ route('admin.main-menu.edit',$main_menu->id) }}" class="btn btn-primary"><i class="fa fa-pencil-alt"></i></a> --}}
+								{{-- Delete Button --}}
+								<button class="btn btn-danger BtnDelete" value="{{ $main_menu->id }}"><i class="fa fa-trash-alt"></i></button>
+								{{ Form::open(['url'=>route('admin.main-menu.destroy', $main_menu->id), 'id' => 'form-item-'.$main_menu->id, 'class' => 'sr-only']) }}
+								{{ Form::hidden('_method','DELETE') }}
+								{{ Form::close() }}
 
 							</td>
 						</tr>
@@ -132,52 +134,6 @@
 @section('js')
 	<script type="text/javascript">
 
-		$('.editBtn').click(function (e) {
-  		e.preventDefault();
-
-			$.ajaxSetup({
-				headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				}
-			});
-			$.ajax({
-				url: "{{ route('admin.main-menu.edit') }}",
-				method: 'post',
-				data: {
-					id: $(this).data('id'),
-					lang: $(this).data('lang'),
-				},
-				success: function(data){
-					console.log(data);
-					$('[name="lang"]').val($(this).data('lang'));
-					$('#editMainMenuModal').modal();
-				}
-			});
-		});
-
-		$('#update_lang_main_menu').click(function (e) {
-  		e.preventDefault();
-
-			$.ajaxSetup({
-				headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				}
-			});
-			$.ajax({
-				url: "{{ route('admin.main-menu.edit') }}",
-				method: 'post',
-				data: {
-					id: $(this).data('id'),
-					lang: $(this).data('lang'),
-				},
-				success: function(data){
-					console.log(data);
-					$('[name="lang"]').val($(this).data('lang'));
-					$('#editMainMenuModal').modal();
-				}
-			});
-			
-		});
 
 	</script>
 @endsection

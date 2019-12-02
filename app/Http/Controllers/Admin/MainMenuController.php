@@ -15,11 +15,12 @@ class MainMenuController extends Controller
     
     public function index()
     {
-        $this->data = [
-            'main_menus' => MainMenu::orderBy('index', 'asc')->get(),
-        ];
-    
-        return view('admin.main_menu.index', $this->data);
+        // $this->data = [
+        //     'main_menus' => MainMenu::orderBy('index', 'asc')->get(),
+        // ];
+        $main_menus = MainMenu::orderBy('index', 'asc')->get();
+        
+        return view('admin.main_menu.index')->with(compact('main_menus'));
     }
 
     
@@ -63,23 +64,42 @@ class MainMenuController extends Controller
     }
 
     
-    public function edit(Request $request)
+    public function edit(Request $request, MainMenu $mainMenu, $lang)
     {
-        $main_menu = MainMenu::find($request->id)->translation($request->lang);
-
-        return $main_menu;
-
+        // return $mainMenu;
+        return view('admin.main_menu.edit')->with(compact('mainMenu','lang'));
     }
 
     
     public function update(Request $request, MainMenu $mainMenu)
     {
-        //
+        
+        $mainMenu->update([
+                        'url' => $request->url,
+                        'index' => $request->index,
+                        'status' => $request->status,
+                        'updated_by' => Auth::user()->id,
+                    ]);
+
+        $mainMenuTranslation = $mainMenu->translation($request->language)
+                                        ->update([
+                                            'name' => $request->name,
+                                            'updated_by' => Auth::user()->id
+                                        ]);
+        // Redirect
+        return redirect()->route('admin.main-menu.edit', [$mainMenu->id, $request->language])
+            ->with('success', '<strong>' .$mainMenu->translation($request->language)->name . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
+
     }
 
     
     public function destroy(MainMenu $mainMenu)
     {
-        //
+        $name = $mainMenu->translation('en')->name;
+		if ($mainMenu->delete()){
+            // Redirect
+            return redirect()->route('admin.main-menu.index')
+                ->with('success', '<strong>' .$mainMenu->translation('en')->name . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
+        }
     }
 }
