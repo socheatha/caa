@@ -15,8 +15,14 @@ class CreateSubMenuTable extends Migration
     {
         Schema::create('sub_menu', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('name_en');
+            $table->string('name_kh');
+            $table->string('name_my');
+            $table->string('name_sa');
+            
+            $table->integer('index')->default(0);
             $table->string('url', 255);
-            $table->integer('index');
             $table->integer('status')->default(1);
             $table->unsignedInteger('main_menu_id');
             $table->unsignedInteger('created_by');

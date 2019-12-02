@@ -18,8 +18,8 @@ class CreateLanguageTable extends Migration
             $table->string('language');
             $table->string('nationality');
             $table->text('detail');
-            $table->integer('index');
-            $table->integer('status');
+            $table->integer('index')->default(0);
+            $table->integer('status')->default(1);
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();

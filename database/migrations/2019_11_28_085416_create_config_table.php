@@ -15,16 +15,37 @@ class CreateConfigTable extends Migration
     {
         Schema::create('config', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('logo', 255);
+            $table->string('logo');
             $table->string('email');
-            $table->longText('social');
-            $table->string('fb_url', 255);
-            $table->string('map_location', 255);
-            $table->text('header_color', 255);
-            $table->text('footer_color', 255);
-            $table->text('body_color', 255);
-            $table->text('menu_active_color', 255);
-            $table->text('text_color', 255);
+            $table->string('social'); 
+            $table->string('fb_url');
+            $table->string('map_location');
+            $table->string('header_color');
+            $table->string('footer_color');
+            $table->string('body_color');
+            $table->string('menu_active_color');
+            $table->string('text_color');
+
+            $table->string('phone_en');
+            $table->string('phone_kh');
+            $table->string('phone_my');
+            $table->string('phone_sa');
+
+            $table->string('address_en');
+            $table->string('address_kh');
+            $table->string('address_my');
+            $table->string('address_sa');
+
+            $table->string('copyright_en');
+            $table->string('copyright_kh');
+            $table->string('copyright_my');
+            $table->string('copyright_sa');
+
+            $table->text('welcome_message_en');
+            $table->text('welcome_message_kh');
+            $table->text('welcome_message_my');
+            $table->text('welcome_message_sa');
+
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
             $table->timestamps();

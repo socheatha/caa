@@ -16,8 +16,24 @@ class CreateProjectTable extends Migration
         Schema::create('project', function (Blueprint $table) {
             $table->increments('id');
             $table->string('thumbnail');
-            $table->integer('view');
-            $table->integer('index');
+
+            $table->string('name_en');
+            $table->string('name_kh');
+            $table->string('name_my');
+            $table->string('name_sa');
+
+            $table->string('short_descript_en');
+            $table->string('short_descript_kh');
+            $table->string('short_descript_my');
+            $table->string('short_descript_sa');
+
+            $table->text('detail_en');
+            $table->text('detail_kh');
+            $table->text('detail_my');
+            $table->text('detail_sa');
+
+            $table->integer('view')->default(0);
+            $table->integer('index')->default(0);
             $table->integer('status')->default(1);
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('created_by');
