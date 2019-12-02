@@ -64,6 +64,7 @@
           <li class=""><a href="#"><i class="far fa-circle"></i> Our Parthner</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Extra Menu</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Document</a></li>
+          <li class=""><a href="#"><i class="far fa-circle"></i> Donation</a></li>
         </ul>
       </li>
 
