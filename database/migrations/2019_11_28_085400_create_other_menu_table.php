@@ -15,6 +15,9 @@ class CreateOtherMenuTable extends Migration
     {
         Schema::create('other_menu', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('seo_keywords');
+            $table->string('seo_description');
             
             $table->string('name_en');
             $table->string('name_kh');

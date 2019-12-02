@@ -17,6 +17,9 @@ class CreateProjectTable extends Migration
             $table->increments('id');
             $table->string('thumbnail');
 
+            $table->string('seo_keywords');
+            $table->string('seo_description');
+
             $table->string('name_en');
             $table->string('name_kh');
             $table->string('name_my');

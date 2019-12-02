@@ -17,6 +17,9 @@ class CreateSlideShowTable extends Migration
             $table->increments('id');
             $table->string('image');
             $table->integer('index')->default(0);
+
+            $table->string('seo_keywords');
+            $table->string('seo_description');
             
             $table->string('name_en');
             $table->string('name_kh');
