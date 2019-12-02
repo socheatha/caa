@@ -51,7 +51,7 @@
         </ul>
       </li>
 
-      <li class="treeview {{ ((strpos('project-category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+      <li class="treeview {{ ((strpos('website-config', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
           <i class="fa fa-project-diagram"></i> <span> Setting</span>
           <span class="pull-right-container">
@@ -59,7 +59,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class=""><a href="#"><i class="far fa-circle"></i> Website Config</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'website-config' )? 'active':'') }}">
+            <a href="{{ route('admin.website-config.index') }}"><i class="far fa-circle"></i> Website Config</a>
+          </li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Slide Show</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Our Parthner</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Extra Menu</a></li>

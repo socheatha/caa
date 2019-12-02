@@ -50,6 +50,8 @@
 
     Route::resource('activity-categories', 'ActivityCategoryController');
     Route::resource('activities', 'ActivitiesController');
+    
+    Route::resource('website-config', 'ConfigController');
 
 
   });

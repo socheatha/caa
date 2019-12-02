@@ -15,7 +15,7 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.website_config.index');
     }
 
     /**
@@ -58,7 +58,7 @@ class ConfigController extends Controller
      */
     public function edit(Config $config)
     {
-        //
+        dd('edit page');
     }
 
     /**
