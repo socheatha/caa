@@ -12,11 +12,17 @@ class MainMenu extends BaseModel
 {
 	protected $table = 'main_menu';
 
-	protected $fillable = ['url','index','status','created_by','updated_by'];
+	protected $fillable = ['name_en',
+													'name_kh',
+													'name_my',
+													'name_sa',
+													'url',
+													'index',
+													'status',
+													'created_by',
+													'updated_by'];
 
-	public function translation($lang){
-		return $this->hasMany(MainMenuTranslation::class,'main_menu_id')->where('language', $lang)->first();
-	}
+
 	public function SubMenu(){
 		return $this->hasMany(SubMenu::class,'main_menu_id');
 	}

@@ -11,6 +11,7 @@
 	
 	<!-- Styles -->
 	<link href="{{ asset('admin_asset/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/flags.css') }}" rel="stylesheet">
 	<link href="{{ asset('admin_asset/css/custom-style.css') }}" rel="stylesheet">
 
 	{{-- Custom Style Css --}}

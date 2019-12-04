@@ -11,7 +11,15 @@ class SubMenu extends BaseModel
 {
 	protected $table = 'sub_menu';
 
-	protected $fillable = ['name','url','index','status','main_menu_id','created_by','updated_by'];
+	protected $fillable = ['name_en',
+													'name_kh',
+													'name_my',
+													'name_sa',
+													'url',
+													'index',
+													'status',
+													'main_menu_id',
+													'created_by','updated_by'];
 
 
 	public function MainMenu(){

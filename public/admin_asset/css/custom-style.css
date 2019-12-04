@@ -101,6 +101,11 @@ font-family: 'roboto_r','khmerkuolen' !important;
   margin-top: 7px;
   min-width: 100%;
 }
+.nav-tabs-custom-ns{
+  border: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
 .dataTables_paginate .pagination li a{
   border-radius: 0 !important;
   padding: 3px 8px;

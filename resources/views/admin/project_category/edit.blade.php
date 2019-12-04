@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+
 	<div class="box box-success">
     <div class="box-header with-border">
       <h3 class="box-title">{{ Auth::user()->subModule() }}</h3>
@@ -16,7 +17,7 @@
 				<!-- Action Dropdown -->
 				@component('admin.components.back')
 					@slot('btnBack')
-						{{route('admin.sub_menu.index')}}
+						{{route('admin.project_category.index')}}
 					@endslot
 				@endcomponent
 
@@ -28,16 +29,14 @@
     </div>
     <!-- /.box-header -->
 
-		{!! Form::open(['url' => route('admin.sub_menu.update', $subMenu->id),'method' => 'post','class' => 'mt-3']) !!}
+		{!! Form::open(['url' => route('admin.project_category.update', $projectCategory->id),'method' => 'post','class' => 'mt-3']) !!}
 		{!! Form::hidden('_method', 'PUT') !!}
 
     <div class="box-body">
 			
 			<!-- Form -->
-			@include('admin.sub_menu.form')
-
-		  {{ csrf_field() }}
-
+			@include('admin.project_category.form')
+			
     </div>
     <!-- ./box-body -->
 

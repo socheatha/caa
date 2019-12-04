@@ -15,14 +15,14 @@ return [
 		'dashboard' => 'Dashboard',
 		
 		'main' => [
-			'main-menu' => 'Main Menu',
+			'main_menu' => 'Main Menu',
 			'project' => 'Project',
 			'activity-category' => 'Activity Category',
 		],
 		'sub' => [
 			
-			'main-menu' => 'Main Menu',
-			'sub-menu' => 'Sub Menu',
+			'main_menu' => 'Main Menu',
+			'sub_menu' => 'Sub Menu',
 			'other-menu' => 'Other Menu',
 
 			'project-category' => 'Project Category',
@@ -57,7 +57,7 @@ return [
 			'index' => 'Index Sort',
 			'url' => 'URL',
 			'status' => 'Status',
-			'sub-menu' => 'Sub Menu',
+			'sub_menu' => 'Sub Menu',
 		],
 	],
 

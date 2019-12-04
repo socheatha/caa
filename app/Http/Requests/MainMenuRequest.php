@@ -24,10 +24,9 @@ class MainMenuRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:main_menu_translation,name,'.$this->route('main-menu'),
-            'index' => 'required|unique:main_menu,index,'.$this->route('main-menu'),
-            'url' => 'required|unique:main_menu,url,'.$this->route('main-menu'),
-            'status' => 'required',
+            'name_en' => 'required|unique:main_menu,name_en,'.((isset($this->main_menu))? $this->main_menu->id : ''),
+            'index' => 'required|unique:main_menu,index,'.((isset($this->main_menu))? $this->main_menu->id : ''),
+            'url' => 'required|unique:main_menu,url,'.((isset($this->main_menu))? $this->main_menu->id : ''),
         ];
     }
 }

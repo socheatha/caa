@@ -16,7 +16,7 @@
 				<!-- Action Dropdown -->
 				@component('admin.components.back')
 					@slot('btnBack')
-						{{route('admin.sub-menu.index')}}
+						{{route('admin.sub_menu.index')}}
 					@endslot
 				@endcomponent
 
@@ -28,14 +28,12 @@
     </div>
     <!-- /.box-header -->
 
-		{{ Form::open(['route' => 'admin.sub-menu.store','method' => 'post','class' => 'mt-3']) }}
+		{{ Form::open(['route' => 'admin.sub_menu.store','method' => 'post','class' => 'mt-3']) }}
 
     <div class="box-body">
 			
 			<!-- Form -->
 			@include('admin.sub_menu.form')
-
-		  {{ csrf_field() }}
 
     </div>
     <!-- ./box-body -->

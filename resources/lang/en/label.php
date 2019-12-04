@@ -21,9 +21,15 @@ return [
   	'home' => 'Dashboard',
   	'admin' => 'Administrator',
     'list' => 'List',
-    'main-menu' => 'Main Menu',
-    'sub-menu' => 'Sub Menu',
-    'other-menu' => 'Other Menu',
+    'main_menu' => 'Main Menu',
+    'sub_menu' => 'Sub Menu',
+    'extra_menu' => 'Extra Menu',
+
+    'project_category' => 'Project Category',
+    'project' => 'Project',
+
+    'activity_category' => 'Activity Category',
+    'activity' => 'Activity',
     
   ],
 
@@ -43,9 +49,15 @@ return [
       'admin' => 'Administrator',
       'home' => 'Dashboard',
       
-      'main-menu' => 'Main Menu',
-      'sub-menu' => 'Sub Menu',
-      'other-menu' => 'Other Menu',
+      'main_menu' => 'Main Menu',
+      'sub_menu' => 'Sub Menu',
+      'extra_menu' => 'Extra Menu',
+
+      'project_category' => 'Project Category',
+      'project' => 'Project',
+
+      'activity_category' => 'Activity Category',
+      'activity' => 'Activity',
 
       'province' => 'Provinces',
       'district' => 'Districts',
@@ -94,7 +106,7 @@ return [
     'female' => 'Female',
     'other' => 'Others',
 
-    'main-menu' => [
+    'main_menu' => [
       'name' => 'Name',
       'name_kh' => 'Name in Khmer',
       'name_my' => 'Name in Malay',

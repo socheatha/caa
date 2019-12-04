@@ -16,7 +16,7 @@
 				<!-- Action Dropdown -->
 				@component('admin.components.back')
 					@slot('btnBack')
-						{{route('admin.main-menu.index')}}
+						{{route('admin.main_menu.index')}}
 					@endslot
 				@endcomponent
 
@@ -28,7 +28,7 @@
     </div>
     <!-- /.box-header -->
 
-		{{ Form::open(['route' => 'admin.main-menu.store','method' => 'post','class' => 'mt-3']) }}
+		{{ Form::open(['route' => 'admin.main_menu.store','method' => 'post','class' => 'mt-3']) }}
 
     <div class="box-body">
 			

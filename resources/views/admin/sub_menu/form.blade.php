@@ -2,27 +2,84 @@
   <div class="row">
 
     <div class="col-sm-6">
-      <div class="form-group {!! (($errors->has('name'))? 'has-error':'') !!}">
-        {!! Html::decode(Form::label('name', __('label.form.sub-menu.name')." <small>*</small>")) !!}
-        {!! Form::text('name', ((isset($sub_menu->name))? $sub_menu->name : '' ), ['class' => 'form-control ','placeholder' => 'khmer name','required']) !!}
-        {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
-      </div>
-      <div class="form-group {!! (($errors->has('name_en'))? 'has-error':'') !!}">
-        {!! Html::decode(Form::label('name', __('label.form.sub-menu.name_en')." <small>*</small>")) !!}
-        {!! Form::text('name_en', ((isset($sub_menu->name_en))? $sub_menu->name_en : '' ), ['class' => 'form-control ','placeholder' => 'english name','required']) !!}
-        {!! $errors->first('name_en', '<span class="help-block">:message</span>') !!}
+      <div class="form-group {!! (($errors->has('url'))? 'has-error':'') !!}">
+        {!! Html::decode(Form::label('name', "URL <small>*</small>")) !!}
+        {!! Form::text('url', ((isset($subMenu->url))? $subMenu->url : '' ), ['class' => 'form-control ','placeholder' => 'url','required']) !!}
+        {!! $errors->first('index', '<span class="help-block">:message</span>') !!}
       </div>
     </div>
     {{-- / .col --}}
 
-    <div class="col-sm-6">
-      <div class="form-group {!! (($errors->has('description'))? 'has-error':'') !!}">
-        {!! Html::decode(Form::label('name', __('label.form.sub-menu.description'))) !!}
-        {!! Form::textarea('description', ((isset($sub_menu->description))? $sub_menu->description : '' ), ['class' => 'form-control ','placeholder' => 'description','style' => 'height: 108px;']) !!}
-        {!! $errors->first('description', '<span class="help-block">:message</span>') !!}
+    <div class="col-sm-3">
+      <div class="form-group {!! (($errors->has('main_menu_id'))? 'has-error':'') !!}">
+        {!! Html::decode(Form::label('main_menu_id', "Main Menu <small>*</small>")) !!}
+        {!! Form::select('main_menu_id', $main_menus, ((isset($subMenu->main_menu_id))? $subMenu->main_menu_id : '' ), ['class' => 'form-control select2', 'required']) !!}
+        {!! $errors->first('main_menu_id', '<span class="help-block">:message</span>') !!}
       </div>
     </div>
     {{-- / .col --}}
+
+    <div class="col-sm-1">
+      <div class="form-group {!! (($errors->has('index'))? 'has-error':'') !!}">
+        {!! Html::decode(Form::label('name', "Index <small>*</small>")) !!}
+        {!! Form::text('index', ((isset($subMenu->index))? $subMenu->index : $index ), ['class' => 'form-control ','placeholder' => 'index','required']) !!}
+        {!! $errors->first('index', '<span class="help-block">:message</span>') !!}
+      </div>
+    </div>
+    {{-- / .col --}}
+
+    <div class="col-sm-2">
+      <div class="form-group text-center">
+        {!! Html::decode(Form::label('status', "Status")) !!}
+        <div class="togglebutton mt-4">
+          <label>
+            {!! Form::checkbox('status',((isset($subMenu->status))? $subMenu->status : 1 ), ((isset($subMenu->status))? (($subMenu->status==1)? true : false) : true) )  !!}
+            <span class="toggle toggle-success"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    {{-- / .col --}}
+
+    <!-- Component Languages Table -->
+    @component('admin.components.languageTab')
+      @slot('tab_en')
+        <div class="col-sm-12">
+          <div class="form-group {!! (($errors->has('name_en'))? 'has-error':'') !!}">
+            {!! Html::decode(Form::label('name_en', "Name in English <small>*</small>")) !!}
+            {!! Form::text('name_en', ((isset($subMenu))? $subMenu->name_en : '' ), ['class' => 'form-control ','placeholder' => 'name en','required']) !!}
+            {!! $errors->first('name_en', '<span class="help-block">:message</span>') !!}
+          </div>
+        </div>
+      @endslot
+      @slot('tab_kh')
+        <div class="col-sm-12">
+          <div class="form-group {!! (($errors->has('name_kh'))? 'has-error':'') !!}">
+            {!! Html::decode(Form::label('name_kh', "Name in Khmer")) !!}
+            {!! Form::text('name_kh', ((isset($subMenu))? $subMenu->name_kh : '' ), ['class' => 'form-control ','placeholder' => 'name kh']) !!}
+            {!! $errors->first('name_kh', '<span class="help-block">:message</span>') !!}
+          </div>
+        </div>
+      @endslot
+      @slot('tab_my')
+        <div class="col-sm-12">
+          <div class="form-group {!! (($errors->has('name_my'))? 'has-error':'') !!}">
+            {!! Html::decode(Form::label('name_my', "Name in Malay")) !!}
+            {!! Form::text('name_my', ((isset($subMenu))? $subMenu->name_my : '' ), ['class' => 'form-control ','placeholder' => 'name my']) !!}
+            {!! $errors->first('name_my', '<span class="help-block">:message</span>') !!}
+          </div>
+        </div>
+      @endslot
+      @slot('tab_sa')
+        <div class="col-sm-12">
+          <div class="form-group {!! (($errors->has('name_sa'))? 'has-error':'') !!}">
+            {!! Html::decode(Form::label('name_sa', "Name in Arab")) !!}
+            {!! Form::text('name_sa', ((isset($subMenu))? $subMenu->name_sa : '' ), ['class' => 'form-control ','placeholder' => 'name sa']) !!}
+            {!! $errors->first('name_sa', '<span class="help-block">:message</span>') !!}
+          </div>
+        </div>
+      @endslot
+    @endcomponent
 
   </div>
   {{-- / .row --}}

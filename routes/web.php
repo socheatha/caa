@@ -33,11 +33,9 @@
 
     Route::get('/', 'HomeController@index')->name('home');
 
-    Route::resource('main-menu', 'MainMenuController')->except(['edit', 'show']);
-    Route::get('main-menu/{mainMenu}/edit/{lang}', 'MainMenuController@edit')->name('main-menu.edit');
-    Route::post('main-menu/updateLang', 'MainMenuController@updateLang')->name('main-menu.updateLang');
-    Route::resource('sub-menu', 'SubMenuController');
-    Route::resource('other-menu', 'OtherMenuController');
+    Route::resource('main_menu', 'MainMenuController')->except(['show']);
+    Route::resource('sub_menu', 'SubMenuController');
+    Route::resource('extra_menu', 'ExtraMenuController');
 
     Route::resource('config', 'ConfigController');
     Route::resource('abou-us', 'SubMenuController');
@@ -45,11 +43,11 @@
     Route::resource('documents', 'SubMenuController');
     Route::resource('partners', 'PartnersController');
 
-    Route::resource('project-categories', 'ProjectCategoryController');
-    Route::resource('projects', 'ProjectsController');
+    Route::resource('project_category', 'ProjectCategoryController');
+    Route::resource('project', 'ProjectsController');
 
-    Route::resource('activity-categories', 'ActivityCategoryController');
-    Route::resource('activities', 'ActivitiesController');
+    Route::resource('activity_category', 'ActivityCategoryController');
+    Route::resource('activity', 'ActivitiesController');
     
     Route::resource('website-config', 'ConfigController');
 
