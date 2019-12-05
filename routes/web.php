@@ -30,6 +30,9 @@
   });
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
+    
+    Route::get('/laravel-filemanager', '\UniSharp\LaravelFilemanager\Controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\UniSharp\LaravelFilemanager\Controllers\UploadController@upload');
 
     Route::get('/', 'HomeController@index')->name('home');
 
@@ -44,7 +47,9 @@
     Route::resource('partners', 'PartnersController');
 
     Route::resource('project_category', 'ProjectCategoryController');
-    Route::resource('project', 'ProjectsController');
+    Route::resource('project', 'ProjectController');
+    Route::get('project/{project}/image', 'ProjectController@image')->name('project.image');
+    Route::post('project/{project}/image_update', 'ProjectController@image_update')->name('project.image_update');
 
     Route::resource('activity_category', 'ActivityCategoryController');
     Route::resource('activity', 'ActivitiesController');

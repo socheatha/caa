@@ -1,6 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('css')
+	<link href="{{ asset('admin_asset/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
 	<style type="text/css">
 		
 	</style>
@@ -28,7 +29,7 @@
     </div>
     <!-- /.box-header -->
 
-		{{ Form::open(['route' => 'admin.project.store','method' => 'post','class' => 'mt-3']) }}
+		{{ Form::open(['route' => 'admin.project.store','method' => 'post', 'enctype'=>'multipart/form-data','class' => 'mt-3']) }}
 
     <div class="box-body">
 			
@@ -50,7 +51,10 @@
 @endsection
 
 @section('js')
+	<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
+	<script src="{{ asset('admin_asset/ckeditor/ckeditor.js') }}"></script>
 	<script type="text/javascript">
-		
+
+
 	</script>
 @endsection

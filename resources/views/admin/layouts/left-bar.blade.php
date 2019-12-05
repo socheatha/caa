@@ -24,7 +24,7 @@
         </ul>
       </li>
 
-      <li class="treeview {{ ((strpos('project-category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+      <li class="treeview {{ ((strpos('project_category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
           <i class="fa fa-project-diagram"></i> <span> Projects</span>
           <span class="pull-right-container">
@@ -32,14 +32,14 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="{{ ((Auth::user()->sidebarActive() == 'project-category' )? 'active':'') }}"><a href="{{ route('admin.project_category.index') }}"><i class="far fa-circle"></i> Project Category</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'project_category' )? 'active':'') }}"><a href="{{ route('admin.project_category.index') }}"><i class="far fa-circle"></i> Project Category</a></li>
           <li class="{{ ((Auth::user()->sidebarActive() == 'project' )? 'active':'') }}"><a href="{{ route('admin.project.index') }}"><i class="far fa-circle"></i> Projects</a></li>
         </ul>
       </li>
 
-      <li class="treeview {{ ((strpos('project-category project', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+      <li class="treeview {{ ((strpos('activity_category activity', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
-          <i class="fa fa-project-diagram"></i> <span> Activty</span>
+          <i class="fa fa-fist-raised"></i> <span> Activty</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>

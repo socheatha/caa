@@ -136,7 +136,17 @@ $('#dataTable-no-sorting-kh').DataTable( {
 
 
 $( document ).ready(function() {
+	$('.my-editor').each(function(e){
+		CKEDITOR.replace(this.id, {
+			filebrowserImageBrowseUrl: '/admin/laravel-filemanager?type=Images',
+			filebrowserImageUploadUrl: '/admin/laravel-filemanager/upload?type=Images&_token=',
+			filebrowserBrowseUrl: '/admin/laravel-filemanager?type=Files',
+			filebrowserUploadUrl: '/admin/laravel-filemanager/upload?type=Files&_token=',
+			extraPlugins: 'autogrow',
+		});
+	});
 
+	
 	$('#dataTable').DataTable();
 
 	$('#dataTable-kh').DataTable( {
@@ -253,4 +263,5 @@ function dynamicSelect(parent_field,child_table,parent_id,child_select) {
 		}
   });
 }
+
 

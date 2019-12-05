@@ -2,7 +2,10 @@
 
 @section('css')
 	<style type="text/css">
-		
+		.thumbnail{
+			width: 120px;
+			height: 50px;
+		}
 	</style>
 @endsection
 
@@ -46,6 +49,7 @@
         <thead>
 	        <tr>
 	          <th width="5%">N&deg;</th>
+	          <th>Image</th>
 	          <th>Name</th>
 	          <th>index</th>
 	          <th>SEO Keywords</th>
@@ -58,6 +62,9 @@
         	@foreach($projects as $i => $project)
 						<tr>
 							<td>{{ ++$i }}</td>
+							<td>
+								<div class="thumbnail" style="background: url('/images/projects/{{ $project->id }}/{{ $project->thumbnail }}'); background-size: cover; border: 1px solid #eee;"></div>
+							</td>
 							<td>{{ $project->name_en .' : '. $project->name_kh .' : '. $project->name_my .' : '. $project->name_sa }}</td>
 							<td>{{ $project->index }}</td>
 							<td>{{ $project->seo_keywords }}</td>
@@ -65,6 +72,8 @@
 							<td class="text-center"><span class="label label-primary">{{ $project->ProjectCategory->name_en }}</span></td>
 							<td class="td-action text-right">
 
+								{{-- Edit Button --}}
+								<a href="{{ route('admin.project.image',$project->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 								{{-- Edit Button --}}
 								<a href="{{ route('admin.project.edit',$project->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 								{{-- Delete Button --}}

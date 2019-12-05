@@ -32,7 +32,6 @@ class SubMenuController extends Controller
     
     public function store(SubMenuRequest $request)
     {
-        // dd($request->all());
         $sub_menu = SubMenu::create([
                                     'name_en' => $request->name_en,
                                     'name_kh' => (($request->name_kh)? $request->name_kh : $request->name_en),
@@ -59,9 +58,7 @@ class SubMenuController extends Controller
     
     public function edit(SubMenu $subMenu)
     {
-
         $main_menus = MainMenu::getSelectData('index', 'asc', 'id', 'name_en');
-    
         return view('admin.sub_menu.edit')->with(compact('main_menus','subMenu'));
     }
 

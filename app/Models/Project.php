@@ -35,7 +35,7 @@ class Project extends BaseModel
 
 
 	public function ProjectCategory(){
-		return $this->hasMany(ProjectCategory::class,'category_id');
+		return $this->belongsTo(ProjectCategory::class,'category_id');
 	}
 	public function CreatedBy(){
 		return $this->belongsTo(User::class,'created_by');

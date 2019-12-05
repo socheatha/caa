@@ -1,6 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('css')
+<link href="{{ asset('admin_asset/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
 	<style type="text/css">
 		
 	</style>
@@ -53,6 +54,8 @@
 @endsection
 
 @section('js')
+<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
+<script src="{{ asset('admin_asset/ckeditor/ckeditor.js') }}"></script>
 	<script type="text/javascript">
 		
 	</script>

@@ -106,6 +106,10 @@ font-family: 'roboto_r','khmerkuolen' !important;
   box-shadow: none;
   margin-bottom: 0;
 }
+
+.label{
+  font-weight: normal;
+}
 .dataTables_paginate .pagination li a{
   border-radius: 0 !important;
   padding: 3px 8px;

@@ -1,25 +1,30 @@
 <div class="row">
   <div class="col-sm-6">
-
-    <div class="form-group {!! (($errors->has('index'))? 'has-error':'') !!}">
-      {!! Html::decode(Form::label('name', "Index <small>*</small>")) !!}
-      {!! Form::text('index', ((isset($projectCategory->index))? $projectCategory->index : $index ), ['class' => 'form-control ','placeholder' => 'index','required']) !!}
-      {!! $errors->first('index', '<span class="help-block">:message</span>') !!}
-    </div>
-  
-
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('seo_keywords'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('name', "SEO Keywords")) !!}
+          {!! Html::decode(Form::label('name', "SEO Keywords <small>*</small>")) !!}
           {!! Form::text('seo_keywords', ((isset($projectCategory->seo_keywords))? $projectCategory->seo_keywords : '' ), ['class' => 'form-control ','placeholder' => 'seo keywords','required']) !!}
           {!! $errors->first('seo_keywords', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-9">
         <div class="form-group {!! (($errors->has('index'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name', "Index <small>*</small>")) !!}
-          {!! Form::input('color','color', '', ['class' => 'form-control ','placeholder' => 'index','required']) !!}
+          {!! Form::text('index', ((isset($projectCategory->index))? $projectCategory->index : $index ), ['class' => 'form-control ','placeholder' => 'index','required']) !!}
+          {!! $errors->first('index', '<span class="help-block">:message</span>') !!}
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group {!! (($errors->has('color'))? 'has-error':'') !!}">
+          {!! Html::decode(Form::label('name', "Color <small>*</small>")) !!}
+          <div class="input-group my-colorpicker2">
+            {!! Form::text('color', ((isset($projectCategory->color))? $projectCategory->color : '' ), ['class' => 'form-control ','placeholder' => 'color','required']) !!}
+            <div class="input-group-addon">
+              <i></i>
+            </div>
+          </div>
+          <!-- /.input group -->
           {!! $errors->first('index', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
@@ -31,9 +36,9 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('description'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('name', __('label.form.role.description')." <small>*</small>")) !!}
-          {!! Form::textarea('description', ((isset($role->description))? $role->description : '' ), ['class' => 'form-control ','style' => 'height: 108px;','placeholder' => 'english name','required']) !!}
-          {!! $errors->first('description', '<span class="help-block">:message</span>') !!}
+          {!! Html::decode(Form::label('name', "SEO Description <small>*</small>")) !!}
+          {!! Form::textarea('seo_description', ((isset($projectCategory->seo_description))? $projectCategory->seo_description : '' ), ['class' => 'form-control ','style' => 'height: 108px;','placeholder' => 'seo description','required']) !!}
+          {!! $errors->first('seo_description', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
     </div>

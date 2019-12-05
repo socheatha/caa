@@ -1,6 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('css')
+	<link href="{{ asset('admin_asset/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
 	<style type="text/css">
 		
 	</style>
@@ -52,7 +53,9 @@
 @endsection
 
 @section('js')
+	<script src="{{ asset('admin_asset/js/bootstrap-colorpicker.min.js') }}"></script>
 	<script type="text/javascript">
-		
+		//color picker with addon
+		$('.my-colorpicker2').colorpicker()
 	</script>
 @endsection
