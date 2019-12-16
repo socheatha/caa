@@ -89,14 +89,12 @@ class ProjectController extends Controller
 		//
 	}
 
-	
 	public function edit(Project $project)
 	{
 		$project_categories = ProjectCategory::getSelectData('index', 'asc', 'id', 'name_en');
 		return view('admin.project.edit')->with(compact('project_categories','project'));
 	}
 
-	
 	public function update(ProjectRequest $request, Project $project)
 	{
 		$project->update([
@@ -124,14 +122,7 @@ class ProjectController extends Controller
 			->with('success', '<strong>' .$project->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
 	}
 
-	
-	public function image(Project $project)
-	{
-		return view('admin.project.image')->with(compact('project'));
-	}
-
-	
-	public function update_image(ProjectRequest $request, Project $project)
+	public function update_image(Request $request, Project $project)
 	{
 		if ($request->file('thumbnail')) {
 
@@ -156,8 +147,6 @@ class ProjectController extends Controller
 	
 	public function destroy(Project $project)
 	{
-
-		// dd('asdf');
 
 		$path = $this->path. $project->id .'/';
 		$name = $project->name_en;

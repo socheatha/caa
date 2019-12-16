@@ -44,9 +44,9 @@
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
-        <ul class="treeview-menu">
-          <li class=""><a href="#"><i class="far fa-circle"></i> Activty Category</a></li>
-          <li class=""><a href="#"><i class="far fa-circle"></i> Activty List</a></li>
+        <ul class="treeview-menu {{ ((strpos('activity_category activity', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+          <li class="{{ ((Auth::user()->sidebarActive() == 'activity_category' )? 'active':'') }}"><a href="{{ route('admin.activity_category.index') }}"><i class="far fa-circle"></i> Activty Category</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'activity' )? 'active':'') }}"><a href="{{ route('admin.activity.index') }}"><i class="far fa-circle"></i> Activty List</a></li>
         </ul>
       </li>
 
