@@ -37,7 +37,6 @@
 			<!-- Form -->
 			@include('admin.project.form')
 
-		  {{ csrf_field() }}
 
     </div>
     <!-- ./box-body -->

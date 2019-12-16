@@ -30,7 +30,7 @@
       @if (!isset($project))
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('thumbnail'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('thumbnail', "Thumbnail (750px x 520px) <small>*</small>")) !!}
+          {!! Html::decode(Form::label('thumbnail', "Thumbnail (1000px x 690px) <small>*</small>")) !!}
           <div class="fileinput fileinput-new input-group" data-provides="fileinput">
             <div class="form-control nbr" data-trigger="fileinput">
               <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span>
