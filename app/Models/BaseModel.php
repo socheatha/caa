@@ -23,11 +23,6 @@ class BaseModel extends Model
 			return $index;
 	}
 
-
-
-
-
-
 	public static function getSelectData($orderby = 'created_at', $sort = 'asc', $field_1 = 'id', $field_2 = 'name_en')
 	{
 			$collection = parent::orderBy($orderby, $sort)->get();

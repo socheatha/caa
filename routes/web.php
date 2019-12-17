@@ -43,7 +43,10 @@
 
     Route::resource('config', 'ConfigController');
     Route::resource('abou-us', 'SubMenuController');
-    Route::resource('slide-shows', 'SlideShowController');
+
+    Route::resource('slide_show', 'SlideShowController');
+    Route::put('slide_show/{slide_show}/update_image', 'SlideShowController@update_image')->name('slide_show.update_image');
+
     Route::resource('documents', 'SubMenuController');
     Route::resource('partners', 'PartnersController');
 

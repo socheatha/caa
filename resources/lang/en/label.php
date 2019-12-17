@@ -24,6 +24,7 @@ return [
     'main_menu' => 'Main Menu',
     'sub_menu' => 'Sub Menu',
     'extra_menu' => 'Extra Menu',
+  	'slide_show' => 'Slide Show',
 
     'project_category' => 'Project Category',
     'project' => 'Project',
@@ -52,6 +53,7 @@ return [
       'main_menu' => 'Main Menu',
       'sub_menu' => 'Sub Menu',
       'extra_menu' => 'Extra Menu',
+      'slide_show' => 'Slide Show',
 
       'project_category' => 'Project Category',
       'project' => 'Project',

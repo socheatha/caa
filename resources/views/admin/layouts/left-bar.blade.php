@@ -61,7 +61,7 @@
           <li class="{{ ((Auth::user()->sidebarActive() == 'website-config' )? 'active':'') }}">
             <a href="{{ route('admin.website-config.index') }}"><i class="far fa-circle"></i> Website Config</a>
           </li>
-          <li class=""><a href="#"><i class="far fa-circle"></i> Slide Show</a></li>
+          <li class=""><a href="{{ route('admin.slide_show.index') }}"><i class="far fa-circle"></i> Slide Show</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Our Parthner</a></li>
           <li class=""><a href="{{ route('admin.extra_menu.index') }}"><i class="far fa-circle"></i> Extra Menu</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Document</a></li>
