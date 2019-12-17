@@ -37,6 +37,7 @@
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::resource('main_menu', 'MainMenuController')->except(['show']);
+    Route::resource('main-menu', 'MainMenuController')->except(['show']);
     Route::resource('sub_menu', 'SubMenuController');
     Route::resource('extra_menu', 'ExtraMenuController');
 
