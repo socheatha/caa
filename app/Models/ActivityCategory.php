@@ -11,10 +11,19 @@ class ActivityCategory extends BaseModel
 {
 	protected $table = 'activity_category';
 
-	protected $fillable = ['name','color','index','created_by','updated_by'];
+	protected $fillable = [	'seo_keywords',
+													'seo_description',
+													'name_en',
+													'name_kh',
+													'name_my',
+													'name_sa',
+													'color',
+													'index',
+													'created_by','updated_by'];
 
 
-	public function Activity(){
+
+	public function Activities(){
 		return $this->hasMany(Activity::class,'category_id');
 	}
 	public function CreatedBy(){

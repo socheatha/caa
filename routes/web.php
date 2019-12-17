@@ -49,11 +49,11 @@
 
     Route::resource('project_category', 'ProjectCategoryController');
     Route::resource('project', 'ProjectController');
-    Route::get('project/{project}/image', 'ProjectController@image')->name('project.image');
-    Route::post('project/{project}/image_update', 'ProjectController@image_update')->name('project.image_update');
+    Route::put('project/{project}/update_image', 'ProjectController@update_image')->name('project.update_image');
 
     Route::resource('activity_category', 'ActivityCategoryController');
-    Route::resource('activity', 'ActivitiesController');
+    Route::resource('activity', 'ActivityController');
+    Route::put('activity/{activity}/update_image', 'ActivityController@update_image')->name('activity.update_image');
     
     Route::resource('website-config', 'ConfigController');
 

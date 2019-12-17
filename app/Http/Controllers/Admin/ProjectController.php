@@ -13,10 +13,16 @@ use File;
 
 class ProjectController extends Controller
 {
+
+	protected $path;
+
+	public function __construct()
+	{
+		$this->path = public_path().'/images/projects/';
+	}
 	
 	public function index()
 	{
-		// dd('');
 		$this->data = [
 			'projects' => Project::orderBy('index', 'asc')->get(),
 		];
@@ -35,8 +41,6 @@ class ProjectController extends Controller
 	
 	public function store(ProjectRequest $request)
 	{
-		// dd($request->all());
-
 
 		if ($request->file('thumbnail')) {
 
@@ -63,7 +67,7 @@ class ProjectController extends Controller
 															'updated_by' => Auth::user()->id,
 														]);
 
-			$path = public_path().'/images/projects/'. $project->id .'/';
+			$path = $this->path. $project->id .'/';
 			if (!file_exists($path)) {
 					mkdir($path, 666, true);
 			}
@@ -85,14 +89,12 @@ class ProjectController extends Controller
 		//
 	}
 
-	
 	public function edit(Project $project)
 	{
 		$project_categories = ProjectCategory::getSelectData('index', 'asc', 'id', 'name_en');
 		return view('admin.project.edit')->with(compact('project_categories','project'));
 	}
 
-	
 	public function update(ProjectRequest $request, Project $project)
 	{
 		$project->update([
@@ -120,15 +122,38 @@ class ProjectController extends Controller
 			->with('success', '<strong>' .$project->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
 	}
 
+	public function update_image(Request $request, Project $project)
+	{
+		if ($request->file('thumbnail')) {
+
+			$path = $this->path. $project->id .'/';
+			if (!file_exists($path)) {
+					mkdir($path, 666, true);
+			}
+
+			File::delete($path .'/thumb_'.$project->thumbnail);
+			File::delete($path .'/'.$project->thumbnail);
+
+			$image = $request->file('thumbnail');
+			$thumbnail = time() .'_'. $project->id .'.png';
+			$thumb = Image::make($image->getRealPath())->resize(260, 180)->save($path.'thumb_'. $thumbnail);
+			$img = Image::make($image->getRealPath())->resize(1000, 690)->save($path.$thumbnail);
+			$project->update(['thumbnail' => $thumbnail]);
+		}
+		// Redirect
+		return redirect()->route('admin.project.index', $project->id)
+			->with('success', '<strong>' .$project->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
+	}
 	
 	public function destroy(Project $project)
 	{
 
-		$path = public_path().'/images/projects/'. $project->id;
+		$path = $this->path. $project->id .'/';
 		$name = $project->name_en;
+		$thumbnail = $project->thumbnail;
 
 		if ($project->delete()){
-			File::delete($path);
+			File::deleteDirectory($path);
 			// Redirect
 			return redirect()->route('admin.project.index')
 				->with('success', '<strong>' . $name . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));

@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('css')
-<link href="{{ asset('admin_asset/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('admin_asset/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
 	<style type="text/css">
 		
 	</style>
@@ -17,7 +17,7 @@
 				<!-- Action Dropdown -->
 				@component('admin.components.back')
 					@slot('btnBack')
-						{{route('admin.project.index')}}
+						{{route('admin.activity.index')}}
 					@endslot
 				@endcomponent
 
@@ -29,14 +29,12 @@
     </div>
     <!-- /.box-header -->
 
-		{!! Form::open(['url' => route('admin.project.update', $project->id),'method' => 'post','class' => 'mt-3']) !!}
-		{!! Form::hidden('_method', 'PUT') !!}
+		{{ Form::open(['route' => 'admin.activity.store','method' => 'post', 'enctype'=>'multipart/form-data','class' => 'mt-3']) }}
 
     <div class="box-body">
 			
 			<!-- Form -->
-			@include('admin.project.form')
-
+			@include('admin.activity.form')
 
     </div>
     <!-- ./box-body -->
@@ -46,16 +44,17 @@
     </div>
     <!-- ./box-body -->
 
-		{!! Form::close() !!}
+		{{ Form::close() }}
 
   </div>
   <!-- /.box -->
 @endsection
 
 @section('js')
-<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
-<script src="{{ asset('admin_asset/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
+	<script src="{{ asset('admin_asset/ckeditor/ckeditor.js') }}"></script>
 	<script type="text/javascript">
-		
+
+
 	</script>
 @endsection
