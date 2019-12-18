@@ -18,7 +18,7 @@
 				<!-- Action Dropdown -->
 				@component('admin.components.action')
 					@slot('btnCreate')
-						{{route('admin.main-menu.create')}}
+						{{route('admin.website-config.create')}}
 					@endslot
 				@endcomponent
 		        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -42,7 +42,7 @@
 			<table class="table table-bordered nowrap table-striped" width="100%">
 				<thead>
 					<tr>
-						<th  class="text-center">Logo</th>
+						<th class="text-center">Logo</th>
 						<th>Title</th>
 						<th>Keywords</th>
 						<th>Description</th>
@@ -50,7 +50,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th  class="text-center">
+						<th class="text-center" width="150px">
 							<img class="img-thumbnail" width="100px" src="/{{!empty($config->logo)?$config->logo:''}}" alt="">
 						</th>
 						<td>
@@ -121,7 +121,7 @@
 							<div class="col-xs-12">
 								<div class="form-group">
 									<label for="" class="form-label">keywords:</label>
-									<textarea type="color" class="form-control" rows="5" name="keyword" value="{{!empty($config->keyword)?$config->keyword:''}}"></textarea>
+									<textarea type="color" class="form-control" rows="5" name="keyword">{{!empty($config->keyword)?$config->keyword:''}}</textarea>
 								</div>
 							</div>
 						</div>
@@ -187,39 +187,64 @@
 					$color = '#444';
 				?>
 				<tr>
-					<th class="text-center">1</th>
-					<th>Header</th>
-					<th>header bg</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->header_color)?$config->header_color:''}}; color: #fff;">{{!empty($config->header_color)?$config->header_color:'#ffffff'}}</th>
-					<th>background color at header</th>
+					<td class="text-center">1</td>
+					<td>Header</td>
+					<td>header bg</td>
+					<td width="150px" style="color: #000A19;">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->header_color)?$config->header_color:'#FFF'}};" />
+						</svg>
+						{{!empty($config->header_color)?$config->header_color:'default'}}
+					</td>
+					<td>background color at header</td>
 				</tr>
 				<tr>
-					<th class="text-center">2</th>
-					<th>Header</th>
-					<th>menu active color</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->menu_active_color)?$config->menu_active_color:''}}; color: #fff;">{{!empty($config->menu_active_color)?$config->menu_active_color:'#FFFFFF'}}</th>
-					<th>text color at header when menu active</th>
+					<td>2</td>
+					<td>Header</td>
+					<td>menu active color</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->menu_active_color)?$config->menu_active_color:'#FFF'}};" />
+						</svg>
+						{{!empty($config->menu_active_color)?$config->menu_active_color:'default'}}
+					</td>
+					<td>text color at header when menu active</td>
 				</tr>
 				<tr>
-					<th class="text-center">3</th>
-					<th>Header+Body+Footer</th>
-					<th>text color</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->text_color)?$config->text_color:''}}; color: #fff;">{{!empty($config->text_color)?$config->text_color:'#FFFFFF'}}</th>
-					<th>the color of text in website</th>
+					<td>3</td>
+					<td>Header+Body+Footer</td>
+					<td>text color</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->text_color)?$config->text_color:''}};" />
+						</svg>
+						{{!empty($config->text_color)?$config->text_color:'default'}}
+					</td>
+					<td>tde color of text in website</td>
 				</tr>
 				<tr>
-					<th class="text-center">4</th>
-					<th>Body</th>
-					<th>body bg</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->body_color)?$config->body_color:''}}; color: #fff;">{{!empty($config->body_color)?$config->body_color:'#FFFFFF'}}</th>
-					<th>background color of body</th>
+					<td>4</td>
+					<td>Body</td>
+					<td>body bg</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->body_color)?$config->body_color:''}};" />
+						</svg>
+						{{!empty($config->body_color)?$config->body_color:'default'}}
+					</td>
+					<td>background color of body</td>
 				</tr>
 				<tr>
-					<th class="text-center">5</th>
-					<th>Footer</th>
-					<th>footer bg</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->footer_color)?$config->footer_color:''}}; color: #fff;">{{!empty($config->footer_color)?$config->footer_color:'#FFF'}}</th>
-					<th>background color of footer</th>
+					<td>5</td>
+					<td>Footer</td>
+					<td>footer bg</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->footer_color)?$config->footer_color:''}};" />
+						</svg>
+						{{!empty($config->footer_color)?$config->footer_color:'default'}}
+					</td>
+					<td>background color of footer</td>
 				</tr>
 			</tbody>
 		</table>
@@ -238,13 +263,13 @@
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">header bg:</label>
-									<input type="color" class="form-control" name="header_color">
+									<input type="color" class="form-control" name="header_color" value="{{!empty($config->header_color)?$config->header_color:''}}">
 								</div>
 							</div>
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">menu active color:</label>
-									<input type="color" class="form-control" name="menu_active_color">
+									<input type="color" class="form-control" name="menu_active_color" value="{{!empty($config->menu_active_color)?$config->menu_active_color:''}}">
 								</div>
 							</div>
 						</div>
@@ -254,7 +279,7 @@
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">body bg:</label>
-									<input type="color" class="form-control" name="body_color">
+									<input type="color" class="form-control" name="body_color" value="{{!empty($config->body_color)?$config->body_color:''}}">
 								</div>
 							</div>
 							<div class="col-xs-4">
@@ -289,8 +314,8 @@
 		<br>
 		<br>
 		<a href="#" data-toggle="modal" data-target="#_modal_text_and_label"><h4>Text and Label <i class="fa fa-edit"></i></a></h4>
-		<table class="table table-bordered table-hover table-striped">
-			<thead>
+		<table class="table table-bordered table-striped">
+			<tbody>
 				<tr>
 					<th class="text-center">N&deg;</th>
 					<th>Title</th>
@@ -301,77 +326,80 @@
 					<th>Position</th>
 					<th>Description</th>
 				</tr>
-			</thead>
-			<tbody>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">1</td>
 					<th>welcome message</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>33</td>
+					<td>44</td>
+					<td>55</td>
+					<td>66</td>
+					<td>---</td>
+					<td>---</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
-					<th>email address</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
-				</tr>
-				<tr>
-					<th class="text-center">1</th>
-					<th>facebook url</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
-				</tr>
-				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">1</td>
 					<th>map location</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>33</td>
+					<td>44</td>
+					<td>55</td>
+					<td>66</td>
+					<td>---</td>
+					<td>---</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">1</td>
 					<th>phone</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>33</td>
+					<td>44</td>
+					<td>55</td>
+					<td>66</td>
+					<td>---</td>
+					<td>---</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">1</td>
 					<th>address</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>33</td>
+					<td>44</td>
+					<td>55</td>
+					<td>66</td>
+					<td>---</td>
+					<td>---</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">1</td>
 					<th>copy right text</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>33</td>
+					<td>44</td>
+					<td>55</td>
+					<td>66</td>
+					<td>---</td>
+					<td>---</td>
+				</tr>
+				<tr>
+					<th class="text-center">N&deg;</th>
+					<th>Social Media</th>
+					<th colspan="6">URL link</th>
+				</tr>
+				<tr>
+					<td class="text-center">1</td>
+					<th>email address</th>
+					<td colspan="6">33</td>
+				</tr>
+				<tr>
+					<td class="text-center">1</td>
+					<th>facebook url</th>
+					<td colspan="6">33</td>
+				</tr>
+				<tr>
+					<td class="text-center">1</td>
+					<th>tweeter url</th>
+					<td colspan="6">33</td>
+				</tr>
+				<tr>
+					<td class="text-center">1</td>
+					<th>linkedin url</th>
+					<td colspan="6">33</td>
 				</tr>
 			</tbody>
 		</table>
