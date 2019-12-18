@@ -50,7 +50,7 @@
         </ul>
       </li>
 
-      <li class="treeview {{ ((strpos('website-config', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+      <li class="treeview {{ ((strpos('website-config slide_show partner', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
           <i class="fa fa-project-diagram"></i> <span> Setting</span>
           <span class="pull-right-container">
@@ -61,8 +61,8 @@
           <li class="{{ ((Auth::user()->sidebarActive() == 'website-config' )? 'active':'') }}">
             <a href="{{ route('admin.website-config.index') }}"><i class="far fa-circle"></i> Website Config</a>
           </li>
-          <li class=""><a href="{{ route('admin.slide_show.index') }}"><i class="far fa-circle"></i> Slide Show</a></li>
-          <li class=""><a href="#"><i class="far fa-circle"></i> Our Parthner</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'slide_show' )? 'active':'') }}"><a href="{{ route('admin.slide_show.index') }}"><i class="far fa-circle"></i> Slide Show</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'partner' )? 'active':'') }}"><a href="{{ route('admin.partner.index') }}"><i class="far fa-circle"></i> Our Parthner</a></li>
           <li class=""><a href="{{ route('admin.extra_menu.index') }}"><i class="far fa-circle"></i> Extra Menu</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Document</a></li>
           <li class=""><a href="#"><i class="far fa-circle"></i> Donation</a></li>

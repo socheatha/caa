@@ -20,6 +20,7 @@ return [
   'routename' => [
   	'home' => 'Dashboard',
   	'slide_show' => 'Slide Show',
+    'partner' => 'Partner',
     'list' => 'List',
     'main-menu' => 'ម៉េនុយមេ',
     'sub-menu' => 'ម៉េនុយកូន',
@@ -42,6 +43,7 @@ return [
 	  'routename' => [
       'admin' => 'អ្នកគ្រប់គ្រង',
       'slide_show' => 'Slide Show',
+      'partner' => 'Partner',
       'home' => 'ផ្ទះដើម',
       
       'main-menu' => 'ម៉េនុយមេ',

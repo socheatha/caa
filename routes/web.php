@@ -37,7 +37,6 @@
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::resource('main_menu', 'MainMenuController')->except(['show']);
-    Route::resource('main-menu', 'MainMenuController')->except(['show']);
     Route::resource('sub_menu', 'SubMenuController');
     Route::resource('extra_menu', 'ExtraMenuController');
 
@@ -48,7 +47,7 @@
     Route::put('slide_show/{slide_show}/update_image', 'SlideShowController@update_image')->name('slide_show.update_image');
 
     Route::resource('documents', 'SubMenuController');
-    Route::resource('partners', 'PartnersController');
+    Route::resource('partner', 'PartnerController');
 
     Route::resource('project_category', 'ProjectCategoryController');
     Route::resource('project', 'ProjectController');

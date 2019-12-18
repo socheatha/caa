@@ -140,7 +140,7 @@ class ActivityController extends Controller
 			$activity->update(['thumbnail' => $thumbnail]);
 		}
 		// Redirect
-		return redirect()->route('admin.activity.index', $activity->id)
+		return redirect()->route('admin.activity.index')
 			->with('success', '<strong>' .$activity->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
 	}
 	

@@ -10,7 +10,7 @@ class Partner extends BaseModel
 {
 	protected $table = 'partner';
 
-	protected $fillable = ['name','thumbnail','url','index','status','created_by','updated_by'];
+	protected $fillable = ['thumbnail','url','index','status','created_by','updated_by'];
 
 
 	public function CreatedBy(){

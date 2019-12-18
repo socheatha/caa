@@ -141,7 +141,7 @@ class ProjectController extends Controller
 			$project->update(['thumbnail' => $thumbnail]);
 		}
 		// Redirect
-		return redirect()->route('admin.project.index', $project->id)
+		return redirect()->route('admin.project.index')
 			->with('success', '<strong>' .$project->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
 	}
 	

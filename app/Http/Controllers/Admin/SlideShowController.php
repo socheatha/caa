@@ -37,7 +37,6 @@ class SlideShowController extends Controller
 	
 	public function store(SlideShowRequest $request)
 	{
-		// dd($request->all());
 		if ($request->file('image')) {
 
 			$slide_show = SlideShow::create([
@@ -95,10 +94,10 @@ class SlideShowController extends Controller
 										'name_kh' => (($request->name_kh)? $request->name_kh : $request->name_en),
 										'name_my' => (($request->name_my)? $request->name_my : $request->name_en),
 										'name_sa' => (($request->name_sa)? $request->name_sa : $request->name_en),
-										'short_descript_en' => $request->short_descript_en,
-										'short_descript_kh' => (($request->short_descript_kh)? $request->short_descript_kh : $request->short_descript_en),
-										'short_descript_my' => (($request->short_descript_my)? $request->short_descript_my : $request->short_descript_en),
-										'short_descript_sa' => (($request->short_descript_sa)? $request->short_descript_sa : $request->short_descript_en),
+										'short_desc_en' => $request->short_desc_en,
+										'short_desc_kh' => (($request->short_desc_kh)? $request->short_desc_kh : $request->short_desc_en),
+										'short_desc_my' => (($request->short_desc_my)? $request->short_desc_my : $request->short_desc_en),
+										'short_desc_sa' => (($request->short_desc_sa)? $request->short_desc_sa : $request->short_desc_en),
 										'detail_en' => $request->detail_en,
 										'detail_kh' => (($request->detail_kh)? $request->detail_kh : $request->detail_en),
 										'detail_my' => (($request->detail_my)? $request->detail_my : $request->detail_en),
@@ -134,19 +133,22 @@ class SlideShowController extends Controller
 			$slide_show->update(['image' => $image_name]);
 		}
 		// Redirect
-		return redirect()->route('admin.slide_show.index', $slide_show->id)
+		return redirect()->route('admin.slide_show.index')
 			->with('success', '<strong>' .$slide_show->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
 	}
 	
 	public function destroy(SlideShow $slide_show)
 	{
 
-		$path = $this->path. $slide_show->id .'/';
+		$path = $this->path;
 		$name = $slide_show->name_en;
-		$thumbnail = $slide_show->thumbnail;
+		$image = $slide_show->image;
 
 		if ($slide_show->delete()){
-			File::deleteDirectory($path);
+
+			File::delete($path .'/thumb_'.$slide_show->image);
+			File::delete($path .'/'.$slide_show->image);
+
 			// Redirect
 			return redirect()->route('admin.slide_show.index')
 				->with('success', '<strong>' . $name . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
