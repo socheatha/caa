@@ -192,7 +192,7 @@
 					<td>header bg</td>
 					<td width="150px" style="color: #000A19;">
 						<svg width="30" height="10">
-							<rect width="30" height="10" style="fill:{{!empty($config->header_color)?$config->header_color:'#FFF'}};" />
+							<rect width="30" height="10" style="fill:{{!empty($config->header_color)?$config->header_color:'none'}};" />
 						</svg>
 						{{!empty($config->header_color)?$config->header_color:'default'}}
 					</td>
@@ -204,7 +204,7 @@
 					<td>menu active color</td>
 					<td width="150px">
 						<svg width="30" height="10">
-							<rect width="30" height="10" style="fill:{{!empty($config->menu_active_color)?$config->menu_active_color:'#FFF'}};" />
+							<rect width="30" height="10" style="fill:{{!empty($config->menu_active_color)?$config->menu_active_color:'none'}};" />
 						</svg>
 						{{!empty($config->menu_active_color)?$config->menu_active_color:'default'}}
 					</td>
@@ -216,7 +216,7 @@
 					<td>text color</td>
 					<td width="150px">
 						<svg width="30" height="10">
-							<rect width="30" height="10" style="fill:{{!empty($config->text_color)?$config->text_color:''}};" />
+							<rect width="30" height="10" style="fill:{{!empty($config->text_color)?$config->text_color:'none'}};" />
 						</svg>
 						{{!empty($config->text_color)?$config->text_color:'default'}}
 					</td>
@@ -228,7 +228,7 @@
 					<td>body bg</td>
 					<td width="150px">
 						<svg width="30" height="10">
-							<rect width="30" height="10" style="fill:{{!empty($config->body_color)?$config->body_color:''}};" />
+							<rect width="30" height="10" style="fill:{{!empty($config->body_color)?$config->body_color:'none'}};" />
 						</svg>
 						{{!empty($config->body_color)?$config->body_color:'default'}}
 					</td>
@@ -240,7 +240,7 @@
 					<td>footer bg</td>
 					<td width="150px">
 						<svg width="30" height="10">
-							<rect width="30" height="10" style="fill:{{!empty($config->footer_color)?$config->footer_color:''}};" />
+							<rect width="30" height="10" style="fill:{{!empty($config->footer_color)?$config->footer_color:'none'}};" />
 						</svg>
 						{{!empty($config->footer_color)?$config->footer_color:'default'}}
 					</td>
@@ -295,7 +295,7 @@
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">footer bg</label>
-									<input type="color" class="form-control" name="footer_color" value="{{!empty($config->fooer_color)? $config->fooer_color:''}}">
+									<input type="color" class="form-control" name="footer_color" value="{{!empty($config->footer_color)? $config->footer_color:''}}">
 								</div>
 							</div>
 						</div>
@@ -357,37 +357,32 @@
 					<td>{{!empty($config->copyright_sa)? $config->copyright_sa:'---'}}</td>
 				</tr>
 				<tr>
-					<th class="text-center">N&deg;</th>
-					<th>Title</th>
-					<th colspan="4">URL link</th>
-				</tr>
-				<tr>
-					<td class="text-center">1</td>
+					<td class="text-center">5</td>
 					<th>Map Location</th>
 					<td colspan="4">{{!empty($config->map_location)? $config->map_location:'---'}}</td>
 				</tr>
 				<tr>
-					<td class="text-center">2</td>
+					<td class="text-center">6</td>
 					<th>email address</th>
 					<td colspan="4">{{!empty($config->email)? $config->email:'---'}}</td>
 				</tr>
 				<tr>
-					<td class="text-center">3</td>
+					<td class="text-center">7</td>
 					<th>facebook url</th>
 					<td colspan="4">{{!empty($config->fb_url)? $config->fb_url:'---'}}</td>
 				</tr>
 				<tr>
-					<td class="text-center">3</td>
+					<td class="text-center">8</td>
 					<th>instagram url</th>
 					<td colspan="4">{{!empty($config->instagram_url)? $config->instagram_url:'---'}}</td>
 				</tr>
 				<tr>
-					<td class="text-center">4</td>
+					<td class="text-center">9</td>
 					<th>tweeter url</th>
 					<td colspan="4">{{!empty($config->tw_url)? $config->tw_url:'---'}}</td>
 				</tr>
 				<tr>
-					<td class="text-center">5</td>
+					<td class="text-center">10</td>
 					<th>linkedin url</th>
 					<td colspan="4">{{!empty($config->linkedin_url)? $config->linkedin_url:'---'}}</td>
 				</tr>
