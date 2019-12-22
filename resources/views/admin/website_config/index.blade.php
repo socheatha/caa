@@ -16,11 +16,11 @@
     		<div class="col-sm-6 col-md-5">
 		      <div class="box-tools pull-right">
 				<!-- Action Dropdown -->
-				@component('admin.components.action')
+				{{--@component('admin.components.action')
 					@slot('btnCreate')
-						{{route('admin.main-menu.create')}}
+						{{route('admin.website-config.create')}}
 					@endslot
-				@endcomponent
+				@endcomponent--}}
 		        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 		      </div>
     		</div>
@@ -42,7 +42,7 @@
 			<table class="table table-bordered nowrap table-striped" width="100%">
 				<thead>
 					<tr>
-						<th  class="text-center">Logo</th>
+						<th class="text-center">Logo</th>
 						<th>Title</th>
 						<th>Keywords</th>
 						<th>Description</th>
@@ -50,7 +50,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th  class="text-center">
+						<th class="text-center" width="150px">
 							<img class="img-thumbnail" width="100px" src="/{{!empty($config->logo)?$config->logo:''}}" alt="">
 						</th>
 						<td>
@@ -121,7 +121,7 @@
 							<div class="col-xs-12">
 								<div class="form-group">
 									<label for="" class="form-label">keywords:</label>
-									<textarea type="color" class="form-control" rows="5" name="keyword" value="{{!empty($config->keyword)?$config->keyword:''}}"></textarea>
+									<textarea type="color" class="form-control" rows="5" name="keyword">{{!empty($config->keyword)?$config->keyword:''}}</textarea>
 								</div>
 							</div>
 						</div>
@@ -187,39 +187,64 @@
 					$color = '#444';
 				?>
 				<tr>
-					<th class="text-center">1</th>
-					<th>Header</th>
-					<th>header bg</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->header_color)?$config->header_color:''}}; color: #fff;">{{!empty($config->header_color)?$config->header_color:'#ffffff'}}</th>
-					<th>background color at header</th>
+					<td class="text-center">1</td>
+					<td>Header</td>
+					<td>header bg</td>
+					<td width="150px" style="color: #000A19;">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->header_color)?$config->header_color:'none'}};" />
+						</svg>
+						{{!empty($config->header_color)?$config->header_color:'default'}}
+					</td>
+					<td>background color at header</td>
 				</tr>
 				<tr>
-					<th class="text-center">2</th>
-					<th>Header</th>
-					<th>menu active color</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->menu_active_color)?$config->menu_active_color:''}}; color: #fff;">{{!empty($config->menu_active_color)?$config->menu_active_color:'#FFFFFF'}}</th>
-					<th>text color at header when menu active</th>
+					<td class="text-center">2</td>
+					<td>Header</td>
+					<td>menu active color</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->menu_active_color)?$config->menu_active_color:'none'}};" />
+						</svg>
+						{{!empty($config->menu_active_color)?$config->menu_active_color:'default'}}
+					</td>
+					<td>text color at header when menu active</td>
 				</tr>
 				<tr>
-					<th class="text-center">3</th>
-					<th>Header+Body+Footer</th>
-					<th>text color</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->text_color)?$config->text_color:''}}; color: #fff;">{{!empty($config->text_color)?$config->text_color:'#FFFFFF'}}</th>
-					<th>the color of text in website</th>
+					<td class="text-center">3</td>
+					<td>Header+Body+Footer</td>
+					<td>text color</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->text_color)?$config->text_color:'none'}};" />
+						</svg>
+						{{!empty($config->text_color)?$config->text_color:'default'}}
+					</td>
+					<td>tde color of text in website</td>
 				</tr>
 				<tr>
-					<th class="text-center">4</th>
-					<th>Body</th>
-					<th>body bg</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->body_color)?$config->body_color:''}}; color: #fff;">{{!empty($config->body_color)?$config->body_color:'#FFFFFF'}}</th>
-					<th>background color of body</th>
+					<td class="text-center">4</td>
+					<td>Body</td>
+					<td>body bg</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->body_color)?$config->body_color:'none'}};" />
+						</svg>
+						{{!empty($config->body_color)?$config->body_color:'default'}}
+					</td>
+					<td>background color of body</td>
 				</tr>
 				<tr>
-					<th class="text-center">5</th>
-					<th>Footer</th>
-					<th>footer bg</th>
-					<th class="text-center" width="150px" style="background:{{!empty($config->footer_color)?$config->footer_color:''}}; color: #fff;">{{!empty($config->footer_color)?$config->footer_color:'#FFF'}}</th>
-					<th>background color of footer</th>
+					<td class="text-center">5</td>
+					<td>Footer</td>
+					<td>footer bg</td>
+					<td width="150px">
+						<svg width="30" height="10">
+							<rect width="30" height="10" style="fill:{{!empty($config->footer_color)?$config->footer_color:'none'}};" />
+						</svg>
+						{{!empty($config->footer_color)?$config->footer_color:'default'}}
+					</td>
+					<td>background color of footer</td>
 				</tr>
 			</tbody>
 		</table>
@@ -238,13 +263,13 @@
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">header bg:</label>
-									<input type="color" class="form-control" name="header_color">
+									<input type="color" class="form-control" name="header_color" value="{{!empty($config->header_color)?$config->header_color:''}}">
 								</div>
 							</div>
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">menu active color:</label>
-									<input type="color" class="form-control" name="menu_active_color">
+									<input type="color" class="form-control" name="menu_active_color" value="{{!empty($config->menu_active_color)?$config->menu_active_color:''}}">
 								</div>
 							</div>
 						</div>
@@ -254,7 +279,7 @@
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">body bg:</label>
-									<input type="color" class="form-control" name="body_color">
+									<input type="color" class="form-control" name="body_color" value="{{!empty($config->body_color)?$config->body_color:''}}">
 								</div>
 							</div>
 							<div class="col-xs-4">
@@ -270,7 +295,7 @@
 							<div class="col-xs-4">
 								<div class="form-group">
 									<label for="" class="form-label">footer bg</label>
-									<input type="color" class="form-control" name="footer_color" value="{{!empty($config->fooer_color)? $config->fooer_color:''}}">
+									<input type="color" class="form-control" name="footer_color" value="{{!empty($config->footer_color)? $config->footer_color:''}}">
 								</div>
 							</div>
 						</div>
@@ -289,89 +314,77 @@
 		<br>
 		<br>
 		<a href="#" data-toggle="modal" data-target="#_modal_text_and_label"><h4>Text and Label <i class="fa fa-edit"></i></a></h4>
-		<table class="table table-bordered table-hover table-striped">
-			<thead>
+		<table class="table table-bordered table-striped">
+			<tbody>
 				<tr>
 					<th class="text-center">N&deg;</th>
-					<th>Title</th>
+					<th width="150px">Title</th>
 					<th>Translate in En</th>
 					<th>Translate in Kh</th>
 					<th>Translate in My</th>
 					<th>Translate in Sa</th>
-					<th>Position</th>
-					<th>Description</th>
 				</tr>
-			</thead>
-			<tbody>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">1</td>
 					<th>welcome message</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>{{!empty($config->welcome_message_en)? $config->welcome_message_en:'---'}}</td>
+					<td>{{!empty($config->welcome_message_kh)? $config->welcome_message_kh:'---'}}</td>
+					<td>{{!empty($config->welcome_message_my)? $config->welcome_message_my:'---'}}</td>
+					<td>{{!empty($config->welcome_message_sa)? $config->welcome_message_sa:'---'}}</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
-					<th>email address</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
-				</tr>
-				<tr>
-					<th class="text-center">1</th>
-					<th>facebook url</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
-				</tr>
-				<tr>
-					<th class="text-center">1</th>
-					<th>map location</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
-				</tr>
-				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">2</td>
 					<th>phone</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>{{!empty($config->phone_en)? $config->phone_en:'---'}}</td>
+					<td>{{!empty($config->phone_kh)? $config->phone_kh:'---'}}</td>
+					<td>{{!empty($config->phone_my)? $config->phone_my:'---'}}</td>
+					<td>{{!empty($config->phone_sa)? $config->phone_sa:'---'}}</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">3</td>
 					<th>address</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>{{!empty($config->address_en)? $config->address_en:'---'}}</td>
+					<td>{{!empty($config->address_kh)? $config->address_kh:'---'}}</td>
+					<td>{{!empty($config->address_my)? $config->address_my:'---'}}</td>
+					<td>{{!empty($config->address_sa)? $config->address_sa:'---'}}</td>
 				</tr>
 				<tr>
-					<th class="text-center">1</th>
+					<td class="text-center">4</td>
 					<th>copy right text</th>
-					<th>33</th>
-					<th>44</th>
-					<th>55</th>
-					<th>66</th>
-					<th>---</th>
-					<th>---</th>
+					<td>{{!empty($config->copyright_en)? $config->copyright_en:'---'}}</td>
+					<td>{{!empty($config->copyright_kh)? $config->copyright_kh:'---'}}</td>
+					<td>{{!empty($config->copyright_my)? $config->copyright_my:'---'}}</td>
+					<td>{{!empty($config->copyright_sa)? $config->copyright_sa:'---'}}</td>
+				</tr>
+				<tr>
+					<td class="text-center">5</td>
+					<th>Map Location</th>
+					<td colspan="4">{{!empty($config->map_location)? $config->map_location:'---'}}</td>
+				</tr>
+				<tr>
+					<td class="text-center">6</td>
+					<th>email address</th>
+					<td colspan="4">{{!empty($config->email)? $config->email:'---'}}</td>
+				</tr>
+				<tr>
+					<td class="text-center">7</td>
+					<th>facebook url</th>
+					<td colspan="4">{{!empty($config->fb_url)? $config->fb_url:'---'}}</td>
+				</tr>
+				<tr>
+					<td class="text-center">8</td>
+					<th>instagram url</th>
+					<td colspan="4">{{!empty($config->instagram_url)? $config->instagram_url:'---'}}</td>
+				</tr>
+				<tr>
+					<td class="text-center">9</td>
+					<th>tweeter url</th>
+					<td colspan="4">{{!empty($config->tw_url)? $config->tw_url:'---'}}</td>
+				</tr>
+				<tr>
+					<td class="text-center">10</td>
+					<th>linkedin url</th>
+					<td colspan="4">{{!empty($config->linkedin_url)? $config->linkedin_url:'---'}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -383,19 +396,33 @@
 						<h4 class="modal-title" id="main_menuModalLabel">Please input data becarefully</h4>
 					</div>
 					<div class="modal-body">
+						{!! Form::open(['url' => route('admin.config.update', $config->id),'method' => 'patch','class' => 'mt-3','enctype'=>'multipart/form-data']) !!}
+						<input type="hidden" value="{{!empty($config->id)?$config->id:''}}" name="id">
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="form-group">
 									<label for="" class="form-label">email address:</label>
-									<input type="text" class="form-control" rows="5"></textarea>
+									<input type="text" class="form-control" rows="5" name="email" value="{{!empty($config->email)? $config->email:''}}">
 								</div>
 								<div class="form-group">
 									<label for="" class="form-label">facebook url:</label>
-									<input type="text" class="form-control" rows="5"></textarea>
+									<input type="text" class="form-control" rows="5" name="fb_url" value="{{!empty($config->fb_url)? $config->fb_url:''}}">
+								</div>
+								<div class="form-group">
+									<label for="" class="form-label">instagram url:</label>
+									<input type="text" class="form-control" rows="5" name="instagram_url" value="{{!empty($config->instagram_url)? $config->instagram_url:''}}">
+								</div>
+								<div class="form-group">
+									<label for="" class="form-label">tweeter url:</label>
+									<input type="text" class="form-control" rows="5" name="tw_url" value="{{!empty($config->tw_url)? $config->tw_url:''}}">
+								</div>
+								<div class="form-group">
+									<label for="" class="form-label">linkedin url:</label>
+									<input type="text" class="form-control" rows="5" name="linkedin_url" value="{{!empty($config->linkedin_url)? $config->linkedin_url:''}}">
 								</div>
 								<div class="form-group">
 									<label for="" class="form-label">map location:</label>
-									<input type="text" class="form-control" rows="5"></textarea>
+									<input type="text" class="form-control" rows="5" name="map_location" value="{{!empty($config->map_location)? $config->map_location:''}}">
 								</div>
 							</div>
 						</div>
@@ -407,83 +434,84 @@
 								@slot('tab_en')
 									<div class="form-group">
 										<label for="" class="form-label">welcome message En:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="welcome_message_en" value="{{!empty($config->welcome_message_en)? $config->welcome_message_en:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">phone En:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="phone_en" value="{{!empty($config->phone_en)? $config->phone_en:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">address En:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="address_en" value="{{!empty($config->address_en)? $config->address_en:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">copy right text En:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="copyright_en" value="{{!empty($config->copyright_en)? $config->copyright_en:''}}" />
 									</div>
 								@endslot
 								@slot('tab_kh')
 									<div class="form-group">
 										<label for="" class="form-label">welcome message Kh:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="welcome_message_kh" value="{{!empty($config->welcome_message_kh)? $config->welcome_message_kh:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">phone Kh:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="phone_kh" value="{{!empty($config->phone_kh)? $config->phone_kh:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">address Kh:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="address_kh" value="{{!empty($config->address_kh)? $config->address_kh:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">copy right text Kh:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="copyright_kh" value="{{!empty($config->copyright_kh)? $config->copyright_kh:''}}" />
 									</div>
 								@endslot
 								@slot('tab_my')
 									<div class="form-group">
 										<label for="" class="form-label">welcome message My:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="welcome_message_my" value="{{!empty($config->welcome_message_my)? $config->welcome_message_my:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">phone My:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="phone_my" value="{{!empty($config->phone_my)? $config->phone_my:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">address My:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="address_my" value="{{!empty($config->address_my)? $config->address_my:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">copy right text My:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="copyright_my" value="{{!empty($config->copyright_my)? $config->copyright_my:''}}" />
 									</div>
 								@endslot
 								@slot('tab_sa')
 									<div class="form-group">
 										<label for="" class="form-label">welcome message Sa:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="welcome_message_sa" value="{{!empty($config->welcome_message_sa)? $config->welcome_message_sa:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">phone Sa:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="phone_sa" value="{{!empty($config->phone_sa)? $config->phone_sa:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">address Sa:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="address_sa" value="{{!empty($config->address_sa)? $config->address_sa:''}}" />
 									</div>
 									<div class="form-group">
 										<label for="" class="form-label">copy right text Sa:</label>
-										<input type="text" class="form-control" />
+										<input type="text" class="form-control" name="copyright_sa" value="{{!empty($config->copyright_sa)? $config->copyright_sa:''}}" />
 									</div>
 								@endslot
 							@endcomponent
 							<div class="clearfix"></div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-dismiss="modal">{{ __('alert.swal.button.no') }}</button>
-						<button type="button" class="btn btn btn-success" id="update_lang_main_menu">{{ __('alert.swal.button.yes') }}</button>
+					<div class="box-footer text-center">
+						@include('admin.components.submit')
 					</div>
+					{!! Form::close() !!}
+				</div>
 				</div>
 			</div>
 		</div>

@@ -10,7 +10,47 @@ class Config extends BaseModel
 {
 	protected $table = 'config';
 
-	protected $fillable = ['logo','title_en','title_kh','title_my','title_sa','keyword','description_en','description_kh','description_my','description_sa','email','phone','address','copyright','social','fb_url','map_location','welcome_message','header_color','footer_color','body_color','menu_active_color','text_color','created_by','updated_by'];
+	protected $fillable = [
+		'logo',
+		'title_en',
+		'title_kh',
+		'title_my',
+		'title_sa',
+		'keyword',
+		'description_en',
+		'description_kh',
+		'description_my',
+		'description_sa',
+		'email',
+		'instagram_url',
+		'fb_url',
+		'tw_url',
+		'linkedin_url',
+		'map_location',
+		'phone_en',
+		'phone_kh',
+		'phone_my',
+		'phone_sa',
+		'address_en',
+		'address_kh',
+		'address_my',
+		'address_sa',
+		'copyright_en',
+		'copyright_kh',
+		'copyright_my',
+		'copyright_sa',
+		'welcome_message_en',
+		'welcome_message_kh',
+		'welcome_message_my',
+		'welcome_message_sa',
+		'header_color',
+		'footer_color',
+		'body_color',
+		'menu_active_color',
+		'text_color',
+		'created_by',
+		'updated_by'
+	];
 
 
 	public function CreatedBy(){

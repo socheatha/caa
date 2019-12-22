@@ -15,36 +15,49 @@ class CreateConfigTable extends Migration
     {
         Schema::create('config', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('logo');
-            $table->string('email');
-            $table->string('social'); 
-            $table->string('fb_url');
-            $table->string('map_location');
-            $table->string('header_color');
-            $table->string('footer_color');
-            $table->string('body_color');
-            $table->string('menu_active_color');
-            $table->string('text_color');
+            $table->string('logo')->nullable();
+            $table->string('title_en')->nullable();
+            $table->string('title_kh')->nullable();
+            $table->string('title_my')->nullable();
+            $table->string('title_sa')->nullable();
+            $table->string('keyword')->nullable();
+            $table->string('description_en')->nullable();
+            $table->string('description_kh')->nullable();
+            $table->string('description_my')->nullable();
+            $table->string('description_sa')->nullable();
+            
+            $table->string('header_color')->nullable();
+            $table->string('text_color')->nullable();
+            $table->string('menu_active_color')->nullable();
+            $table->string('body_color')->nullable();
+            $table->string('footer_color')->nullable();
+            
+            $table->string('email')->nullable();
+            $table->string('fb_url')->nullable();
+            $table->string('instagram_url')->nullable(); 
+            $table->string('tw_url')->nullable();
+            $table->string('linkedin_url')->nullable();
+            $table->string('map_location')->nullable();
 
-            $table->string('phone_en');
-            $table->string('phone_kh');
-            $table->string('phone_my');
-            $table->string('phone_sa');
+            $table->text('welcome_message_en')->nullable();
+            $table->text('welcome_message_kh')->nullable();
+            $table->text('welcome_message_my')->nullable();
+            $table->text('welcome_message_sa')->nullable();
 
-            $table->string('address_en');
-            $table->string('address_kh');
-            $table->string('address_my');
-            $table->string('address_sa');
+            $table->string('phone_en')->nullable();
+            $table->string('phone_kh')->nullable();
+            $table->string('phone_my')->nullable();
+            $table->string('phone_sa')->nullable();
 
-            $table->string('copyright_en');
-            $table->string('copyright_kh');
-            $table->string('copyright_my');
-            $table->string('copyright_sa');
+            $table->string('address_en')->nullable();
+            $table->string('address_kh')->nullable();
+            $table->string('address_my')->nullable();
+            $table->string('address_sa')->nullable();
 
-            $table->text('welcome_message_en');
-            $table->text('welcome_message_kh');
-            $table->text('welcome_message_my');
-            $table->text('welcome_message_sa');
+            $table->string('copyright_en')->nullable();
+            $table->string('copyright_kh')->nullable();
+            $table->string('copyright_my')->nullable();
+            $table->string('copyright_sa')->nullable();
 
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by');
