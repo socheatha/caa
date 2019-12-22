@@ -37,17 +37,17 @@
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::resource('main_menu', 'MainMenuController')->except(['show']);
-    Route::resource('sub_menu', 'SubMenuController');
-    Route::resource('extra_menu', 'ExtraMenuController');
+    Route::resource('sub_menu', 'SubMenuController')->except(['show']);
+    // Route::resource('extra_menu', 'ExtraMenuController');
 
-    Route::resource('config', 'ConfigController');
-    Route::resource('abou-us', 'SubMenuController');
+    // Route::resource('config', 'ConfigController');
+    Route::resource('abou_us', 'AboutUsController');
 
-    Route::resource('slide_show', 'SlideShowController');
+    Route::resource('slide_show', 'SlideShowController')->except(['show']);
     Route::put('slide_show/{slide_show}/update_image', 'SlideShowController@update_image')->name('slide_show.update_image');
 
-    Route::resource('documents', 'SubMenuController');
-    Route::resource('partner', 'PartnerController');
+    Route::resource('documents', 'SubMenuController')->except(['show']);
+    Route::resource('partner', 'PartnerController')->except(['show']);
 
     Route::resource('project_category', 'ProjectCategoryController');
     Route::resource('project', 'ProjectController');
@@ -58,7 +58,9 @@
     Route::put('activity/{activity}/update_image', 'ActivityController@update_image')->name('activity.update_image');
     
     Route::resource('website-config', 'ConfigController');
-
+    
+    Route::get('donation', 'DonationController@index')->name('donation.index');
+    Route::put('donation/update', 'DonationController@update')->name('donation.update');
 
   });
 
