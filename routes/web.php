@@ -11,14 +11,16 @@
       // 'verify' => false,
     ]);
 
-  Route::get('/', 'HomeController@index2')->name('home');
-  Route::get('/home-2', 'HomeController@index2')->name('home-2');
+  Route::get('/', 'HomeController@index')->name('home');
 
   // block about us
   Route::group(['namespace' => 'Frontend'], function () {
     Route::get('about-us', 'AboutUsController@index')->name('about-us');
     
     Route::get('contact-us', 'ContanUsController@index')->name('contact-us');
+
+    Route::get('project_category', 'ProjectCategoryController@index')->name('project_category');
+    Route::get('activity_category', 'ProjectCategoryController@index')->name('activity_category');
   
   });
 

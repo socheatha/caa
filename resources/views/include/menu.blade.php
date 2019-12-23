@@ -10,7 +10,28 @@
 			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav navbar-item-list mr-auto">
-					<li class="nav-item active">
+					@foreach (Auth::user()->topMenu() as $menu)
+						{{-- {{ dd($menu->SubMenu->count()) }} --}}
+							@if ($menu->SubMenu->count() > 0 )
+									
+								<li class="nav-item">
+									<a class="nav-link" href="#{{ $menu->$name }}" data-toggle="tab">{{ $menu->$name }} &nbsp;<i class="fa fa-angle-down"></i></a>
+									<ul class="list-unstyled">
+										@foreach ($menu->SubMenu as $sub_menu)
+											<li>
+												<a href="{{ $sub_menu->url }}">{{ $sub_menu->$name }}</a>
+											</li>
+										@endforeach
+									</ul>
+								</li>
+							@else
+							<li class="nav-item">
+								<a class="nav-link" href="{{ $menu->url }}">{{ $menu->$name }}</a>
+							</li>
+							@endif
+					@endforeach
+					
+					{{-- <li class="nav-item active">
 						<a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
@@ -52,7 +73,8 @@
 								<a href="{{ route('project.primary-school') }}">Testing 2</a>
 							</li>
 						</ul>
-					</li>
+					</li> --}}
+
 					<li class="nav-item search sr-only">
 						<a class="nav-link" href="#search" data-toggle="tab"><i class="fa fa-search"></i></a>
 						<ul class="list-unstyled">

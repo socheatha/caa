@@ -54,7 +54,7 @@ class PartnerController extends Controller
 			$image = $request->file('thumbnail');
 			$image_name = time() .'_'. $partner->id .'.png';
 			$thumb = Image::make($image->getRealPath())->resize(150, 150)->save($path.'thumb_'. $image_name);
-			$img = Image::make($image->getRealPath())->resize(400, 400)->save($path.$image_name);
+			$img = Image::make($image->getRealPath())->resize(230, 230)->save($path.$image_name);
 			$partner->update(['thumbnail' => $image_name]);
 		}
 
@@ -88,7 +88,7 @@ class PartnerController extends Controller
 			$image = $request->file('thumbnail');
 			$image_name = time() .'_'. $partner->id .'.png';
 			$thumb = Image::make($image->getRealPath())->resize(150, 150)->save($path.'thumb_'. $image_name);
-			$img = Image::make($image->getRealPath())->resize(400, 400)->save($path.$image_name);
+			$img = Image::make($image->getRealPath())->resize(230, 230)->save($path.$image_name);
 
 			$partner->update([
 												'index' => $request->index,

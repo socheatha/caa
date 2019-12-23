@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\MainMenu;
+use App\Models\Partner;
 use Route;
 
 class User extends Authenticatable
@@ -37,6 +39,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+	public function topMenu(){
+		$main_menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
+		return $main_menus;
+	}
+
+	public function partners(){
+		$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
+		return $partners;
+	}
 
 
 
