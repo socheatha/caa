@@ -59,8 +59,8 @@ class CreateConfigTable extends Migration
             $table->string('copyright_my')->nullable();
             $table->string('copyright_sa')->nullable();
 
-            $table->unsignedInteger('created_by');
-            $table->unsignedInteger('updated_by');
+            $table->unsignedInteger('created_by')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
 
             $table->foreign('created_by')

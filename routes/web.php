@@ -48,7 +48,9 @@
     Route::resource('slide_show', 'SlideShowController')->except(['show']);
     Route::put('slide_show/{slide_show}/update_image', 'SlideShowController@update_image')->name('slide_show.update_image');
 
-    Route::resource('documents', 'SubMenuController')->except(['show']);
+    Route::resource('documents', 'DocumentController')->except(['show']);
+
+    Route::resource('sub_menu', 'SubMenuController')->except(['show']);
     Route::resource('partner', 'PartnerController')->except(['show']);
 
     Route::resource('project_category', 'ProjectCategoryController');

@@ -64,7 +64,7 @@
           <li class="{{ ((Auth::user()->sidebarActive() == 'slide_show' )? 'active':'') }}"><a href="{{ route('admin.slide_show.index') }}"><i class="far fa-circle"></i> Slide Show</a></li>
           <li class="{{ ((Auth::user()->sidebarActive() == 'partner' )? 'active':'') }}"><a href="{{ route('admin.partner.index') }}"><i class="far fa-circle"></i> Our Parthner</a></li>
           {{-- <li class=""><a href="{{ route('admin.extra_menu.index') }}"><i class="far fa-circle"></i> Extra Menu</a></li> --}}
-          <li class=""><a href="#"><i class="far fa-circle"></i> Document</a></li>
+          <li class=""><a href="{{ route('admin.documents.index') }}"><i class="far fa-circle"></i> Document</a></li>
           <li class=""><a href="{{ route('admin.donation.index') }}"><i class="far fa-circle"></i> Donation</a></li>
         </ul>
       </li>

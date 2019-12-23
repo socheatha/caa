@@ -15,7 +15,11 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        //
+        $document=Document::get()->first();
+        return view('admin.document.index')->with(
+        [
+            'document'=> $document,
+        ]);
     }
 
     /**
@@ -25,7 +29,7 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        //
+		return view('admin.document.create');
     }
 
     /**
@@ -58,7 +62,7 @@ class DocumentController extends Controller
      */
     public function edit(Document $document)
     {
-        //
+        return view('admin.document.edit')->with(compact('document'));
     }
 
     /**

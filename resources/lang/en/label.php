@@ -4,7 +4,7 @@ return [
     
   'content' => [
   	'header' => [
-      'title' => 'Manage',
+      'title' => 'Manage ',
       'index' => 'List of ',
       'create' => 'Create',
       'edit' => 'Edit',
@@ -15,6 +15,8 @@ return [
   	],
 
     'main' => 'ទីតាំង',
+    'website-config'  =>  'Website Config',
+    'documents'  =>  'Documents',
   ],
 
   'routename' => [
@@ -32,6 +34,9 @@ return [
 
     'activity_category' => 'Activity Category',
     'activity' => 'Activity',
+
+    'website-config'  =>  'Website Config',
+    'documents'  =>  'Documents',
     
   ],
 
@@ -65,6 +70,8 @@ return [
 
       'province' => 'Provinces',
       'district' => 'Districts',
+      'website-config'  =>  'Website Config',
+      'documents'  =>  'Documents',
 
 	  ],
   ],
