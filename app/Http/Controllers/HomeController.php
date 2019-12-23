@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SlideShow;
+use App\Models\ProjectCategory;
+use App\Models\ActivityCategory;
 
 class HomeController extends Controller
 {
@@ -23,11 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $slide_shows = SlideShow::orderBy('index', 'asc')->get();
+        $projects = ProjectCategory::orderBy('index', 'asc')->get();
+        $activities = ActivityCategory::orderBy('index', 'asc')->get();
+        return view('frontend.home')->with(compact('slide_shows','projects','activities'));
     }
 
-    public function index2()
-    {
-        return view('home-2');
-    }
 }
