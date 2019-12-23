@@ -19,10 +19,43 @@ class ConfigController extends Controller
     public function index()
     {
         $config=Config::get()->first();
-        return view('admin.website_config.index')->with(
-            [
-                'config'=> $config,
+        if(!$config){
+            Config::create([
+                'logo'=>'1',
+                'email'=>'1',
+                'social'=>'1',
+                'fb_url'=>'1',
+                'map_location'=>'1',
+                'header_color'=>'1',
+                'footer_color'=>'1',
+                'body_color'=>'1',
+                'menu_active_color'=>'1',
+                'text_color'=>'1',
+                'phone_en'=>'1',
+                'phone_kh'=>'1',
+                'phone_my'=>'1',
+                'phone_sa'=>'1',
+                'address_en'=>'1',
+                'address_kh'=>'1',
+                'address_my'=>'1',
+                'address_sa'=>'1',
+                'copyright_en'=>'1',
+                'copyright_kh'=>'1',
+                'copyright_my'=>'1',
+                'copyright_sa'=>'1',
+                'welcome_message_en'=>'1',
+                'welcome_message_kh'=>'1',
+                'welcome_message_my'=>'1',
+                'welcome_message_sa'=>'1',
+                'created_by'=>'1',
+                'updated_by'=>'1'
             ]);
+        }
+        $config=Config::get()->first();
+        return view('admin.website_config.index')->with(
+        [
+            'config'=> $config,
+        ]);
     }
 
     /**

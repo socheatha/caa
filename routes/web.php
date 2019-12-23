@@ -40,7 +40,7 @@
     Route::resource('sub_menu', 'SubMenuController')->except(['show']);
     // Route::resource('extra_menu', 'ExtraMenuController');
 
-    // Route::resource('config', 'ConfigController');
+    Route::resource('config', 'ConfigController');
     Route::resource('abou_us', 'AboutUsController');
 
     Route::resource('slide_show', 'SlideShowController')->except(['show']);
