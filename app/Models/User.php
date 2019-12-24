@@ -42,16 +42,6 @@ class User extends Authenticatable
 
 
 
-	public function topMenu(){
-		$main_menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
-		return $main_menus;
-	}
-
-	public function partners(){
-		$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
-		return $partners;
-	}
-
 
 
 	public function sidebarActive(){

@@ -21,12 +21,15 @@
 
   </head>
 <body>
-    <?php
-        $web_lang = ((!session('locale'))? 'en':session('locale') );
+		<?php
+		
+				use App\Models\MainMenu;
+				use App\Models\Partner;
+				
+				$menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
 
-        $name = 'name_'.$web_lang;
-        $detail = 'detail_'.$web_lang;
-        $short_desc = 'short_desc_'.$web_lang;
+				$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
+
     ?>
 	@include('include.header')
 	@include('include.menu')

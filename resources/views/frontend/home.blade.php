@@ -1,18 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-	
 	{{-- Block slider --}}
 	<section id="block-front-slider">
 		<div id="frontSlideShows" class="carousel slide" data-ride="carousel">
-			<?php
-
-			?>
 			<div class="carousel-inner">
 				@foreach ($slide_shows as $key => $slide_show)
 					<div class="carousel-item {{ (($key==0)? 'active' : '' ) }}">
+
 						<img src="/images/slide_shows/{{ $slide_show->image }}" class="img-fluid d-block w-100" alt="{{ $slide_show->seo_description . $slide_show->seo_keywords }}">
+
+						<div class="carousel-caption d-none d-md-block">
+							<h2 class="animated slideInDown">{{ $slide_show->$name }}</h2>
+							<p class="animated slideInUp">{{ $slide_show->$short_desc }}</p>
+						</div>
+
 					</div>
+
 				@endforeach
 			</div>
 
@@ -36,7 +40,6 @@
 			</a>
 		</div>
 	</section>
-
 
 	<div class="container">
 		<div class="row">
@@ -488,8 +491,6 @@
 			</div>
 		</div>
 	</div>
-
-	
 @endsection
 
 @section('js')

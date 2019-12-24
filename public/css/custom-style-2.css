@@ -278,6 +278,25 @@ body{ background: #f9f9f9;}
   height: 500px;
 }
 
+#block-front-slider .carousel-item .carousel-caption{
+	border: 1px solid red;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+#block-front-slider .carousel-item .carousel-caption h2{
+	border: 1px solid red;
+	position: absolute;
+	top: 25%;
+	text-align: left;
+}
+#block-front-slider .carousel-item .carousel-caption p{
+	border: 1px solid red;
+	position: absolute;
+	top: 33%;
+}
+
 
 
 .block-content{

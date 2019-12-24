@@ -10,8 +10,7 @@
 			
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav navbar-item-list mr-auto">
-					@foreach (Auth::user()->topMenu() as $menu)
-						{{-- {{ dd($menu->SubMenu->count()) }} --}}
+					@foreach ($menus as $menu)
 							@if ($menu->SubMenu->count() > 0 )
 									
 								<li class="nav-item">
