@@ -17,6 +17,7 @@ return [
     'main' => 'ទីតាំង',
     'website-config'  =>  'Website Config',
     'documents'  =>  'Documents',
+    'about_us'  =>  'About Us',
   ],
 
   'routename' => [
@@ -34,6 +35,7 @@ return [
 
     'activity_category' => 'Activity Category',
     'activity' => 'Activity',
+    'about_us' => 'About Us',
 
     'website-config'  =>  'Website Config',
     'documents'  =>  'Documents',
@@ -67,6 +69,7 @@ return [
 
       'activity_category' => 'Activity Category',
       'activity' => 'Activity',
+      'about_us' => 'About Us',
 
       'province' => 'Provinces',
       'district' => 'Districts',

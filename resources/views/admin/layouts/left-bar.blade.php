@@ -50,6 +50,8 @@
         </ul>
       </li>
 
+      <li class="{{ ((Auth::user()->sidebarActive() == 'about_us' )? 'active':'') }}"><a href="{{ route('admin.about_us.index') }}"><i class="far fa-circle"></i> About Us</a></li>
+
       <li class="treeview {{ ((strpos('website-config slide_show partner', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
           <i class="fa fa-project-diagram"></i> <span> Setting</span>

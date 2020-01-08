@@ -68,6 +68,10 @@
     Route::resource('activity', 'ActivityController');
     Route::put('activity/{activity}/update_image', 'ActivityController@update_image')->name('activity.update_image');
     
+    
+    Route::resource('about_us', 'AboutUsController');
+    Route::put('about_us/{about_us}/update_image', 'AboutUsController@update_image')->name('about_us.update_image');
+
     Route::resource('website-config', 'ConfigController');
     
     Route::get('donation', 'DonationController@index')->name('donation.index');

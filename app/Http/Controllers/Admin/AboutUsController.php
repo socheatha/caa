@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\AboutUsMenu;
+use App\Models\AboutUs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,11 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        //
+        $this->data = [
+			'aboutus' => AboutUs::orderBy('index', 'asc')->get(),
+		];
+	
+		return view('admin.about_us.index', $this->data);
     }
 
     /**
@@ -25,7 +29,9 @@ class AboutUsController extends Controller
      */
     public function create()
     {
-        //
+        $about_us = AboutUs::getSelectData('index', 'asc', 'id', 'name_en');
+		$index = AboutUs::sortIndex();
+		return view('admin.about_us.create')->with(compact('index', 'about_us'));
     }
 
     /**
