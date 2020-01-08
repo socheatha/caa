@@ -15,6 +15,7 @@
 
   // block about us
   Route::group(['namespace' => 'Frontend'], function () {
+    
     Route::get('about-us', 'AboutUsController@index')->name('about-us');
     
     Route::get('contact-us', 'ContanUsController@index')->name('contact-us');
@@ -30,8 +31,11 @@
   // block project
   Route::group(['prefix' => 'project', 'as' => 'project.','namespace' => 'Frontend'], function () {
     Route::get('{id}', 'ProjectController@getProjectDetail')->name('detail');
-    // Route::get('halaqah', 'ProjectController@halaqah')->name('halaqah');
-    // Route::get('primary-school', 'ProjectController@primaryschool')->name('primary-school');
+  });
+
+  // block Activity
+  Route::group(['prefix' => 'activity', 'as' => 'activity.','namespace' => 'Frontend'], function () {
+    Route::get('{id}', 'activityController@getactivityDetail')->name('detail');
   });
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {

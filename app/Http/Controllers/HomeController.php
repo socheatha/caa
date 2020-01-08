@@ -26,9 +26,9 @@ class HomeController extends Controller
 	{
 		$this->data +=[
 						'slide_shows' => SlideShow::orderBy('index', 'asc')->get(),
-						'projects' => ProjectCategory::orderBy('index', 'asc')->get(),
-						'activities' => ActivityCategory::orderBy('index', 'asc')->get(),
-						'documents' => Document::orderBy('created_at', 'desc')->get()
+						'project_categories' => ProjectCategory::orderBy('index', 'asc')->get(),
+						'activity_categories' => ActivityCategory::orderBy('index', 'asc')->get(),
+						'documents' => Document::orderBy('created_at', 'desc')->get(),
 					];
 		return view('frontend.home', $this->data);
 	}
