@@ -1,49 +1,44 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="row">
-      <div class="col-sm-9">
-        <div class="form-group {!! (($errors->has('seo_keywords'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('name', "SEO Keywords <small>*</small>")) !!}
-          {!! Form::text('seo_keywords', ((isset($document->seo_keywords))? $document->seo_keywords : '' ), ['class' => 'form-control ','placeholder' => 'seo keywords','required']) !!}
-          {!! $errors->first('seo_keywords', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
-
-      
-      @if (!isset($document))
-        <div class="col-sm-12">
-          <div class="form-group {!! (($errors->has('image'))? 'has-error':'') !!}">
-            {!! Html::decode(Form::label('image', "image (1000px x 690px) <small>*</small>")) !!}
-            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-              <div class="form-control nbr" data-trigger="fileinput">
-                <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span>
+      <div class="col-sm-12">
+        @if (!isset($document))
+            <div class="form-group {!! (($errors->has('image'))? 'has-error':'') !!}">
+              {!! Html::decode(Form::label('soft', "Soft (PDF) <small>*</small>")) !!}
+              <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                <div class="form-control nbr" data-trigger="fileinput">
+                  <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span>
+                </div>
+                <span class="input-group-addon btn-file btn btn-primary" style="border-radius: 0;">
+                  <span class="fileinput-new">{{ __('label.buttons.select') }}</span>
+                  <span class="fileinput-exists">{{ __('label.buttons.change') }}</span>
+                  {!! Form::file('soft', ['accept' => 'application/pdf','required']) !!}
+                </span>
+                <a href="#" class="input-group-addon fileinput-exists btn btn-danger" data-dismiss="fileinput">{{ __('label.buttons.remove') }}</a>
               </div>
-              <span class="input-group-addon btn-file btn btn-primary" style="border-radius: 0;">
-                <span class="fileinput-new">{{ __('label.buttons.select') }}</span>
-                <span class="fileinput-exists">{{ __('label.buttons.change') }}</span>
-                {!! Form::file('image', ['accept' => 'image/jpeg,image/png','required']) !!}
-              </span>
-              <a href="#" class="input-group-addon fileinput-exists btn btn-danger" data-dismiss="fileinput">{{ __('label.buttons.remove') }}</a>
+              {!! $errors->first('image', '<span class="help-block">:message</span>') !!}
             </div>
-            {!! $errors->first('image', '<span class="help-block">:message</span>') !!}
+        @endif
+          <div class="form-group {!! (($errors->has('seo_keywords'))? 'has-error':'') !!}">
+            {!! Html::decode(Form::label('name', "SEO Keywords <small>*</small>")) !!}
+            {!! Form::text('seo_keywords', ((isset($document->seo_keywords))? $document->seo_keywords : '' ), ['class' => 'form-control ','placeholder' => 'seo keywords','required']) !!}
+            {!! $errors->first('seo_keywords', '<span class="help-block">:message</span>') !!}
           </div>
-        </div>
-      @endif
-
-    </div>
+      </div>
+    </div> <!-- row -->
   </div>
   {{-- / .col --}}
 
   <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('description'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('name', "SEO Description <small>*</small>")) !!}
-          {!! Form::textarea('seo_description', ((isset($document->seo_description))? $document->seo_description : '' ), ['class' => 'form-control ','style' => ((!isset($document))? 'height: 108px;' : 'height: 33px;'),'placeholder' => 'seo description','required']) !!}
-          {!! $errors->first('seo_description', '<span class="help-block">:message</span>') !!}
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group {!! (($errors->has('description'))? 'has-error':'') !!}">
+            {!! Html::decode(Form::label('name', "SEO Description <small>*</small>")) !!}
+            {!! Form::textarea('seo_description', ((isset($document->seo_description))? $document->seo_description : '' ), ['class' => 'form-control ','style' => ((!isset($document))? 'height: 108px;' : 'height: 33px;'),'placeholder' => 'seo description','required']) !!}
+            {!! $errors->first('seo_description', '<span class="help-block">:message</span>') !!}
+          </div>
         </div>
-      </div>
-    </div>
+      </div> <!-- row -->
   </div>
   {{-- / .col --}}
   
@@ -55,13 +50,6 @@
           {!! Html::decode(Form::label('name_en', "Name in English <small>*</small>")) !!}
           {!! Form::text('name_en', ((isset($document))? $document->name_en : '' ), ['class' => 'form-control ','placeholder' => 'name en','required']) !!}
           {!! $errors->first('name_en', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('short_desc_en'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('short_desc_en', "Short Description in English <small>*</small>")) !!}
-          {!! Form::textarea('short_desc_en', ((isset($document->short_desc_en))? $document->short_desc_en : '' ), ['class' => 'form-control ','rows' => '3','placeholder' => 'short description in english','required']) !!}
-          {!! $errors->first('short_desc_en', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
       <div class="col-sm-12">
@@ -80,13 +68,7 @@
           {!! $errors->first('name_kh', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('description'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('short_desc_kh', "Short Description in Khmer")) !!}
-          {!! Form::textarea('short_desc_kh', ((isset($document->short_desc_kh))? $document->short_desc_kh : '' ), ['class' => 'form-control ','rows' => '3','placeholder' => 'short description in khmer']) !!}
-          {!! $errors->first('short_desc_kh', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
+      
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('detail_kh'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('detail_kh', "Detail in Khmer")) !!}
@@ -103,13 +85,7 @@
           {!! $errors->first('name_my', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('short_desc_my'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('short_desc_my', "Short Description in Malay")) !!}
-          {!! Form::textarea('short_desc_my', ((isset($document->short_desc_my))? $slide_show->short_desc_my : '' ), ['class' => 'form-control ','rows' => '3','placeholder' => 'short description in malay']) !!}
-          {!! $errors->first('short_desc_my', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
+      
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('detail_my'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('detail_my', "Detail in Malay")) !!}
@@ -126,13 +102,7 @@
           {!! $errors->first('name_sa', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('short_desc_sa'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('short_desc_sa', "Short Description in Arab")) !!}
-          {!! Form::textarea('short_desc_sa', ((isset($slide_show->short_desc_sa))? $slide_show->short_desc_sa : '' ), ['class' => 'form-control ','rows' => '3','placeholder' => 'short description in arab']) !!}
-          {!! $errors->first('short_desc_sa', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
+      
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('detail_sa'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('detail_sa', "Detail in Arab")) !!}

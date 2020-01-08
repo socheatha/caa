@@ -55,20 +55,23 @@
 	          <th>Name</th>
 	          <th>SEO Keywords</th>
 	          <th>SEO Description</th>
+	          <th>Detail</th>
 	          <th width="10%">Action</th>
 	        </tr>
         </thead>
         <tbody>
+					@foreach($documents as $i => $document)
 						<tr>
 							<td>{{!empty($document->id)?$i=+1:''}}</td>
-							<td>{{!empty($document->soft)?$document->soft:''}}</td>
+							<td><a href="#">{{!empty($document->soft)?$document->soft:''}}</a></td>
 							<td>
-								<small>EN Name:</small> {{!empty($document->name_en)?$document->name_en:''}}<br>
-								<small>KH Name:</small> {{!empty($document->name_kh)?$document->name_kh:''}}<br>
-								<small>MY Name:</small> {{!empty($document->name_my)?$document->name_my:''}}<br>
-								<small>SA Name:</small> {{!empty($document->name_sa)?$document->name_sa:''}}<br>
+								<small>EN:</small> {{!empty($document->name_en)?$document->name_en:''}}<br>
+								<small>KH:</small> {{!empty($document->name_kh)?$document->name_kh:''}}<br>
+								<small>MY:</small> {{!empty($document->name_my)?$document->name_my:''}}<br>
+								<small>SA:</small> {{!empty($document->name_sa)?$document->name_sa:''}}<br>
 							</td>
 							<td>{{!empty($document->seo_keywords)?$document->seo_keywords:''}}</td>
+							<td>{{!empty($document->seo_description)?$document->seo_description:''}}</td>
 							<td>
 								<small>EN:</small> {{!empty($document->detail_en)?$document->detail_en:''}}<br>
 								<small>KH:</small> {{!empty($document->detail_kh)?$document->detail_kh:''}}<br>
@@ -80,11 +83,12 @@
 								<a href="{{ route('admin.documents.edit',!empty($document->id)?$document->id:'') }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 								{{-- Delete Button --}}
 								<button class="btn btn-danger BtnDelete" value="{{ !empty($document->id)?$document->id:'' }}"><i class="fa fa-trash-alt"></i></button>
-								{{ Form::open(['url'=>route('admin.documents.destroy', (!empty($document->id)?$document->id:'')), 'id' => 'form-item-'.(!empty($document->id)?$document->id:''), 'class' => 'sr-only']) }}
+								{{ Form::open(['url'=>route('admin.documents.destroy', $document->id), 'id' => 'form-item-'.$document->id, 'class' => 'sr-only']) }}
 								{{ Form::hidden('_method','DELETE') }}
 								{{ Form::close() }}
 							</td>
 						</tr>
+        	@endforeach
         </tbody>
       </table>
     </div>
