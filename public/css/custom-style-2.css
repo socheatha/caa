@@ -282,18 +282,21 @@ body{ background: #f9f9f9;}
 	border: 1px solid red;
 	height: 100%;
 	position: absolute;
+	z-index: 1;
 	top: 0;
 }
 
 #block-front-slider .carousel-item .carousel-caption h2{
 	border: 1px solid red;
 	position: absolute;
+	z-index: 1;
 	top: 25%;
 	text-align: left;
 }
 #block-front-slider .carousel-item .carousel-caption p{
 	border: 1px solid red;
 	position: absolute;
+	z-index: 1;
 	top: 33%;
 }
 
