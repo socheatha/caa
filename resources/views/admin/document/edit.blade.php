@@ -29,7 +29,7 @@
     </div>
     <!-- /.box-header -->
 
-		{!! Form::open(['url' => route('admin.documents.update', $document->id),'method' => 'post','class' => 'mt-3']) !!}
+		{!! Form::open(['url' => route('admin.documents.update', $document->id),'method' => 'post', 'enctype'=>'multipart/form-data','class' => 'mt-3']) !!}
 		{!! Form::hidden('_method', 'PUT') !!}
 
     <div class="box-body">

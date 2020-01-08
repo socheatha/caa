@@ -351,30 +351,11 @@
 						</div>
 						<div class="content">
 							<ul class="doc-list list-unstyled">
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 1 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 2 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 3 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 4 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 5 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 6 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 7 title for download testing side download list</a>
-								</li>
-								<li>
-									<a href="#"><i class="fas fa-file-alt"></i>&nbsp; Document project 8 title for download testing side download list</a>
-								</li>
+								@foreach ($documents as $document)
+									<li>
+										<a href="{{ route('document.show', $document->id) }}"><i class="fas fa-file-alt"></i>&nbsp; {{ $document->$name }}</a>
+									</li>
+								@endforeach
 							</ul>
 						</div>
 	

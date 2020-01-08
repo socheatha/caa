@@ -76,7 +76,9 @@ class DocumentController extends Controller
      */
     public function show(Document $document)
     {
-        //
+		$filename = $document->soft;
+		$path = public_path().'/'. $filename;
+		return response()->file($path);
     }
 
     /**
@@ -99,21 +101,44 @@ class DocumentController extends Controller
      */
     public function update(Request $request, Document $document)
     {
-        $document->update([
-            'name_en' => $request->name_en,
-            'name_kh' => (($request->name_kh)? $request->name_kh : $request->name_en),
-            'name_my' => (($request->name_my)? $request->name_my : $request->name_en),
-            'name_sa' => (($request->name_sa)? $request->name_sa : $request->name_en),
-            'detail_en' => $request->detail_en,
-            'detail_kh' => (($request->detail_kh)? $request->detail_kh : $request->detail_en),
-            'detail_my' => (($request->detail_my)? $request->detail_my : $request->detail_en),
-            'detail_sa' => (($request->detail_sa)? $request->detail_sa : $request->detail_en),
-            'seo_keywords' => $request->seo_keywords,
-            'seo_description' => $request->seo_description,
-            'updated_by' => Auth::user()->id,
-        ]);
+        if ($request->file('soft')) {
+            $path = 'images/document/';
+            $extension = Input::file('soft')->getClientOriginalExtension(); 
+            $softname =  time().'caa_'.'_soft.'.$extension;
+            Input::file('soft')->move($path, $softname);
+            File::delete($document->soft);
+            $soft=$path.$softname;
+            $document->update([
+                'name_en' => $request->name_en,
+                'name_kh' => (($request->name_kh)? $request->name_kh : $request->name_en),
+                'name_my' => (($request->name_my)? $request->name_my : $request->name_en),
+                'name_sa' => (($request->name_sa)? $request->name_sa : $request->name_en),
+                'detail_en' => $request->detail_en,
+                'detail_kh' => (($request->detail_kh)? $request->detail_kh : $request->detail_en),
+                'detail_my' => (($request->detail_my)? $request->detail_my : $request->detail_en),
+                'detail_sa' => (($request->detail_sa)? $request->detail_sa : $request->detail_en),
+                'seo_keywords' => $request->seo_keywords,
+                'seo_description' => $request->seo_description,
+                'soft' => $soft,
+                'updated_by' => Auth::user()->id,
+            ]);
+        }else{
+            $document->update([
+                'name_en' => $request->name_en,
+                'name_kh' => (($request->name_kh)? $request->name_kh : $request->name_en),
+                'name_my' => (($request->name_my)? $request->name_my : $request->name_en),
+                'name_sa' => (($request->name_sa)? $request->name_sa : $request->name_en),
+                'detail_en' => $request->detail_en,
+                'detail_kh' => (($request->detail_kh)? $request->detail_kh : $request->detail_en),
+                'detail_my' => (($request->detail_my)? $request->detail_my : $request->detail_en),
+                'detail_sa' => (($request->detail_sa)? $request->detail_sa : $request->detail_en),
+                'seo_keywords' => $request->seo_keywords,
+                'seo_description' => $request->seo_description,
+                'updated_by' => Auth::user()->id,
+            ]);
+        }
         // Redirect
-        return redirect()->route('admin.documents.index', $document->id)
+        return redirect()->route('admin.documents.index')
         ->with('success', '<strong>' .$document->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
     }
 

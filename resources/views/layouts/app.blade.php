@@ -27,8 +27,8 @@
 				use App\Models\Partner;
 				
 				$menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
-
 				$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
+
 
     ?>
 	@include('include.header')

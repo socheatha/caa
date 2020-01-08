@@ -7,14 +7,21 @@ use App\Http\Controllers\Controller;
 
 class AboutUsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function __construct()
+    {
+        $web_lang = ((!session('locale'))? 'en':session('locale') );    
+        $this->data =[
+                        'name' => 'name_'.$web_lang,
+                        'detail' => 'detail_'.$web_lang,
+                        'short_desc' => 'short_desc_'.$web_lang,
+                    ];  
+    }
+
+
     public function index()
     {
-        return view('frontend.about_us');
+        return view('frontend.about_us', $this->data);
     }
 
     /**

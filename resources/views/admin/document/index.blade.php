@@ -63,7 +63,7 @@
 					@foreach($documents as $i => $document)
 						<tr>
 							<td>{{!empty($document->id)?$i=+1:''}}</td>
-							<td><a href="#">{{!empty($document->soft)?$document->soft:''}}</a></td>
+							<td><a  target="_blank" href="{{ (substr(strrchr($document->soft,'.'),1) == 'pdf') ? route('admin.documents.show', $document->id) : '/'. $document->soft }}">{{!empty($document->soft)?$document->soft:''}}</a></td>
 							<td>
 								<small>EN:</small> {{!empty($document->name_en)?$document->name_en:''}}<br>
 								<small>KH:</small> {{!empty($document->name_kh)?$document->name_kh:''}}<br>
