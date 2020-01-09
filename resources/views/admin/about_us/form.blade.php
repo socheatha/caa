@@ -39,13 +39,7 @@
         </div>
       </div>
       @endif
-
-    </div>
-  </div>
-  {{-- / .col --}}
-
-  <div class="col-sm-6">
-    <div class="row">
+      
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('seo_keywords'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name', "SEO Keywords <small>*</small>")) !!}
@@ -53,6 +47,11 @@
           {!! $errors->first('seo_keywords', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
+    </div>
+  </div>
+  {{-- / .col --}}
+  <div class="col-sm-6">
+    <div class="row">
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('description'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name', "SEO Description <small>*</small>")) !!}
@@ -70,7 +69,7 @@
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('name_en'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name_en', "Name in English <small>*</small>")) !!}
-          {!! Form::text('name_en', ((isset($about_us))? $about_us->name_en : '' ), ['class' => 'form-control ','placeholder' => 'name en','required']) !!}
+          {!! Form::text('name_en', ((isset($about_us->name_en))? $about_us->name_en : '' ), ['class' => 'form-control ','placeholder' => 'name en','required']) !!}
           {!! $errors->first('name_en', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
@@ -93,7 +92,7 @@
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('name_kh'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name_kh', "Name in Khmer")) !!}
-          {!! Form::text('name_kh', ((isset($about_us))? $about_us->name_kh : '' ), ['class' => 'form-control ','placeholder' => 'name khmer']) !!}
+          {!! Form::text('name_kh', ((isset($about_us->name_kh))? $about_us->name_kh : '' ), ['class' => 'form-control ','placeholder' => 'name khmer']) !!}
           {!! $errors->first('name_kh', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
@@ -116,7 +115,7 @@
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('name_my'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name_my', "Name in Malay")) !!}
-          {!! Form::text('name_my', ((isset($about_us))? $about_us->name_my : '' ), ['class' => 'form-control ','placeholder' => 'name malay']) !!}
+          {!! Form::text('name_my', ((isset($about_us->name_my))? $about_us->name_my : '' ), ['class' => 'form-control ','placeholder' => 'name malay']) !!}
           {!! $errors->first('name_my', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
@@ -139,7 +138,7 @@
       <div class="col-sm-12">
         <div class="form-group {!! (($errors->has('name_sa'))? 'has-error':'') !!}">
           {!! Html::decode(Form::label('name_sa', "Name in Arab")) !!}
-          {!! Form::text('name_sa', ((isset($about_us))? $about_us->name_sa : '' ), ['class' => 'form-control ','placeholder' => 'name arab']) !!}
+          {!! Form::text('name_sa', ((isset($about_us->name_sa))? $about_us->name_sa : '' ), ['class' => 'form-control ','placeholder' => 'name arab']) !!}
           {!! $errors->first('name_sa', '<span class="help-block">:message</span>') !!}
         </div>
       </div>

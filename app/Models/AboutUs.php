@@ -10,7 +10,16 @@ class AboutUs extends BaseModel
 {
 	protected $table = 'about_us';
 
-	protected $fillable = ['name','detail','index','created_by','updated_by'];
+	protected $fillable = [
+		'name_en',
+		'name_kh',
+		'name_my',
+		'name_sa',
+		'detail',
+		'index',
+		'created_by',
+		'updated_by'
+	];
 
 
 
