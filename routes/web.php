@@ -20,9 +20,6 @@
     
     Route::get('contact-us', 'ContanUsController@index')->name('contact-us');
 
-    Route::get('project_category', 'ProjectCategoryController@index')->name('project_category');
-    Route::get('activity_category', 'ProjectCategoryController@index')->name('activity_category');
-
 
     Route::get('document/{document}', 'DocumentController@show')->name('document.show');
   
@@ -31,11 +28,13 @@
   // block project
   Route::group(['prefix' => 'project', 'as' => 'project.','namespace' => 'Frontend'], function () {
     Route::get('{project}', 'ProjectController@getProjectDetail')->name('detail');
+    Route::get('project_category/{project_category}', 'ProjectController@project_category')->name('project_category');
   });
 
   // block Activity
   Route::group(['prefix' => 'activity', 'as' => 'activity.','namespace' => 'Frontend'], function () {
     Route::get('{activity}', 'activityController@getactivityDetail')->name('detail');
+    Route::get('activity_category/{activity_category}', 'activityController@activity_category')->name('activity_category');
   });
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {

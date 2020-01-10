@@ -279,7 +279,7 @@ body{ background: #f9f9f9;}
 }
 
 #block-front-slider .carousel-item .carousel-caption{
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	height: 100%;
 	position: absolute;
 	z-index: 1;
@@ -287,14 +287,14 @@ body{ background: #f9f9f9;}
 }
 
 #block-front-slider .carousel-item .carousel-caption h2{
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	position: absolute;
 	z-index: 1;
 	top: 25%;
 	text-align: left;
 }
 #block-front-slider .carousel-item .carousel-caption p{
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	position: absolute;
 	z-index: 1;
 	top: 33%;
@@ -496,4 +496,32 @@ body{ background: #f9f9f9;}
 }
 #navtab .nav-link:hover {
     border-color: transparent;
+}
+
+
+
+/* Project */
+
+.block-project{
+	padding: 15px;
+	margin: 30px 0;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(000, 000, 000, 0.2);
+}
+
+.block-project .img{
+	height: 180px;
+}
+
+
+/* Activity */
+.block-activity{
+	padding: 15px;
+	margin: 30px 0;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(000, 000, 000, 0.2);
+}
+
+.block-activity .img{
+	height: 180px;
 }

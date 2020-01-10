@@ -30,7 +30,8 @@
 				$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
 
 
-    ?>
+		?>
+	
 	@include('include.header')
 	@include('include.menu')
 	
