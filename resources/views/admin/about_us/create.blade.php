@@ -29,7 +29,7 @@
     </div>
     <!-- /.box-header -->
 
-		{{ Form::open(['route' => 'admin.about_us.store','method' => 'post', 'enctype'=>'multipart/form-data','class' => 'mt-3']) }}
+		{{ Form::open(['url' => route('admin.about_us.store'),'method' => 'post', 'enctype'=>'multipart/form-data','class' => 'mt-3']) }}
 
     <div class="box-body">
 			

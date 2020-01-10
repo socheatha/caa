@@ -51,12 +51,10 @@
         <thead>
 	        <tr>
 	          <th width="5%">N&deg;</th>
-	          <th>Image</th>
 	          <th>Name</th>
 	          <th>index</th>
 	          <th>SEO Keywords</th>
 	          <th>SEO Description</th>
-	          <th>about_us Category</th>
 	          <th width="10%">Action</th>
 	        </tr>
         </thead>
@@ -64,18 +62,11 @@
         	@foreach($aboutus as $i => $about_us)
 						<tr>
 							<td>{{ ++$i }}</td>
-							<td>
-								<div class="thumbnail" style="background: url('/images/aboutus/{{ $about_us->id }}/thumb_{{ $about_us->thumbnail }}') center center; background-size: cover;"></div>
-							</td>
 							<td>{{ $about_us->name_en .' : '. $about_us->name_kh .' : '. $about_us->name_my .' : '. $about_us->name_sa }}</td>
 							<td>{{ $about_us->index }}</td>
 							<td>{{ $about_us->seo_keywords }}</td>
 							<td>{{ $about_us->seo_descrition }}</td>
-							<td class="text-center"><span class="label label-primary">{{ $about_us->about_usCategory->name_en }}</span></td>
 							<td class="td-action text-right">
-
-								{{-- Edit Button --}}
-								<button class="btn btn-warning btnImage" data-url="{{ route('admin.about_us.update_image', $about_us->id) }}" data-src="{{ $about_us->thumbnail }}" data-id="{{ $about_us->id }}"><i class="fa fa-image"></i></button>
 								{{-- Edit Button --}}
 								<a href="{{ route('admin.about_us.edit',$about_us->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 								{{-- Delete Button --}}

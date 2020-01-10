@@ -50,7 +50,7 @@
 
               @foreach ($about_us as $i => $about)
                 <div role="tabpanel" class="tab-pane fade show {{ (($i==0)? 'active' : '') }}" id="introduction">
-                  {!! $about->$description !!}
+                  {!! $about->$detail !!}
                 </div>
               @endforeach
 
@@ -109,7 +109,7 @@
 				</section>
 			</div>
 			<div class="col-sm-4">
-				@include('include.side_bar_right');
+				@include('include.side_bar_right')
 			</div>
 		</div>
 	</div>

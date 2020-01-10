@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\AboutUs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Document;
 
 class AboutUsController extends Controller
 {
@@ -16,6 +17,7 @@ class AboutUsController extends Controller
 						'name' => 'name_'.$web_lang,
 						'detail' => 'detail_'.$web_lang,
 						'short_desc' => 'short_desc_'.$web_lang,
+						'documents' => Document::orderBy('created_at', 'desc')->get(),
 					];
 	}
 

@@ -16,16 +16,16 @@
 							<div class="flag flag-en"></div> English
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-							<a href="#" class="dropdown-item">
+							<a href="{{ route('locale', 'kh') }}" class="dropdown-item">
 								<div class="flag flag-kh"></div> &nbsp;Khmer
 							</a>
-							<a href="#" class="dropdown-item">
+							<a href="{{ route('locale', 'en') }}" class="dropdown-item">
 								<div class="flag flag-en"></div> &nbsp;English
 							</a>
-							<a href="#" class="dropdown-item">
+							<a href="{{ route('locale', 'my') }}" class="dropdown-item">
 								<div class="flag flag-my"></div> &nbsp;Malay
 							</a>
-							<a href="#" class="dropdown-item">
+							<a href="{{ route('locale', 'sa') }}" class="dropdown-item">
 								<div class="flag flag-sa"></div> &nbsp;Arab
 							</a>
 						</div>

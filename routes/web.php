@@ -30,12 +30,12 @@
 
   // block project
   Route::group(['prefix' => 'project', 'as' => 'project.','namespace' => 'Frontend'], function () {
-    Route::get('{id}', 'ProjectController@getProjectDetail')->name('detail');
+    Route::get('{project}', 'ProjectController@getProjectDetail')->name('detail');
   });
 
   // block Activity
   Route::group(['prefix' => 'activity', 'as' => 'activity.','namespace' => 'Frontend'], function () {
-    Route::get('{id}', 'activityController@getactivityDetail')->name('detail');
+    Route::get('{activity}', 'activityController@getactivityDetail')->name('detail');
   });
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
@@ -50,7 +50,6 @@
     // Route::resource('extra_menu', 'ExtraMenuController');
 
     Route::resource('config', 'ConfigController');
-    Route::resource('abou_us', 'AboutUsController');
 
     Route::resource('slide_show', 'SlideShowController')->except(['show']);
     Route::put('slide_show/{slide_show}/update_image', 'SlideShowController@update_image')->name('slide_show.update_image');
@@ -70,7 +69,6 @@
     
     
     Route::resource('about_us', 'AboutUsController');
-    Route::put('about_us/{about_us}/update_image', 'AboutUsController@update_image')->name('about_us.update_image');
 
     Route::resource('website-config', 'ConfigController');
     

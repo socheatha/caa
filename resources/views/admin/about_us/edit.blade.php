@@ -17,7 +17,7 @@
 				<!-- Action Dropdown -->
 				@component('admin.components.back')
 					@slot('btnBack')
-						{{route('admin.project.index')}}
+						{{route('admin.about_us.index')}}
 					@endslot
 				@endcomponent
 
@@ -29,13 +29,13 @@
     </div>
     <!-- /.box-header -->
 
-		{!! Form::open(['url' => route('admin.project.update', $project->id),'method' => 'post','class' => 'mt-3']) !!}
+		{!! Form::open(['url' => route('admin.about_us.update', $about_us->id),'method' => 'post','class' => 'mt-3']) !!}
 		{!! Form::hidden('_method', 'PUT') !!}
 
     <div class="box-body">
 			
 			<!-- Form -->
-			@include('admin.project.form')
+			@include('admin.about_us.form')
 
 
     </div>

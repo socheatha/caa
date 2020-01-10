@@ -1,4 +1,10 @@
-
+<?php
+	
+	$web_lang = ((!session('locale'))? 'en': session('locale') );
+	$name = 'name_'.$web_lang;
+	$detail = 'detail_'.$web_lang;
+	$short_desc = 'short_desc_'.$web_lang;	
+?>
 	<nav id="navbar-2" class="navbar navbar-main-top navbar-expand-lg navbar-light bg-white animated">
 		<div class="container">
 			<a class="navbar-brand sr-only" style="width: 210px;" href="#">

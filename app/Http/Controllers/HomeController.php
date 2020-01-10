@@ -18,6 +18,7 @@ class HomeController extends Controller
 						'name' => 'name_'.$web_lang,
 						'detail' => 'detail_'.$web_lang,
 						'short_desc' => 'short_desc_'.$web_lang,
+						'documents' => Document::orderBy('created_at', 'desc')->get(),
 					];	
 	}
 
@@ -28,7 +29,6 @@ class HomeController extends Controller
 						'slide_shows' => SlideShow::orderBy('index', 'asc')->get(),
 						'project_categories' => ProjectCategory::orderBy('index', 'asc')->get(),
 						'activity_categories' => ActivityCategory::orderBy('index', 'asc')->get(),
-						'documents' => Document::orderBy('created_at', 'desc')->get(),
 					];
 		return view('frontend.home', $this->data);
 	}
