@@ -25,10 +25,22 @@
 							@else
 							<li class="nav-item">
 								<a class="nav-link" href="{{ $menu->url }}">{{ $menu->$name }}</a>
+								<ul class="list-unstyled">
+											<li>
+												<a href="#">Level 1</a>
+												<ul class="list-unstyled">
+														<li>
+															<a href="#">Level 2</a>
+														</li>
+												</ul>
+											</li>
+									</ul>
 							</li>
 							@endif
 					@endforeach
-					
+							<li class="nav-item">
+							<a class="nav-link" href="#" data-toggle="tab">Hello <i class="fa fa-angle-down"></i></a>
+							</li>
 					{{-- <li class="nav-item active">
 						<a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
 					</li>

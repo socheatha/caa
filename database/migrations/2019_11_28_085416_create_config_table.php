@@ -59,7 +59,7 @@ class CreateConfigTable extends Migration
             $table->string('copyright_my')->nullable();
             $table->string('copyright_sa')->nullable();
 
-            $table->string('sidebar_right')->nullable();
+            $table->text('sidebar_right')->nullable();
             $table->string('language_en')->nullable();
             $table->string('language_kh')->nullable();
             $table->string('language_my')->nullable();

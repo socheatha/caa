@@ -119,6 +119,7 @@ class ConfigController extends Controller
      */
     public function update(Request $request, Config $config)
     {
+        dd($request->side_right);
         if ($request->hasFile('logo')) {
             $path = 'images/config/';
             $extension = Input::file('logo')->getClientOriginalExtension(); 
@@ -173,6 +174,7 @@ class ConfigController extends Controller
             'copyright_my' => !empty((($request->copyright_my)? $request->copyright_my : $request->copyright_en))?(($request->copyright_my)? $request->copyright_my : $request->copyright_en):$config->copyright_my,
             'copyright_sa' => !empty((($request->copyright_sa)? $request->copyright_sa : $request->copyright_en))?(($request->copyright_sa)? $request->copyright_sa : $request->copyright_en):$config->copyright_sa,
 
+            'sidebar_right' => !empty($request->sidebar_right)?$request->sidebar_right:$config->sidebar_right,
             'language_en' => !empty($request->language_en)?$request->language_en:'English',
             'language_kh' => !empty($request->language_kh)?$request->language_kh:'Khmer',
             'language_my' => !empty($request->language_my)?$request->language_my:'Malaysia',
@@ -187,23 +189,26 @@ class ConfigController extends Controller
 
     public function Sidebar_Right(Request $request, Config $config)
     {
-        if ($request->file('sidebar_right')) {
+        // if ($request->file('sidebar_right')) {
 
-            $path = $this->path. $config->id .'/';
-            if (!file_exists($path)) {
-                    mkdir($path, 666, true);
-            }
+        //     $path = $this->path. $config->id .'/';
+        //     if (!file_exists($path)) {
+        //             mkdir($path, 666, true);
+        //     }
 
-            File::delete($path .'/sidebar_img_'.$config->sidebar_right);
-            File::delete($path .'/'.$config->sidebar_right);
+        //     File::delete($path .'/sidebar_img_'.$config->sidebar_right);
+        //     File::delete($path .'/'.$config->sidebar_right);
 
-            $image = $request->file('sidebar_right');
-            $sidebar_right = time() .'_'. $config->id .'.png';
-            $sidebar_img = Image::make($image->getRealPath())->resize(260, 180)->save($path.'sidebar_img_'. $sidebar_right);
-            $img = Image::make($image->getRealPath())->resize(1000, 690)->save($path.$sidebar_right);
-            $config->update(['sidebar_right' => $sidebar_right]);
-        }
+        //     $image = $request->file('sidebar_right');
+        //     $sidebar_right = time() .'_'. $config->id .'.png';
+        //     $sidebar_img = Image::make($image->getRealPath())->resize(260, 180)->save($path.'sidebar_img_'. $sidebar_right);
+        //     $img = Image::make($image->getRealPath())->resize(1000, 690)->save($path.$sidebar_right);
+        //     $config->update(['sidebar_right' => $sidebar_right]);
+        // }
         // Redirect
+        $config->update([
+            'sidebar_right' => !empty($request->sidebar_right)?$request->sidebar_right:$config->sidebar_right,
+        ]);
         return redirect()->route('admin.config.index')
             ->with('success', '<strong>' .$config->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
     }

@@ -581,7 +581,8 @@
 					<tbody>
 						<tr>
 							<th width="250px">
-								<img class="img-thumbnail" width="100px" src="/images/sidebar_right/{{ $config->id }}/sidebar_img_{{ $config->sidebar_right }}" alt="">
+								{{((isset($config->sidebar_right))? $config->sidebar_right : '' )}}
+								{{-- <img class="img-thumbnail" width="100px" src="/images/sidebar_right/{{ $config->id }}/sidebar_img_{{ $config->sidebar_right }}" alt=""> --}}
 							</th>
 						</tr>
 					</tbody>
@@ -591,12 +592,22 @@
 						<div class="modal-content">
 							<div class="modal-header">
 						  		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="fa fa-times"></span></button>
-						  		<h4 class="modal-title" id="SidebarImageModalLabel">Change Sidebar Thumbnail (1000px x 690px)</h4>
+						  		<h4 class="modal-title" id="SidebarImageModalLabel">Change Sidebar Right</h4>
 							</div>
 							
 							{!! Form::open(['url' => '','method' => 'post', 'enctype'=>'multipart/form-data','class' => 'mt-3','id' => 'imageForm']) !!}
 							{!! Form::hidden('_method', 'PUT') !!}
-								<div class="modal-body text-center">
+							<div class="col-sm-12">
+								<div class="form-group {!! (($errors->has('sidebar_right'))? 'has-error':'') !!}">
+									{!! Html::decode(Form::label('sidebar_right', "Sidebar Right")) !!}
+									{!! Form::textarea('sidebar_right', ((isset($config->sidebar_right))? $config->sidebar_right : '' ), ['class' => 'form-control my-editor','id' => 'sidebar_right','placeholder' => 'sidebar right']) !!}
+									{!! $errors->first('sidebar_right', '<span class="help-block">:message</span>') !!}
+								</div>
+							</div>
+
+
+
+								<!-- <div class="modal-body text-center">
 									<div class="fileinput fileinput-new" data-provides="fileinput" style="max-width: 100%;">
 										<div class="fileinput-new thumbnail" style="width: 100%; height: auto;">
 											<img id="sidebar_Img" data-src="" src="" alt="...">
@@ -609,7 +620,7 @@
 											<a href="#" class="btn btn-warning fileinput-exists mt-2" data-dismiss="fileinput">Remove</a>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="modal-footer">
 									@include('admin.components.submit')
 								</div>
@@ -635,6 +646,8 @@
 			white-space: nowrap;
 		}
 	</style>
+		<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
+	<script src="{{ asset('admin_asset/ckeditor/ckeditor.js') }}"></script>
 	<script type="text/javascript">
 		$('.btnImage').click(function () {
 
