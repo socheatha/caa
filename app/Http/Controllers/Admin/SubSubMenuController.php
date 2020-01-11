@@ -91,21 +91,22 @@ class SubSubMenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SubSubMenuRequest $request, SubSubMenu $sub_subMenu)
     {
-        $subsubMenu->update([
+        $sub_subMenu->update([
             'name_en' => $request->name_en,
             'name_kh' => (($request->name_kh)? $request->name_kh : $request->name_en),
             'name_my' => (($request->name_my)? $request->name_my : $request->name_en),
             'name_sa' => (($request->name_sa)? $request->name_sa : $request->name_en),
             'url' => $request->url,
             'index' => $request->index,
+            'sub_menu_id' => $request->sub_menu_id,
             'status' => (($request->status==null)? 0 : 1),
             'updated_by' => Auth::user()->id,
         ]);
         // Redirect
-        return redirect()->route('admin.sub_menu.edit', $subsubMenu->id)
-        ->with('success', '<strong>' .$subsubMenu->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
+        return redirect()->route('admin.sub_sub_menu.edit', $sub_subMenu->id)
+        ->with('success', '<strong>' .$sub_subMenu->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
     }
 
     /**
@@ -114,13 +115,13 @@ class SubSubMenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SubSubMenu $sub_subMenu)
     {
-        $name = $subMenu->name_en;
-		if ($subMenu->delete()){
+        $name = $sub_subMenu->name_en;
+		if ($sub_subMenu->delete()){
             // Redirect
-            return redirect()->route('admin.sub_menu.index')
-                ->with('success', '<strong>' . $subMenu->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
+            return redirect()->route('admin.sub_sub_menu.index')
+                ->with('success', '<strong>' . $sub_subMenu->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
         }
     }
 }
