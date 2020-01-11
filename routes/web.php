@@ -46,6 +46,7 @@
 
     Route::resource('main_menu', 'MainMenuController')->except(['show']);
     Route::resource('sub_menu', 'SubMenuController')->except(['show']);
+    Route::resource('sub_sub_menu', 'SubSubMenuController')->except(['show']);
     // Route::resource('extra_menu', 'ExtraMenuController');
 
     Route::resource('config', 'ConfigController');
@@ -70,6 +71,8 @@
     Route::resource('about_us', 'AboutUsController');
 
     Route::resource('website-config', 'ConfigController');
+    Route::put('config/{config}/sidebar_right', 'ConfigController@Sidebar_Right')->name('config.sidebar_right');
+    
     
     Route::get('donation', 'DonationController@index')->name('donation.index');
     Route::put('donation/update', 'DonationController@update')->name('donation.update');

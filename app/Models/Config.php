@@ -48,6 +48,11 @@ class Config extends BaseModel
 		'body_color',
 		'menu_active_color',
 		'text_color',
+		'sidebar_right',
+		'language_en',
+		'language_kh',
+		'language_my',
+		'language_sa',
 		'created_by',
 		'updated_by'
 	];

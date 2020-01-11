@@ -21,6 +21,7 @@
         <ul class="treeview-menu">
         <li class="{{ ((Auth::user()->sidebarActive() == 'main_menu' )? 'active':'') }}"><a href="{{ route('admin.main_menu.index') }}"><i class="far fa-circle"></i> Main Menu</a></li>
           <li class="{{ ((Auth::user()->sidebarActive() == 'sub_menu' )? 'active':'') }}"><a href="{{ route('admin.sub_menu.index') }}"><i class="far fa-circle"></i> Sub Menu</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'sub_sub_menu' )? 'active':'') }}"><a href="{{ route('admin.sub_sub_menu.index') }}"><i class="far fa-circle"></i> Sub Sub-Menu</a></li>
         </ul>
       </li>
 

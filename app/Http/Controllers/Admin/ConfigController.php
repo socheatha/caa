@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Auth;
+use Image;
 use File;
 use App\Models\Config;
 use Illuminate\Http\Request;
@@ -11,26 +12,29 @@ use Illuminate\Support\Facades\Input;
 
 class ConfigController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $path;
+
+    public function __construct()
+    {
+        $this->path = public_path().'/images/sidebar_right/';
+    }
     public function index()
     {
         $config=Config::get()->first();
         if(!$config){
             Config::create([
                 'logo'=>'1',
-                'email'=>'1',
-                'social'=>'1',
-                'fb_url'=>'1',
-                'map_location'=>'1',
-                'header_color'=>'1',
-                'footer_color'=>'1',
-                'body_color'=>'1',
-                'menu_active_color'=>'1',
-                'text_color'=>'1',
+                'email'=>'me@bsssolution.com',
+                'instagram_url'=>'https://instagram.com',
+                'fb_url'=>'https://facebook.com',
+                'tw_url'=>'https://twitter.com',
+                'linkedin_url'=>'https://linkedin.com',
+                'map_location'=>'#FFF',
+                'header_color'=>'#FFF',
+                'footer_color'=>'#FFF',
+                'body_color'=>'#FFF',
+                'menu_active_color'=>'#FFF',
+                'text_color'=>'#FFF',
                 'phone_en'=>'1',
                 'phone_kh'=>'1',
                 'phone_my'=>'1',
@@ -47,6 +51,11 @@ class ConfigController extends Controller
                 'welcome_message_kh'=>'1',
                 'welcome_message_my'=>'1',
                 'welcome_message_sa'=>'1',
+                'sidebar_right',
+                'language_en'=>'English',
+                'language_kh'=>'Khmer',
+                'language_my'=>'Malaysia',
+                'language_sa'=>'Arab',
                 'created_by'=>'1',
                 'updated_by'=>'1'
             ]);
@@ -164,6 +173,10 @@ class ConfigController extends Controller
             'copyright_my' => !empty((($request->copyright_my)? $request->copyright_my : $request->copyright_en))?(($request->copyright_my)? $request->copyright_my : $request->copyright_en):$config->copyright_my,
             'copyright_sa' => !empty((($request->copyright_sa)? $request->copyright_sa : $request->copyright_en))?(($request->copyright_sa)? $request->copyright_sa : $request->copyright_en):$config->copyright_sa,
 
+            'language_en' => !empty($request->language_en)?$request->language_en:'English',
+            'language_kh' => !empty($request->language_kh)?$request->language_kh:'Khmer',
+            'language_my' => !empty($request->language_my)?$request->language_my:'Malaysia',
+            'language_sa' => !empty($request->language_sa)?$request->language_sa:'Arab',
             'updated_by' => Auth::user()->id,
         ]);
         
@@ -172,6 +185,28 @@ class ConfigController extends Controller
             ->with('success', __('alert.crud.success.create', ['name' => Auth::user()->module()]));
     }
 
+    public function Sidebar_Right(Request $request, Config $config)
+    {
+        if ($request->file('sidebar_right')) {
+
+            $path = $this->path. $config->id .'/';
+            if (!file_exists($path)) {
+                    mkdir($path, 666, true);
+            }
+
+            File::delete($path .'/sidebar_img_'.$config->sidebar_right);
+            File::delete($path .'/'.$config->sidebar_right);
+
+            $image = $request->file('sidebar_right');
+            $sidebar_right = time() .'_'. $config->id .'.png';
+            $sidebar_img = Image::make($image->getRealPath())->resize(260, 180)->save($path.'sidebar_img_'. $sidebar_right);
+            $img = Image::make($image->getRealPath())->resize(1000, 690)->save($path.$sidebar_right);
+            $config->update(['sidebar_right' => $sidebar_right]);
+        }
+        // Redirect
+        return redirect()->route('admin.config.index')
+            ->with('success', '<strong>' .$config->name_en . '</strong> ' . __('alert.crud.success.update', ['name' => Auth::user()->module()]));
+    }
     /**
      * Remove the specified resource from storage.
      *

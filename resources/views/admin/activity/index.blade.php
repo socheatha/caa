@@ -75,7 +75,7 @@
 							<td class="td-action text-right">
 
 								{{-- Edit Button --}}
-								<button class="btn btn-warning btnImage" data-url="{{ route('admin.activity.update_image', $activity->id) }}" data-src="{{ $activity->thumbnail }}" data-id="{{ $activity->id }}"><i class="fa fa-image"></i></button>
+								<button class="btn btn-warning btnImage" data-url="" data-src="{{ $activity->thumbnail }}" data-id="{{ $activity->id }}"><i class="fa fa-image"></i></button>
 								{{-- Edit Button --}}
 								<a href="{{ route('admin.activity.edit',$activity->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 								{{-- Delete Button --}}

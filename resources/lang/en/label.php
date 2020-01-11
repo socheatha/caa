@@ -15,7 +15,7 @@ return [
   	],
 
     'main' => 'ទីតាំង',
-    'website-config'  =>  'Website Config',
+    'config'  =>  'Website Config',
     'documents'  =>  'Documents',
     'about_us'  =>  'About Us',
   ],
@@ -27,6 +27,7 @@ return [
     'main_menu' => 'Main Menu',
     'sub_menu' => 'Sub Menu',
     'extra_menu' => 'Extra Menu',
+    'sub_sub_menu' => 'Sub Sub-Menu',
   	'slide_show' => 'Slide Show',
     'partner' => 'Partner',
 
@@ -60,6 +61,7 @@ return [
       
       'main_menu' => 'Main Menu',
       'sub_menu' => 'Sub Menu',
+      'sub_sub_menu' => 'Sub Sub-Menu',
       'extra_menu' => 'Extra Menu',
       'slide_show' => 'Slide Show',
       'partner' => 'Partner',
