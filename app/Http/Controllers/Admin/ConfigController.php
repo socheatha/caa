@@ -118,8 +118,7 @@ class ConfigController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Config $config)
-    {
-        dd($request->side_right);
+    {   
         if ($request->hasFile('logo')) {
             $path = 'images/config/';
             $extension = Input::file('logo')->getClientOriginalExtension(); 
@@ -174,7 +173,6 @@ class ConfigController extends Controller
             'copyright_my' => !empty((($request->copyright_my)? $request->copyright_my : $request->copyright_en))?(($request->copyright_my)? $request->copyright_my : $request->copyright_en):$config->copyright_my,
             'copyright_sa' => !empty((($request->copyright_sa)? $request->copyright_sa : $request->copyright_en))?(($request->copyright_sa)? $request->copyright_sa : $request->copyright_en):$config->copyright_sa,
 
-            'sidebar_right' => !empty($request->sidebar_right)?$request->sidebar_right:$config->sidebar_right,
             'language_en' => !empty($request->language_en)?$request->language_en:'English',
             'language_kh' => !empty($request->language_kh)?$request->language_kh:'Khmer',
             'language_my' => !empty($request->language_my)?$request->language_my:'Malaysia',

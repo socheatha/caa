@@ -38,7 +38,7 @@ return [
     'activity' => 'Activity',
     'about_us' => 'About Us',
 
-    'website-config'  =>  'Website Config',
+    'config'  =>  'Website Config',
     'documents'  =>  'Documents',
     
   ],
@@ -75,7 +75,7 @@ return [
 
       'province' => 'Provinces',
       'district' => 'Districts',
-      'website-config'  =>  'Website Config',
+      'config'  =>  'Website Config',
       'documents'  =>  'Documents',
 
 	  ],
