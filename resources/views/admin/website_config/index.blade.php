@@ -581,7 +581,7 @@
 					<tbody>
 						<tr>
 							<th width="250px">
-								{{((isset($config->sidebar_right))? $config->sidebar_right : '' )}}
+								{!! ((isset($config->sidebar_right))? $config->sidebar_right : '' ) !!}
 								{{-- <img class="img-thumbnail" width="100px" src="/images/sidebar_right/{{ $config->id }}/sidebar_img_{{ $config->sidebar_right }}" alt=""> --}}
 							</th>
 						</tr>
