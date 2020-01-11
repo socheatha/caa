@@ -19,15 +19,6 @@
 											<li>
 												<a href="{{ $sub_menu->url }}">{{ $sub_menu->$name }}</a>
 											</li>
-											<li>
-												<ul class="list-unstyled">
-													@foreach ($menu->SubSubMenu as $sub_sub_menu)
-														<li>
-															<a href="{{ $sub_sub_menu->url }}">{{ $sub_sub_menu->$name }}</a>
-														</li>
-													@endforeach
-												</ul>
-											</li>
 										@endforeach
 									</ul>
 								</li>
