@@ -30,6 +30,7 @@ return [
     'sub_sub_menu' => 'Sub Sub-Menu',
   	'slide_show' => 'Slide Show',
     'partner' => 'Partner',
+    'user' => 'User',
 
     'project_category' => 'Project Category',
     'project' => 'Project',
@@ -58,6 +59,8 @@ return [
 	  'routename' => [
       'admin' => 'Administrator',
       'home' => 'Dashboard',
+      'user' => 'User',
+      'show' => 'Show',
       
       'main_menu' => 'Main Menu',
       'sub_menu' => 'Sub Menu',

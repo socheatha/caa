@@ -25,9 +25,12 @@
 		
 				use App\Models\MainMenu;
 				use App\Models\Partner;
+				use App\Models\Language;
 				
 				$menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
 				$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
+				$languages = Language::all();
+				$language = Language::where('nationality', $web_lang)->first();
 
 
 		?>

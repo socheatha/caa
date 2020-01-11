@@ -9,7 +9,7 @@ class Language extends Model
 {
 	protected $table = 'language';
 
-	protected $fillable = ['language','nationality','detail','index','status','created_by','updated_by'];
+	protected $fillable = ['language_en','language_kh','language_my','language_sa','nationality','detail','index','status','created_by','updated_by'];
 
 
 	public function CreatedBy(){

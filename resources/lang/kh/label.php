@@ -45,6 +45,7 @@ return [
       'slide_show' => 'Slide Show',
       'partner' => 'Partner',
       'home' => 'ផ្ទះដើម',
+      'show' => 'Show',
       
       'main-menu' => 'ម៉េនុយមេ',
       'sub-menu' => 'ម៉េនុយកូន',

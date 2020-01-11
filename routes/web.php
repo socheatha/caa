@@ -77,5 +77,14 @@
     Route::get('donation', 'DonationController@index')->name('donation.index');
     Route::put('donation/update', 'DonationController@update')->name('donation.update');
 
+        
+    // Name Space admin/
+    Route::put('user/updatePassword/{user}', 'UserController@updatePassword')->name('user.updatePassword');
+    Route::put('user/updateInfo/{user}', 'UserController@updateInfo')->name('user.updateInfo');
+    Route::put('user/updateImage/{user}', 'UserController@updateImage')->name('user.updateImage');
+    Route::resource('user', 'UserController');
+    Route::get('user/image/{user}', 'UserController@image')->name('user.image');
+    Route::post('user/password_confirm', 'UserController@password_confirm')->name('user.password_confirm');
+
   });
 

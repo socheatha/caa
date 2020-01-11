@@ -13,9 +13,7 @@
 					<span class="corner"></span>
 				</span>
 				
-			</h5>
-				<a href="#" class="show-all">Show all</a>
-			
+			</h5>			
 		</div>
 		<div class="content">
 			<ul class="doc-list list-unstyled">
@@ -26,7 +24,10 @@
 				@endforeach
 			</ul>
 		</div>
+	</section>
 
+	<section class="block-sidebar-right">
+		{!! $web_config->sidebar_right !!}
 	</section>
 	
 </section>

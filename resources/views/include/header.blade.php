@@ -1,4 +1,13 @@
 
+<?php
+
+		$web_lang = ((!session('locale'))? 'en':session('locale') );
+		
+		$lang_name = 'language_'.$web_lang;
+
+?>
+
+
 <div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=503208063400589&autoLogAppEvents=1"></script>
 	
@@ -13,21 +22,23 @@
 				<div class="col-sm-3 offset-sm-6 text-center">
 					<div class="dropdown dropdown-lang">
 						<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="flag flag-{{ $web_lang }}"></div> {{ $web_lang }}
+							<div class="flag flag-{{ $language->nationality }}"></div> {{ $language->$lang_name }}
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-							<a href="{{ route('locale', 'kh') }}" class="dropdown-item">
-								<div class="flag flag-kh"></div> &nbsp;Khmer
-							</a>
-							<a href="{{ route('locale', 'en') }}" class="dropdown-item">
-								<div class="flag flag-en"></div> &nbsp;English
+							@foreach ($languages as $language)
+								<a href="{{ route('locale', $language->nationality ) }}" class="dropdown-item">
+									<div class="flag flag-{{ $language->nationality }}"></div> &nbsp;{{ $language->$lang_name }}
+								</a>
+							@endforeach
+							{{-- <a href="{{ route('locale', 'en') }}" class="dropdown-item">
+								<div class="flag flag-en"></div> &nbsp;{{ $language->$lang_kh }}
 							</a>
 							<a href="{{ route('locale', 'my') }}" class="dropdown-item">
-								<div class="flag flag-my"></div> &nbsp;Malay
+								<div class="flag flag-my"></div> &nbsp;{{ $language->$lang_my }}
 							</a>
 							<a href="{{ route('locale', 'sa') }}" class="dropdown-item">
-								<div class="flag flag-sa"></div> &nbsp;Arab
-							</a>
+								<div class="flag flag-sa"></div> &nbsp;{{ $language->$lang_sa }}
+							</a> --}}
 						</div>
 					</div>
 					<div class="social-header">

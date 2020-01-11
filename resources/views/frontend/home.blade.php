@@ -59,7 +59,7 @@
 				{{-- Block Content --}}
 				
 				@foreach ($project_categories as $project_category)
-					@if (count($project_category->projects) > 5)
+					@if (count($project_category->projects) > 0)
 						<section id="block-front-latest-news" class="block-content" data-color="darkblue">
 							<div class="title-block">
 								<h4 class="title">
@@ -113,7 +113,7 @@
 
 				{{-- Block Content --}}
 				@foreach ($activity_categories as $activity_category)
-					@if (count($activity_category->activities) > 5)
+					@if (count($activity_category->activities) > 0)
 						<section id="block-front-latest-news" class="block-content" data-color="darkblue">
 							<div class="title-block">
 								<h4 class="title">

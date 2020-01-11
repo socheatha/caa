@@ -72,9 +72,11 @@
         </ul>
       </li>
 
+      <li class="{{ ((Auth::user()->sidebarActive() == 'user' )? 'active':'') }}"><a href="{{ route('admin.user.index') }}"><i class="fa fa-user-friends"></i> Users</a></li>
 
+{{-- 
       <li class="header">LABELS</li>
-      <li><a href="#"><i class="far fa-circle text-red"></i> <span>Logout</span></a></li>
+      <li><a href="#"><i class="far fa-circle text-red"></i> <span>Logout</span></a></li> --}}
     </ul>
   </section>
   <!-- /.sidebar -->

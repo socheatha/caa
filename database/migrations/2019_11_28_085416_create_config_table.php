@@ -60,10 +60,6 @@ class CreateConfigTable extends Migration
             $table->string('copyright_sa')->nullable();
 
             $table->text('sidebar_right')->nullable();
-            $table->string('language_en')->nullable();
-            $table->string('language_kh')->nullable();
-            $table->string('language_my')->nullable();
-            $table->string('language_sa')->nullable();
 
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();

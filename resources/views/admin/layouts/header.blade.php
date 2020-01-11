@@ -1,7 +1,7 @@
 
 <header class="main-header">
   <!-- Logo -->
-  <a href="index2.html" class="logo">
+    <a href="{{ route('admin.home') }}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>CAA</b></span>
     <!-- logo for regular state and mobile devices -->
@@ -18,48 +18,41 @@
       <ul class="nav navbar-nav">
 
         <!-- User Account: style can be found in dropdown.less -->
-        <li class="dropdown user user-menu">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="/images/users/default_user.png" class="user-image" alt="User Image">
-            <span class="hidden-xs">Alexander Pierce</span>
-          </a>
-          <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
-              <img src="/images/users/default_user.png" class="img-circle" alt="User Image">
+        
+				<li class="dropdown user user-menu">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="/images/users/{{ Auth::user()->profile }}" class="user-image" alt="User Image">
+						<span class="hidden-xs">{{ Auth::user()->name }}</span>
+					</a>
+					<ul class="dropdown-menu">
+						<!-- User image -->
+						<li class="user-header">
+							<img src="/images/users/{{ Auth::user()->profile }}" class="img-circle" alt="User Image">
 
-              <p>
-                Alexander Pierce - Web Developer
-                <small>Member since Nov. 2012</small>
-              </p>
-            </li>
-            <!-- Menu Body -->
-            <li class="user-body">
-              <div class="row">
-                <div class="col-xs-4 text-center">
-                  <a href="#">Followers</a>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <a href="#">Sales</a>
-                </div>
-                <div class="col-xs-4 text-center">
-                  <a href="#">Friends</a>
-                </div>
-              </div>
-              <!-- /.row -->
-            </li>
-            <!-- Menu Footer-->
-            <li class="user-footer">
-              <div class="pull-left">
-                <a href="#" class="btn btn-info btn-flat"><i class="fa fa-user"></i> Profile</a>
-              </div>
-              <div class="pull-right">
-                <a href="#" class="btn btn-danger btn-flat"><i class="fa fa-sign-out-alt"></i> Sign out</a>
-              </div>
-            </li>
-          </ul>
-        </li>
+							<p>
+								{{ Auth::user()->name }}
+								<small>Member since : {{ Auth::user()->created_at->format('M d Y') }}</small>
+							</p>
+						</li>
 
+						<!-- Menu Footer-->
+						<li class="user-footer">
+							<div class="pull-left">
+								<a href="{{ route('admin.user.show', Auth::user()->id) }}" class="btn btn-info btn-flat"><i
+										class="fa fa-user"></i>
+									&nbsp;Profile</a>
+							</div>
+							<div class="pull-right">
+								<a class="btn btn-flat btn-danger" href="{{ route('logout') }}"
+									onclick="event.preventDefault();  document.getElementById('logout-form').submit();"><i
+										class="fas fa-sign-out-alt"></i> &nbsp;Sign out</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+								</form>
+							</div>
+						</li>
+					</ul>
+				</li>
         <!-- Control Sidebar Toggle Button -->
         <li>
           <a href="#" data-toggle="control-sidebar"><i class="fas fa-cog"></i></a>

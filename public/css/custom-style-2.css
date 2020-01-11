@@ -445,7 +445,6 @@ body{ background: #f9f9f9;}
 /* Block rightside */
 .block-right-side{
 	padding-top: 20px;
-
 }
 
 #block-right-side .show-all{
@@ -484,6 +483,15 @@ body{ background: #f9f9f9;}
 	text-decoration: none;
 }
 
+.block-sidebar-right{
+	/* border: 1px solid red; */
+}
+
+.block-sidebar-right img{
+	width: 100% !important;
+	height: auto !important;
+}
+
 /*block about us page*/
 
 #navtab .nav-link.active {
@@ -502,14 +510,28 @@ body{ background: #f9f9f9;}
 
 /* Project */
 
-.block-project{
+.block-category{
 	padding: 15px;
 	margin: 30px 0;
 	background: #fff;
 	box-shadow: 0 0 5px rgba(000, 000, 000, 0.2);
 }
 
-.block-project .img{
+.block-category h4 a{
+	color: #07027B;
+	display: block;
+	transition: 0.3s ease-in;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.block-category h4 a:hover{
+	color: #101010;
+	text-decoration: none;
+}
+
+.block-category .img{
 	height: 180px;
 }
 
