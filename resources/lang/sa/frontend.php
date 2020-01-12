@@ -3,17 +3,17 @@
 return [
     
   'buttons' => [
-    'show_all' => 'Show All',
+    'show_all' => 'عرض الكل',
   ],
 
   'header' => [
     'title' => 'Manage ',
   ],
   'sidebar_right' => [
-    'download' => 'Download ',
+    'download' => 'تحميل',
   ],
   'footer' => [
-    'partner' => 'Our Partners ',
+    'partner' => 'شركاؤنا ',
   ],
 
 

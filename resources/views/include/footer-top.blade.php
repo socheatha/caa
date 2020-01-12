@@ -1,6 +1,6 @@
 <footer id="top-footer">
   <div class="container">
-	<h3>Our Partner</h3>
+	<h3>{{ __('frontend.footer.partner') }}</h3>
 	<div class="customer-logos">
 		
 		@foreach ($partners as $partner)

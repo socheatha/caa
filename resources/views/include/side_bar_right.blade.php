@@ -9,7 +9,7 @@
 		<div class="title-block">
 			<h5 class="title">
 				<span class="text">
-					Download
+				{{ __('frontend.sidebar_right.download') }}
 					<span class="corner"></span>
 				</span>
 				
