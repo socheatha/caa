@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\MainMenu;
+use App\Models\SubSubMenu;
 use App\Models\BaseModel;
 
 class SubMenu extends BaseModel
@@ -24,6 +25,9 @@ class SubMenu extends BaseModel
 
 	public function MainMenu(){
 		return $this->belongsTo(MainMenu::class,'main_menu_id');
+	}
+	public function SubSubMenu(){
+		return $this->hasMany(SubSubMenu::class,'sub_menu_id');
 	}
 	public function CreatedBy(){
 		return $this->belongsTo(User::class,'created_by');
