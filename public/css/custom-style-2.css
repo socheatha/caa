@@ -30,6 +30,26 @@ body{ background: #f9f9f9;}
 	padding: 2px 12.5px;
 	font-size: 13.5px;
 }
+/* ============================================================ */
+
+.dropdown-submenu {
+	position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+	top: 0;
+	left: 100%;
+	margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:after {
+	text-decoration: underline;
+	transform: rotate(-90deg);
+} 
+
+
+
+/* ========================================================= */
 .social-header ul{
 	margin: 0;
 }
