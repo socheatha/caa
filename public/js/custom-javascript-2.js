@@ -19,6 +19,18 @@ $(document).ready(function(){
       }
     }]
   });
+  
+  $('.block-content').each(function () {
+    // alert( $(this).data('color') );
+
+    $(this).find('.title-block').css({ 'border-bottom' : '1px solid '+ $(this).data('color') });
+
+    $(this).find('.text').css({ 'background' : $(this).data('color')});
+    
+    $(this).find('.big-article h4').css({ 'background' : $(this).data('color')});
+    
+
+  });
 });
 
 

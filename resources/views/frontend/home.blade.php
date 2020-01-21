@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-{{ dd ("PHP Version:". phpversion()) }}
 	{{-- Block slider --}}
 	<section id="block-front-slider">
 		<div id="frontSlideShows" class="carousel slide" data-ride="carousel">
@@ -61,12 +60,11 @@
 				
 				@foreach ($project_categories as $project_category)
 					@if (count($project_category->projects) > 0)
-						<section id="block-front-latest-news" class="block-content" data-color="darkblue">
+						<section class="block-content" data-color="{{ $project_category->color }}">
 							<div class="title-block">
 								<h4 class="title">
 									<span class="text">
 										{{ $project_category->$name }}
-										<span class="corner"></span>
 									</span>
 									
 								</h4>
