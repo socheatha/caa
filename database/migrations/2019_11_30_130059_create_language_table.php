@@ -41,10 +41,10 @@ class CreateLanguageTable extends Migration
             
         // Insert some languages
         $languages = [
-            ['language' => 'English', 'nationality' => 'en', 'index' => '1', 'status'=>'1', 'detail' => 'English'],
-            ['language' => 'Khmer', 'nationality' => 'kh', 'index' => '2', 'status'=>'1', 'detail' => 'Khmer'],
-            ['language' => 'Malay', 'nationality' => 'my', 'index' => '3', 'status'=>'1', 'detail' => 'Malay'],
-            ['language' => 'Arab', 'nationality' => 'sa', 'index' => '4', 'status'=>'1', 'detail' => 'Arab'],
+            ['language_en' => 'English', 'language_kh' => 'អង់គ្លេស', 'language_my' => 'Bahasa Inggeris', 'language_sa' => 'الإنجليزية', 'nationality' => 'en', 'index' => '1', 'status'=>'1', 'detail' => 'English'],
+            ['language_en' => 'Khmer', 'language_kh' => 'ខ្មែរ', 'language_my' => 'Khmer', 'language_sa' => 'الخمير', 'nationality' => 'kh', 'index' => '2', 'status'=>'1', 'detail' => 'Khmer'],
+            ['language_en' => 'Malay', 'language_kh' => 'ម៉ាឡេស៊ី', 'language_my' => 'Melayu', 'language_sa' => 'لغة الملايو', 'nationality' => 'my', 'index' => '3', 'status'=>'1', 'detail' => 'Malay'],
+            ['language_en' => 'Arab', 'language_kh' => 'អារ៉ាប់', 'language_my' => 'Arab', 'language_sa' => 'عرب', 'nationality' => 'sa', 'index' => '4', 'status'=>'1', 'detail' => 'Arab'],
         ];
 
         DB::table('language')->insert($languages);

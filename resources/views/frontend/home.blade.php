@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{ dd ("PHP Version:". phpversion()) }}
 	{{-- Block slider --}}
 	<section id="block-front-slider">
 		<div id="frontSlideShows" class="carousel slide" data-ride="carousel">
