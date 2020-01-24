@@ -12,6 +12,7 @@
     ]);
 
   Route::get('/', 'HomeController@index')->name('home');
+  Route::get('/home', 'HomeController@index')->name('home');
 
   // block about us
   Route::group(['namespace' => 'Frontend'], function () {

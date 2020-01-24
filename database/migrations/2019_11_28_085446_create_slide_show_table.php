@@ -26,10 +26,10 @@ class CreateSlideShowTable extends Migration
             $table->string('name_my');
             $table->string('name_sa');
 
-            $table->string('short_desc_en');
-            $table->string('short_desc_kh');
-            $table->string('short_desc_my');
-            $table->string('short_desc_sa');
+            $table->text('short_desc_en');
+            $table->text('short_desc_kh');
+            $table->text('short_desc_my');
+            $table->text('short_desc_sa');
 
             $table->text('detail_en');
             $table->text('detail_kh');

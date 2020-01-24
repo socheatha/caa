@@ -4,11 +4,11 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
+                {!! $activity->$name !!}
                 <br/>
                 <img src="/images/projects/{!! $project->id !!}/{!! $project->thumbnail !!}" alt="">
                 <br/>
                 <br/>
-                {{-- {{ session('locale') }} --}}
                 {!! $project->$detail !!}
             </div>
             <div class="col-sm-4">

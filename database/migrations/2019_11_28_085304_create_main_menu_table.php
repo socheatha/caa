@@ -37,6 +37,18 @@ class CreateMainMenuTable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
+            
+            // Insert some main_menus
+            $main_menus = [
+                ['name_en' => 'Home', 'name_kh' => 'ផ្ទាំងដើម', 'name_my' => 'BahaRumah', 'name_sa' => 'الصفحة الرئيسية', 'index' => '1', 'url' => 'http://charity-website.bsssolution.com/', 'status'=>'1', 'created_by' => '1', 'updated_by' => '1'],
+                ['name_en' => 'About Us', 'name_kh' => 'អំពីយើងខ្ញុំ', 'name_my' => 'Tentang kita', 'name_sa' => 'معلومات عنا', 'index' => '2', 'url' => 'http://charity-website.bsssolution.com/about-us', 'status'=>'1', 'created_by' => '1', 'updated_by' => '1'],
+                ['name_en' => 'Contact Us', 'name_kh' => 'ទាក់ទងយើងខ្ញុំ', 'name_my' => 'Hubungi Kami', 'name_sa' => 'اتصل بنا', 'index' => '3', 'url' => 'http://charity-website.bsssolution.com/contact-us', 'status'=>'1', 'created_by' => '1', 'updated_by' => '1'],
+                ['name_en' => 'Donation', 'name_kh' => 'ការបរិច្ចាក', 'name_my' => 'Derma', 'name_sa' => 'هبة', 'index' => '4', 'url' => 'http://charity-website.bsssolution.com/donation', 'status'=>'1', 'created_by' => '1', 'updated_by' => '1'],
+                ['name_en' => 'Projects', 'name_kh' => 'គម្រោង', 'name_my' => 'Projek', 'name_sa' => 'مشروع', 'index' => '4', 'url' => 'http://charity-website.bsssolution.com/donation', 'status'=>'1', 'created_by' => '1', 'updated_by' => '1'],
+                ['name_en' => 'Activities', 'name_kh' => 'សកម្មភាព', 'name_my' => 'Aktiviti', 'name_sa' => 'نشاط', 'index' => '4', 'url' => 'http://charity-website.bsssolution.com/donation', 'status'=>'1', 'created_by' => '1', 'updated_by' => '1'],
+            ];
+    
+            DB::table('main_menu')->insert($main_menus);
         });
     }
 

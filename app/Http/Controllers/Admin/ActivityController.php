@@ -6,7 +6,9 @@ use App\Models\Activity;
 use App\Models\ActivityCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ActivityRequest;
+use App\Http\Requests\ActivityStoreRequest;
+use App\Http\Requests\ActivityUpdateRequest;
+use App\Http\Requests\ActivityImageRequest;
 use Auth;
 use Image;
 use File;
@@ -38,7 +40,7 @@ class ActivityController extends Controller
 	}
 
 	
-	public function store(ActivityRequest $request)
+	public function store(ActivityStoreRequest $request)
 	{
 
 		if ($request->file('thumbnail')) {
@@ -94,7 +96,7 @@ class ActivityController extends Controller
 		return view('admin.activity.edit')->with(compact('activity_categories','activity'));
 	}
 
-	public function update(ActivityRequest $request, Activity $activity)
+	public function update(ActivityUpdateRequest $request, Activity $activity)
 	{
 		$activity->update([
 										'name_en' => $request->name_en,
@@ -121,7 +123,7 @@ class ActivityController extends Controller
 			->with('success', '<strong>' .$activity->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
 	}
 
-	public function update_image(Request $request, Activity $activity)
+	public function update_image(ActivityImageRequest $request, Activity $activity)
 	{
 		if ($request->file('thumbnail')) {
 

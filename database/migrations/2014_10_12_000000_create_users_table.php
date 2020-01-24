@@ -25,6 +25,13 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // Insert some user
+        $user = [
+            ['name' => 'Sokun Sovisal', 'gender' => '1', 'phone' => '0', 'email'=>'sovisal@gmail.com', 'password' => '$2y$10$8wQdheM4HjyIIsfhidzBcePkf.vqU1dOhqNQiGVOFH.6Qsh29fd32'],
+        ];
+
+        DB::table('users')->insert($user);
     }
 
     /**

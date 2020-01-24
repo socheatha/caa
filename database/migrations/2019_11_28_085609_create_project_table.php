@@ -25,10 +25,10 @@ class CreateProjectTable extends Migration
             $table->string('name_my');
             $table->string('name_sa');
 
-            $table->string('short_descript_en');
-            $table->string('short_descript_kh');
-            $table->string('short_descript_my');
-            $table->string('short_descript_sa');
+            $table->text('short_descript_en');
+            $table->text('short_descript_kh');
+            $table->text('short_descript_my');
+            $table->text('short_descript_sa');
 
             $table->text('detail_en');
             $table->text('detail_kh');

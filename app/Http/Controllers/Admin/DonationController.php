@@ -57,7 +57,7 @@ class DonationController extends Controller
                     ]);
         // Redirect
         return redirect()->route('admin.donation.index')
-            ->with('success', __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
+            ->with('success', __('alert.crud.success.update', ['name' => 'Donation']));
     }
 
     

@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
+                {!! $activity->$name !!}
                 <br/>
                 <img src="/images/activities/{!! $activity->id !!}/{!! $activity->thumbnail !!}" alt="">
                 <br/>

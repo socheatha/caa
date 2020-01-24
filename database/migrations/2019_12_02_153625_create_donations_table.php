@@ -26,6 +26,13 @@ class CreateDonationsTable extends Migration
 
             $table->timestamps();
         });
+
+        // Insert some donation
+        $donation = [
+            ['seo_keywords' => 'Donation', 'seo_description' => 'Donation', 'detail_en' => 'Donation', 'detail_kh'=>'Donation', 'detail_my' => 'Donation', 'detail_sa' => 'Donation'],
+        ];
+
+        DB::table('donations')->insert($donation);
     }
 
     /**

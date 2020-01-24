@@ -6,7 +6,9 @@ use App\Models\Project;
 use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProjectRequest;
+use App\Http\Requests\ProjectStoreRequest;
+use App\Http\Requests\ProjectUpdateRequest;
+use App\Http\Requests\ProjectImageRequest;
 use Auth;
 use Image;
 use File;
@@ -39,7 +41,7 @@ class ProjectController extends Controller
 	}
 
 	
-	public function store(ProjectRequest $request)
+	public function store(ProjectStoreRequest $request)
 	{
 
 		if ($request->file('thumbnail')) {
@@ -95,7 +97,7 @@ class ProjectController extends Controller
 		return view('admin.project.edit')->with(compact('project_categories','project'));
 	}
 
-	public function update(ProjectRequest $request, Project $project)
+	public function update(ProjectUpdateRequest $request, Project $project)
 	{
 		$project->update([
 										'name_en' => $request->name_en,
@@ -122,7 +124,7 @@ class ProjectController extends Controller
 			->with('success', '<strong>' .$project->name_en . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
 	}
 
-	public function update_image(Request $request, Project $project)
+	public function update_image(ProjectImageRequest $request, Project $project)
 	{
 		if ($request->file('thumbnail')) {
 
