@@ -554,3 +554,22 @@ body{ background: #f9f9f9;}
 .block-activity .img{
 	height: 180px;
 }
+
+/* =============Contact Us============ */
+.nav_contact li{
+	padding: 5px 0px 5px 0px;
+}
+/* ----map---- */
+.map-responsive{
+	overflow:hidden;
+	padding-bottom:50%;
+	position:relative;
+	height:0;
+}
+.map-responsive iframe{
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}

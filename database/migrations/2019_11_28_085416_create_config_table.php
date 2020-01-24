@@ -37,7 +37,7 @@ class CreateConfigTable extends Migration
             $table->string('instagram_url')->nullable(); 
             $table->string('tw_url')->nullable();
             $table->string('linkedin_url')->nullable();
-            $table->string('map_location')->nullable();
+            $table->text('map_location')->nullable();
 
             $table->text('welcome_message_en')->nullable();
             $table->text('welcome_message_kh')->nullable();

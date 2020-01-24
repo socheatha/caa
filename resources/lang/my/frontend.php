@@ -15,6 +15,13 @@ return [
   'footer' => [
     'partner' => 'Pasangan kami',
   ],
-
+  'contact_us' => [
+    'contact' => 'Hubungi Kami',
+    'phone' => 'Telefon: ',
+    'email' => 'E-mel: ',
+    'address' => 'Alamat: ',
+    'see_on_map' => 'Lihat di peta google ',
+    'facebook' => 'Facebook: ',
+  ],
 
 ];

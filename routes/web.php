@@ -19,7 +19,7 @@
     
     Route::get('about-us', 'AboutUsController@index')->name('about-us');
     
-    Route::get('contact-us', 'ContanUsController@index')->name('contact-us');
+    Route::get('contact_us', 'ContanUsController@index')->name('contact-us');
 
 
     Route::get('document/{document}', 'DocumentController@show')->name('document.show');
