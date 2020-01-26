@@ -63,9 +63,13 @@
 						<section class="block-content" data-color="{{ $project_category->color }}">
 							<div class="title-block">
 								<h4 class="title">
-									<span class="text">
-										{{ $project_category->$name }}
-									</span>
+									<div>
+										<div class="text">
+											<span>
+												{{ $project_category->$name }}
+											</span>
+										</div>
+									</div>
 									
 								</h4>
 								<a href="{{ route('project.project_category', $project_category->id) }}" class="show-all">{{ __('frontend.buttons.show_all') }}</a>
@@ -86,8 +90,8 @@
 										<div class="row">
 											
 											@foreach ($project_category->projects as $key => $project)
-												@if ($key > 0)
-													<div class="col-sm-4">
+												@if ($key > 0 && $key < 7)
+													<div class="col-md-4 col-sm-6">
 														<div class="small-article mb-2">
 															<a href="{{ route('project.detail', $project->id) }}">
 															<div class="img" style="background: url('/images/projects/{{ $project->id }}/{{ 'thumb_'. $project->thumbnail }}') center center; background-size: cover;"></div>
@@ -116,10 +120,13 @@
 						<section id="block-front-latest-news" class="block-content" data-color="darkblue">
 							<div class="title-block">
 								<h4 class="title">
-									<span class="text">
-										{{ $activity_category->$name }}
-										<span class="corner"></span>
-									</span>
+									<div>
+										<div class="text">
+											<span>
+												{{ $activity_category->$name }}
+											</span>
+										</div>
+									</div>
 									
 								</h4>
 								<a href="{{ route('activity.activity_category', $activity_category->id) }}" class="show-all">{{ __('frontend.buttons.show_all') }}</a>
@@ -140,7 +147,7 @@
 										<div class="row">
 											
 											@foreach ($activity_category->activities as $key => $activity)
-												@if ($key > 0)
+												@if ($key > 0 && $key < 7)
 													<div class="col-sm-4">
 														<div class="small-article mb-2">
 															<a href="{{ route('activity.detail', $activity->id) }}">

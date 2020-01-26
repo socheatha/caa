@@ -291,30 +291,22 @@ body{ background: #f9f9f9;}
 
 
 /* Slider Section */
-#block-front-slider{
-  /* height: 400px; */
-}
 #block-front-slider .carousel-item{
   height: 500px;
 }
-
 #block-front-slider .carousel-item .carousel-caption{
-	/* border: 1px solid red; */
 	height: 100%;
 	position: absolute;
 	z-index: 1;
 	top: 0;
 }
-
 #block-front-slider .carousel-item .carousel-caption h2{
-	/* border: 1px solid red; */
 	position: absolute;
 	z-index: 1;
 	top: 25%;
 	text-align: left;
 }
 #block-front-slider .carousel-item .carousel-caption p{
-	/* border: 1px solid red; */
 	position: absolute;
 	z-index: 1;
 	top: 33%;
@@ -329,16 +321,24 @@ body{ background: #f9f9f9;}
 .block-content .title-block{
 	position: relative;
 	border-bottom: 2px solid #EA0000;
-	padding: 3px 0;
 }
 .block-content .title-block .title{
 	margin: 0;
+  overflow: hidden;
 }
-.block-content .title-block .text{
+.block-content .title-block .title > div{
 	background: #EA0000;
-	padding: 2px 0px 2px 15px;
 	position: relative;
+	max-width: 60%;
+}
+.block-content .title-block .title > div .text{
+	background: #EA0000;
+	padding: 3px 0px 3px 15px;
 	color: #fff;
+	width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+	text-overflow: ellipsis;
 }
 .block-content .title-block .text:after{
 	position: absolute;
@@ -348,8 +348,8 @@ body{ background: #f9f9f9;}
 	transform: rotate(50deg);
 	width: 88px;
 	height: 41px;
-	top: 27px;
-	right: -57px;
+	top: 26px;
+	right: -58px;
 	overflow: hidden;
 }
 .block-content .title-block a.show-all{
@@ -530,7 +530,8 @@ body{ background: #f9f9f9;}
 	transition: 0.3s ease-in;
 	white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	margin-top: 5px;
 }
 
 .block-category h4 a:hover{
@@ -539,7 +540,19 @@ body{ background: #f9f9f9;}
 }
 
 .block-category .img{
-	height: 180px;
+	height: 200px;
+}
+
+.block-category small{
+	margin-top: 6px;
+	display: block;
+}
+
+.block-category p{
+	margin-top: 9px;
+	height: 123px;
+	overflow: hidden;
+	margin-bottom: 0;
 }
 
 
@@ -572,4 +585,141 @@ body{ background: #f9f9f9;}
 	height:100%;
 	width:100%;
 	position:absolute;
+}
+
+
+@media screen and (max-width: 1200px){
+	
+	/* Project */
+	.block-category .img{
+		height: 170px;
+	}
+	.block-category h4 a{
+		margin-top: 0;
+	}
+	.block-category small{
+		margin-top: 3px;
+	}
+	.block-category p{
+		margin-top: 0;
+	}
+
+}
+@media screen and (max-width: 991px){
+	/* Slider Section */
+	#block-front-slider .carousel-item{
+		height: 270px;
+	}
+	
+	/* Front Page Category */
+	.big-article .img{
+		height: 270px !important;
+	}
+	.small-article{
+		margin-top: 20px;
+		border: 1px solid red;
+	}
+
+
+	
+	/* Project */
+	.block-category .img{
+		height: 120px;
+	}
+	.block-category h4 a{
+		font-size: 22px;
+		margin-top: 0;
+	}
+	.block-category p{
+		margin-top: 5px;
+		line-height: 20px;
+		font-size: 15px;
+		height: 64px;
+	}
+	
+}
+@media screen and (max-width: 767px){
+	/* Slider Section */
+	#block-front-slider .carousel-item{
+		height: 280px;
+	}
+
+
+	.big-article .img{
+		height: 200px !important;
+	}
+	.small-article .img{
+		height: 110px;
+	}
+	
+	/* Project */
+	/* .block-category{
+		margin: 20px 0 0 0;
+	}
+	.block-category .img{
+		height: 80px;
+	}
+	.block-category h4 a{
+		font-size: 18px;
+	}
+	.block-category small.time{
+		font-size: 12px;
+	}
+	.block-category p{
+		font-size: 15px;
+		margin-top: -5px;
+		margin-bottom: 0;
+	} */
+
+	
+	/* Project */
+	.block-category .img{
+		height: 210px;
+	}
+	.block-category h4 a{
+		font-size: 24px;
+		margin: 15px 0 0 0;
+	}
+	.block-category small.time{
+		font-size: 14px;
+		margin: 5px 0;
+	}
+	.block-category p{
+		font-size: 16px;
+		margin-top: 5px;
+	}
+	
+}
+@media screen and (max-width: 576px){
+	
+	/* Header section */
+	#header-top .img-logo{
+		display: block;
+		text-align: center;
+	}
+	#header-top .img-logo img{
+		width: 90%;
+		padding: 20px;
+		margin: 0 auto;
+	}
+	#header-top .social-header{
+		margin-bottom: 10px;
+	}
+
+	/* Slider Section */
+	#block-front-slider .carousel-item{
+		height: 200px;
+	}
+
+
+	.big-article .img,
+	.small-article .img{
+		height: 280px !important;
+	}
+
+	#bottom-footer .col-sm-6{
+		text-align: center !important;
+		margin-bottom: 15px;
+	}
+
 }

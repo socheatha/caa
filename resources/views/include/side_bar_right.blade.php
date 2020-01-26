@@ -8,10 +8,13 @@
 	<section id="block-side-download" class="block-content">
 		<div class="title-block">
 			<h5 class="title">
-				<span class="text">
-				{{ __('frontend.sidebar_right.download') }}
-					<span class="corner"></span>
-				</span>
+				<div>
+					<div class="text">
+						<span>
+							{{ __('frontend.sidebar_right.download') }}
+						</span>
+					</div>
+				</div>
 				
 			</h5>			
 		</div>
@@ -19,7 +22,7 @@
 			<ul class="doc-list list-unstyled">
 				@foreach ($documents as $document)
 					<li>
-						<a href="{{ route('document.show', $document->id) }}"><i class="fas fa-file-alt"></i>&nbsp; {{ $document->$name }}</a>
+						<a href="{{ route('document.show', $document->id) }}" target="_blank"><i class="fas fa-file-alt"></i>&nbsp; {{ $document->$name }}</a>
 					</li>
 				@endforeach
 			</ul>

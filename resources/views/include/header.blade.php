@@ -14,12 +14,12 @@
   <header id="header-top">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-xl-3 col-lg-4 col-sm-6">
 					<a href="{{ route('home') }}" class="img-logo" title="{{ __('global.company_name') }}">
 						<img src="/{!! $web_config->logo !!}" alt="..." />
 					</a>
 				</div>
-				<div class="col-sm-3 offset-sm-6 text-center">
+				<div class="col-xl-3 offset-xl-6 col-lg-3 offset-lg-5 col-sm-6 text-center">
 					<div class="dropdown dropdown-lang">
 						<button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<div class="flag flag-{{ $language->nationality }}"></div> {{ $language->$lang_name }}

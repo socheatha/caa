@@ -1,4 +1,4 @@
-	<nav id="navbar-2" class="navbar navbar-expand-lg navbar-light bg-white">
+	<nav id="navbar-2" class="navbar navbar-expand-sm navbar-light bg-white">
 		<div class="container">
 			<a class="navbar-brand sr-only" style="width: 210px;" href="#">
 				<img src="/images/logo.png" alt="..." />
@@ -41,17 +41,17 @@
 							@endif
 					@endforeach
 			
-					<li class="nav-item search sr-only">
+					{{-- <li class="nav-item search sr-only">
 						<a class="nav-link" href="#search" data-toggle="tab"><i class="fa fa-search"></i></a>
 						<ul class="list-unstyled">
 							<li>
 								<input type="text" placeholder="search..." />
 							</li>
 						</ul>
-					</li>
+					</li> --}}
 				</ul>
 							
-				<form class="form-inline search-bar-menu-top">
+				{{-- <form class="form-inline search-bar-menu-top">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="search..." aria-label="search..." aria-describedby="button-addon2">
 						<div class="input-group-append">
@@ -60,7 +60,7 @@
 							</button>
 						</div>
 					</div>
-				</form>
+				</form> --}}
 				
 			</div>
 		</div>
