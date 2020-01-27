@@ -27,6 +27,8 @@
 				use App\Models\Partner;
 				use App\Models\Language;
 				
+				$routename = explode('.', Route::currentRouteName());
+
 				$menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
 				$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
 				$languages = Language::all();

@@ -52,10 +52,6 @@ class ConfigController extends Controller
                 'welcome_message_my'=>'1',
                 'welcome_message_sa'=>'1',
                 'sidebar_right',
-                'language_en'=>'English',
-                'language_kh'=>'Khmer',
-                'language_my'=>'Malaysia',
-                'language_sa'=>'Arab',
                 'created_by'=>'1',
                 'updated_by'=>'1'
             ]);
@@ -172,11 +168,6 @@ class ConfigController extends Controller
             'copyright_kh' => !empty((($request->copyright_kh)? $request->copyright_kh : $request->copyright_en))?(($request->copyright_kh)? $request->copyright_kh : $request->copyright_en):$config->copyright_kh,
             'copyright_my' => !empty((($request->copyright_my)? $request->copyright_my : $request->copyright_en))?(($request->copyright_my)? $request->copyright_my : $request->copyright_en):$config->copyright_my,
             'copyright_sa' => !empty((($request->copyright_sa)? $request->copyright_sa : $request->copyright_en))?(($request->copyright_sa)? $request->copyright_sa : $request->copyright_en):$config->copyright_sa,
-
-            'language_en' => !empty($request->language_en)?$request->language_en:'English',
-            'language_kh' => !empty($request->language_kh)?$request->language_kh:'Khmer',
-            'language_my' => !empty($request->language_my)?$request->language_my:'Malaysia',
-            'language_sa' => !empty($request->language_sa)?$request->language_sa:'Arab',
             'updated_by' => Auth::user()->id,
         ]);
         

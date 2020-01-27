@@ -72,13 +72,13 @@
 									</div>
 									
 								</h4>
-								<a href="{{ route('project.project_category', $project_category->id) }}" class="show-all">{{ __('frontend.buttons.show_all') }}</a>
+								<a href="{{ route('projects.project_category', $project_category->id) }}" class="show-all">{{ __('frontend.buttons.show_all') }}</a>
 							</div>
 							<div class="content">
 								<div class="row">
 									<div class="col-lg-5">
 										<div class="big-article">
-											<a href="{{ route('project.detail', $project_category->projects[0]->id) }}">
+											<a href="{{ route('projects.detail', $project_category->projects[0]->id) }}">
 												<div class="img" style="background: url('/images/projects/{{ $project_category->projects[0]->id }}/{{ 'thumb_'. $project_category->projects[0]->thumbnail }}') center center; background-size: cover;"></div>
 												<footer>
 													<h4>{{ $project_category->projects[0]->$name }}</h4>
@@ -93,7 +93,7 @@
 												@if ($key > 0 && $key < 7)
 													<div class="col-md-4 col-sm-6">
 														<div class="small-article mb-2">
-															<a href="{{ route('project.detail', $project->id) }}">
+															<a href="{{ route('projects.detail', $project->id) }}">
 															<div class="img" style="background: url('/images/projects/{{ $project->id }}/{{ 'thumb_'. $project->thumbnail }}') center center; background-size: cover;"></div>
 																<footer>
 																	<h6>{{ $project->$name }}</h6>
@@ -129,13 +129,13 @@
 									</div>
 									
 								</h4>
-								<a href="{{ route('activity.activity_category', $activity_category->id) }}" class="show-all">{{ __('frontend.buttons.show_all') }}</a>
+								<a href="{{ route('activities.activity_category', $activity_category->id) }}" class="show-all">{{ __('frontend.buttons.show_all') }}</a>
 							</div>
 							<div class="content">
 								<div class="row">
 									<div class="col-lg-5">
 										<div class="big-article">
-											<a href="{{ route('activity.detail', $activity_category->activities[0]->id) }}">
+											<a href="{{ route('activities.detail', $activity_category->activities[0]->id) }}">
 												<div class="img" style="background: url('/images/activities/{{ $activity_category->activities[0]->id }}/{{ 'thumb_'. $activity_category->activities[0]->thumbnail }}') center center; background-size: cover;"></div>
 												<footer>
 													<h4>{{ $activity_category->activities[0]->$name }}</h4>
@@ -150,7 +150,7 @@
 												@if ($key > 0 && $key < 7)
 													<div class="col-sm-4">
 														<div class="small-article mb-2">
-															<a href="{{ route('activity.detail', $activity->id) }}">
+															<a href="{{ route('activities.detail', $activity->id) }}">
 															<div class="img" style="background: url('/images/activities/{{ $activity->id }}/{{ 'thumb_'. $activity->thumbnail }}') center center; background-size: cover;"></div>
 																<footer>
 																	<h6>{{ $activity->$name }}</h6>

@@ -4,6 +4,7 @@ return [
     
   'buttons' => [
     'show_all' => 'عرض الكل',
+    'send' => 'إرسال',
   ],
 
   'header' => [
@@ -16,6 +17,8 @@ return [
     'partner' => 'شركاؤنا ',
   ],
   'contact_us' => [
+    'get_in_touch' => 'Get in Touch',
+    'get_in_touch_text' => 'Feel free to drop us your contact and message below.',
     'contact' => 'اتصل بنا',
     'phone' => 'هاتف: ',
     'email' => 'البريد الإلكتروني: ',

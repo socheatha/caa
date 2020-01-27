@@ -18,22 +18,21 @@
   Route::group(['namespace' => 'Frontend'], function () {
     
     Route::get('about-us', 'AboutUsController@index')->name('about-us');
-    
     Route::get('contact-us', 'ContanUsController@index')->name('contact-us');
-
+    Route::get('donation', 'DonationController@index')->name('donation');
 
     Route::get('document/{document}', 'DocumentController@show')->name('document.show');
   
   });
 
   // block project
-  Route::group(['prefix' => 'project', 'as' => 'project.','namespace' => 'Frontend'], function () {
+  Route::group(['prefix' => 'project', 'as' => 'projects.','namespace' => 'Frontend'], function () {
     Route::get('{project}', 'ProjectController@getProjectDetail')->name('detail');
     Route::get('project_category/{project_category}', 'ProjectController@project_category')->name('project_category');
   });
 
   // block Activity
-  Route::group(['prefix' => 'activity', 'as' => 'activity.','namespace' => 'Frontend'], function () {
+  Route::group(['prefix' => 'activity', 'as' => 'activities.','namespace' => 'Frontend'], function () {
     Route::get('{activity}', 'activityController@getactivityDetail')->name('detail');
     Route::get('activity_category/{activity_category}', 'activityController@activity_category')->name('activity_category');
   });

@@ -81045,8 +81045,7 @@ try {
   window.dt = __webpack_require__(/*! admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js */ "./node_modules/admin-lte/bower_components/datatables.net/js/jquery.dataTables.min.js");
   window.dtbs = __webpack_require__(/*! admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js */ "./node_modules/admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js");
   window.select2 = __webpack_require__(/*! admin-lte/bower_components/select2/dist/js/select2.full.min.js */ "./node_modules/admin-lte/bower_components/select2/dist/js/select2.full.min.js");
-  window.fastclick = __webpack_require__(/*! admin-lte/bower_components/fastclick/lib/fastclick.js */ "./node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js"); // window.CKEDITOR = require('admin-lte/bower_components/ckeditor/ckeditor.js');
-
+  window.fastclick = __webpack_require__(/*! admin-lte/bower_components/fastclick/lib/fastclick.js */ "./node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js");
   window.icheck = __webpack_require__(/*! admin-lte/plugins/iCheck/icheck.min.js */ "./node_modules/admin-lte/plugins/iCheck/icheck.min.js");
   window.pace = __webpack_require__(/*! admin-lte/plugins/pace/pace.min.js */ "./node_modules/admin-lte/plugins/pace/pace.min.js");
   window.Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");

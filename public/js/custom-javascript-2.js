@@ -40,37 +40,6 @@ $(document).ready(function(){
 });
 
 
-$(window).resize(function(){     
-
-  // if ($('header').width() <= 991 ){
-
-  //   $('.customer-logos').slick({
-  //     slidesToShow: 2,
-  //     slidesToScroll: 1,
-  //     centerMode: true,
-  //     autoplay: true,
-  //     autoplaySpeed: 1500,
-  //     arrows: false,
-  //     dots: false,
-  //       pauseOnHover: false,
-  //       responsive: [{
-  //       breakpoint: 768,
-  //       settings: {
-  //         slidesToShow: 3
-  //       }
-  //     }, {
-  //       breakpoint: 520,
-  //       settings: {
-  //         slidesToShow: 2
-  //       }
-  //     }]
-  //   });
-
-  // }
-
-});
-
-
 
 
 $(window).bind('scroll', function () {

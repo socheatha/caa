@@ -11,8 +11,8 @@
                                 <div class="img" style="background: url('/images/projects/{{ $project->id }}/thumb_{{ $project->thumbnail }}') center center; background-size: cover;"></div>
                             </div>
                             <div class="col-md-7">
-                                <h4><a href="{{ route('project.detail', $project->id) }}">{{ $project->$name }}</a></h4>
-                                <small class="time"><i class="far fa-clock"></i> {{ $project->created_at->diffForHumans() }}</small>
+                                <h4><a href="{{ route('projects.detail', $project->id) }}">{{ $project->$name }}</a></h4>
+                                <small class="time"><i class="far fa-clock"></i> {{ $project->created_at->format('Y-m-d') }}</small>
                                 <p>{{ $project->$short_desc }}</p>
                             </div>
                         </div>
@@ -24,4 +24,25 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+    
+    $('.time').each(function () {
+        var lang_js = 'en';
+        if ('{{ $web_lang }}'== 'kh') {
+            lang_js = 'km';
+        }else if ('{{ $web_lang }}'== 'my') {
+            lang_js = 'ml';
+        }else if ('{{ $web_lang }}'== 'sa') {
+            lang_js = 'ar';
+        }else{
+            lang_js = 'en';
+        }
+        var publish_time = moment($(this).html()).locale(lang_js).fromNow();
+
+        $(this).html(publish_time);
+    });
+</script>
 @endsection

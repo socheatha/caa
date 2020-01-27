@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\AboutUs;
-use App\Models\Config;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Document;
+use App\Models\AboutUs;
+use App\Models\Config;
 
 class AboutUsController extends Controller
 {

@@ -1,6 +1,6 @@
 	<nav id="navbar-2" class="navbar navbar-expand-sm navbar-light bg-white">
 		<div class="container">
-			<a class="navbar-brand sr-only" style="width: 210px;" href="#">
+			<a class="navbar-brand sr-only" style="width: 210px;" href="{{ route('home') }}">
 				<img src="/images/logo.png" alt="..." />
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
 				<ul class="navbar-nav navbar-item-list">
 					@foreach ($menus as $menu)
 							@if ($menu->SubMenu->count() > 0 )
-								<li class="nav-item dropdown">
+								<li class="nav-item dropdown {{ ((isset($routename[0]) && $routename[0] == strtolower(str_replace(" ","-","$menu->name_en")))? 'active' : '') }}">
 									<a class="nav-link" href="#{{ $menu->$name }}"   id="navbarDropdown" role="button" data-toggle="dropdown">{{ $menu->$name }} &nbsp;<i class="fa fa-angle-down"></i></a>
 									<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 										@foreach ($menu->SubMenu as $sub_menu)
@@ -35,11 +35,12 @@
 									</ul>
 								</li>
 							@else
-							<li class="nav-item">
+							<li class="nav-item {{ ((isset($routename[0]) && $routename[0] == strtolower(str_replace(" ","-","$menu->name_en")))? 'active' : '') }}">
 								<a class="nav-link" href="{{ $menu->url }}">{{ $menu->$name }}</a>
 							</li>
 							@endif
 					@endforeach
+
 			
 					{{-- <li class="nav-item search sr-only">
 						<a class="nav-link" href="#search" data-toggle="tab"><i class="fa fa-search"></i></a>
