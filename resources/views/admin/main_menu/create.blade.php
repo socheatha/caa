@@ -53,6 +53,8 @@
 
 @section('js')
 	<script type="text/javascript">
-		
+		$('#select_default_url').change(function () {
+			$('[name="url"]').val($(this).val());
+		});
 	</script>
 @endsection

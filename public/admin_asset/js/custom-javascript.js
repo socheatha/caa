@@ -4,11 +4,18 @@ $('.btn_copy_link').click( function() {
 	copyToClipboard($(this).data('url'));
 });
 
-function copyToClipboard(elem) {
+function copyToClipboard(value) {
 	
-	$('body').append('<textarea id="copy_to_textarea" class="sr_only" readonly></textarea>').
+	$('body').append('<textarea id="copy_to_textarea" class="sr_only" readonly>'+ value +'</textarea>');
 	$('#copy_to_textarea').select();
 	document.execCommand('copy');
+	Swal.fire({
+		type: 'success',
+		title: 'Copied',
+		text: '"'+ value +'" has been copied',
+		showConfirmButton: true,
+		timer: 1500
+	})
 	
 }
 

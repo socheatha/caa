@@ -1,7 +1,19 @@
 
   <div class="row">
 
-    <div class="col-sm-6">
+    <div class="col-sm-2">
+      <div class="form-group">
+        {!! Html::decode(Form::label('select_default_url', "Default Pages <small>*</small>")) !!}
+        <select class="form-control" id="select_default_url">
+          <option value="{{ route('home') }}">Home page</option>
+          <option value="{{ route('about-us') }}">About Us</option>
+          <option value="{{ route('contact-us') }}">Contact Us</option>
+          <option value="{{ route('donation') }}">Donation</option>
+        </select>
+      </div>
+    </div>
+    {{-- / .col --}}
+    <div class="col-sm-4">
       <div class="form-group {!! (($errors->has('url'))? 'has-error':'') !!}">
         {!! Html::decode(Form::label('name', "URL <small>*</small>")) !!}
         {!! Form::text('url', ((isset($mainMenu->url))? $mainMenu->url : '' ), ['class' => 'form-control ','placeholder' => 'url','required']) !!}
