@@ -26,7 +26,7 @@ class ActivityStoreRequest extends FormRequest
         return [
             'name_en' => 'required|unique:activity,name_en,'.((isset($this->activity))? $this->activity->id : ''),
             'index' => 'required|unique:activity,index,'.((isset($this->activity))? $this->activity->id : ''),
-            'thumbnail' => 'max:2048',
+            'thumbnail' => 'max:1536',
             'seo_keywords' => 'required',
             'seo_description' => 'required',
         ];

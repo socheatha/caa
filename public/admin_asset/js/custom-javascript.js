@@ -1,3 +1,18 @@
+
+
+$('.btn_copy_link').click( function() {
+	copyToClipboard($(this).data('url'));
+});
+
+function copyToClipboard(elem) {
+	
+	$('body').append('<textarea id="copy_to_textarea" class="sr_only" readonly></textarea>').
+	$('#copy_to_textarea').select();
+	document.execCommand('copy');
+	
+}
+
+
 function landscapePrint() {
 	var css = '@page { size: 29.7cm 21cm;}',
 	    head = document.head || document.getElementsByTagName('head')[0],

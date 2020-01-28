@@ -74,6 +74,8 @@
 							<td class="text-center"><span class="label label-primary">{{ $project->ProjectCategory->name_en }}</span></td>
 							<td class="td-action text-right">
 
+								{{-- Copy Link Button --}}
+								<button type="button" class="btn btn-primary btn_copy_link" data-url="{{ route('projects.detail', $project->id) }}"><i class="fa fa-copy"></i></button>
 								{{-- Edit Button --}}
 								<button class="btn btn-warning btnImage" data-url="{{ route('admin.project.update_image', $project->id) }}" data-src="{{ $project->thumbnail }}" data-id="{{ $project->id }}"><i class="fa fa-image"></i></button>
 								{{-- Edit Button --}}

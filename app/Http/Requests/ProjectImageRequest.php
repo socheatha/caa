@@ -24,7 +24,7 @@ class ProjectImageRequest extends FormRequest
     public function rules()
     {
         return [
-          'thumbnail' => 'max:2048',
+          'thumbnail' => 'max:1536',
         ];
     }
 }

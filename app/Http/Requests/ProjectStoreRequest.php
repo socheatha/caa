@@ -26,7 +26,7 @@ class ProjectStoreRequest extends FormRequest
         return [
             'name_en' => 'required|unique:project,name_en,'.((isset($this->project))? $this->project->id : ''),
             'index' => 'required|unique:project,index,'.((isset($this->project))? $this->project->id : ''),
-            'thumbnail' => 'max:2048',
+            'thumbnail' => 'max:1536',
             'seo_keywords' => 'required',
             'seo_description' => 'required',
         ];
