@@ -2,50 +2,54 @@
 
 @section('content')
 	{{-- Block slider --}}
-	<section id="block-front-slider">
-		<div id="frontSlideShows" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				@foreach ($slide_shows as $key => $slide_show)
-					<div class="carousel-item {{ (($key==0)? 'active' : '' ) }}">
+	@if (count($slide_shows) > 0)
+			
+		<section id="block-front-slider">
+			<div id="frontSlideShows" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					@foreach ($slide_shows as $key => $slide_show)
+						<div class="carousel-item {{ (($key==0)? 'active' : '' ) }}">
 
-						<img src="/images/slide_shows/{{ $slide_show->image }}" class="img-fluid d-block w-100" alt="{{ $slide_show->seo_description . $slide_show->seo_keywords }}">
+							<img src="/images/slide_shows/{{ $slide_show->image }}" class="img-fluid d-block w-100" alt="{{ $slide_show->seo_description . $slide_show->seo_keywords }}">
 
-						<div class="carousel-caption d-none d-md-block">
-							<h2 class="animated slideInDown">{{ $slide_show->$name }}</h2>
-							<p class="animated slideInUp">{{ $slide_show->$short_desc }}</p>
+							<div class="carousel-caption d-none d-md-block">
+								<h2 class="animated slideInDown">{{ $slide_show->$name }}</h2>
+								<p class="animated slideInUp">{{ $slide_show->$short_desc }}</p>
+							</div>
+
 						</div>
 
-					</div>
+					@endforeach
+				</div>
 
-				@endforeach
+				<ol class="carousel-indicators">
+
+					<li data-target="#frontSlideShows" data-slide-to="0" class="active"></li>
+
+					@for ($i = 1; $i < $slide_shows->count(); $i++)
+						<li data-target="#frontSlideShows" data-slide-to="{{ $i }}"></li>
+					@endfor
+
+				</ol>
+
+				<a class="carousel-control-prev" href="#frontSlideShows" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#frontSlideShows" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
 			</div>
+		</section>
 
-			<ol class="carousel-indicators">
-
-				<li data-target="#frontSlideShows" data-slide-to="0" class="active"></li>
-
-				@for ($i = 1; $i < $slide_shows->count(); $i++)
-					<li data-target="#frontSlideShows" data-slide-to="{{ $i }}"></li>
-				@endfor
-
-			</ol>
-
-			<a class="carousel-control-prev" href="#frontSlideShows" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#frontSlideShows" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</section>
+	@endif
 
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
 				<section id="block-front-welcome" class="text-center mt-5 mb-3">
-					<h2 class="mb-4">{{ $web_config->$title }}</h2>
+					<h2 class="mb-4">{{ ((isset($web_config->$title) && $web_config->$title != '')? $web_config->$title : 'Welcome') }}</h2>
 					<div class="row justify-content-md-center">
 						<div class="col-sm-10">
 							<p>{{ $web_config->$welcome_message }}</p>

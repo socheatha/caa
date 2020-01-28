@@ -3,8 +3,9 @@
 
     <div class="col-sm-2">
       <div class="form-group">
-        {!! Html::decode(Form::label('select_default_url', "Default Pages <small>*</small>")) !!}
+        {!! Html::decode(Form::label('select_default_url', "Default Pages Suggestion")) !!}
         <select class="form-control" id="select_default_url">
+          <option value="">== Get Default URL ==</option>
           <option value="{{ route('home') }}">Home page</option>
           <option value="{{ route('about-us') }}">About Us</option>
           <option value="{{ route('contact-us') }}">Contact Us</option>

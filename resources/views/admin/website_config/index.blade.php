@@ -515,7 +515,7 @@
 
 				<br>
 				<br>
-				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#_modal_languages">Languages <i class="fa fa-edit"></i></a>
+				{{-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#_modal_languages">Languages <i class="fa fa-edit"></i></a>
 				<table class="table table-bordered nowrap table-striped" width="100%">
 					<thead>
 						<tr>
@@ -571,7 +571,7 @@
 							</div>
 						</div>
 					</div>
-				</div><!-- modal languages -->
+				</div><!-- modal languages --> --}}
 
 				<br>
 				<br>

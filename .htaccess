@@ -1,8 +1,12 @@
 DirectoryIndex index.php
 <IfModule mod_rewrite.c>
+
+    AddType application / x-httpd-php73 .php5 .php4 .php .php3 .php2 .phtml
+    
     <IfModule mod_negotiation.c>
         Options -MultiViews
     </IfModule>
+    
 
     RewriteEngine On
 
