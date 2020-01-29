@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Frontend;
-
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\ContactUs;
 use App\Models\Document;
 use App\Models\Config;
 use App\Http\Controllers\Controller;
+use App\Mail\ContactFormMail;
 
 class ContanUsController extends Controller
 {
@@ -27,4 +28,18 @@ class ContanUsController extends Controller
                     ];	
         return view('frontend.contact_us', $this->data);
 	}
+	public function store(Request $request)
+    {
+        // $request->validate([
+        //     'g-recaptcha-response' => 'required|captcha',
+				// ]);
+				$data=request()->validate([
+					'name'	=>	'required',
+					'email'	=>	'required|email',
+					'message'	=>	'required',
+				]);
+
+				Mail::to('yin.buntheng@gmail.com')->send(new ContactFormMail($data));
+				return redirect('frontend.contact_us');
+    }
 }
