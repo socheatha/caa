@@ -11,7 +11,7 @@
 
       <li class="header">Data Management</li>
 
-      <li class="treeview {{ ((strpos('main_menu sub_menu', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+      <li class="treeview {{ ((strpos('main_menu sub_menu sub_sub_menu', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
           <i class="fas fa-bars"></i> <span> Main Menu</span>
           <span class="pull-right-container">
@@ -53,7 +53,7 @@
 
       <li class="{{ ((Auth::user()->sidebarActive() == 'about_us' )? 'active':'') }}"><a href="{{ route('admin.about_us.index') }}"><i class="far fa-circle"></i> About Us</a></li>
 
-      <li class="treeview {{ ((strpos('website-config slide_show partner', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
+      <li class="treeview {{ ((strpos('website-config slide_show partner documents donations', Auth::user()->sidebarActive()) !== false)? 'active':'') }}">
         <a href="#">
           <i class="fa fa-project-diagram"></i> <span> Setting</span>
           <span class="pull-right-container">
@@ -67,8 +67,8 @@
           <li class="{{ ((Auth::user()->sidebarActive() == 'slide_show' )? 'active':'') }}"><a href="{{ route('admin.slide_show.index') }}"><i class="far fa-circle"></i> Slide Show</a></li>
           <li class="{{ ((Auth::user()->sidebarActive() == 'partner' )? 'active':'') }}"><a href="{{ route('admin.partner.index') }}"><i class="far fa-circle"></i> Our Parthner</a></li>
           {{-- <li class=""><a href="{{ route('admin.extra_menu.index') }}"><i class="far fa-circle"></i> Extra Menu</a></li> --}}
-          <li class=""><a href="{{ route('admin.documents.index') }}"><i class="far fa-circle"></i> Document</a></li>
-          <li class=""><a href="{{ route('admin.donation.index') }}"><i class="far fa-circle"></i> Donation</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'documents' )? 'active':'') }}"><a href="{{ route('admin.documents.index') }}"><i class="far fa-circle"></i> Document</a></li>
+          <li class="{{ ((Auth::user()->sidebarActive() == 'donations' )? 'active':'') }}"><a href="{{ route('admin.donation.index') }}"><i class="far fa-circle"></i> Donation</a></li>
         </ul>
       </li>
 
