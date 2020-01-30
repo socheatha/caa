@@ -37,9 +37,10 @@ class ContanUsController extends Controller
 					'name'	=>	'required',
 					'email'	=>	'required|email',
 					'message'	=>	'required',
+					'g-recaptcha-response' => 'required|captcha',
 				]);
 
-				Mail::to('yin.buntheng@gmail.com')->send(new ContactFormMail($data));
-				return redirect('frontend.contact_us');
+				Mail::to('test@test.com')->send(new ContactFormMail($data));
+				return redirect('contact-us');
     }
 }

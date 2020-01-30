@@ -17,8 +17,8 @@ return [
     'partner' => 'Pasangan kami',
   ],
   'contact_us' => [
-    'get_in_touch' => 'Get in Touch',
-    'get_in_touch_text' => 'Feel free to drop us your contact and message below.',
+    'get_in_touch' => 'Berhubung',
+    'get_in_touch_text' => 'Jangan ragu untuk menjatuhkan kenalan dan mesej anda di bawah.',
     'contact' => 'Hubungi Kami',
     'phone' => 'Telefon: ',
     'email' => 'E-mel: ',

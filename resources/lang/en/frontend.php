@@ -24,7 +24,6 @@ return [
     'email' => 'Email: ',
     'address' => 'Address: ',
     'see_on_map' => 'See on google map ',
-    'facebook' => 'Facebook:',
   ],
 
 ];
