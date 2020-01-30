@@ -23,6 +23,10 @@
 
 	</style>
 @endsection
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+{!! NoCaptcha::renderJs() !!}
 @section('content')
 
 	<div class="map">
@@ -39,7 +43,7 @@
 				<h3 class="mb-2">{{ __('frontend.contact_us.get_in_touch') }}</h3>
 				<div class="text-mute">{{ __('frontend.contact_us.get_in_touch_text') }}</div>
 				<div class="clearfixed"></div>
-				{{ Form::open(['url' => '','method' => 'post', 'class' => 'mt-3']) }}
+				{{ Form::open(['url' => '/contact-form','method' => 'post', 'class' => 'mt-3']) }}
 					<div class="form-group mt-4">
 					{!! Form::text('name', '', ['class' => 'form-control ','placeholder' => 'Your Name','required']) !!}
 					</div>
@@ -49,6 +53,19 @@
 					<div class="form-group">
 					{!! Form::textarea('message', '', ['class' => 'form-control ','rows' => '8','placeholder' => 'Type your message here...','required']) !!}
 					</div>
+					<div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+						<label class="col-md-4 control-label">Captcha</label>
+						<div class="col-md-6">
+							{!! app('captcha')->display() !!}
+							@if ($errors->has('g-recaptcha-response'))
+								<span class="help-block">
+										<strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+								</span>
+							@endif
+						</div>
+					</div>
+
+
 					<button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i> &nbsp;{{ __('frontend.buttons.send') }}</button>
 				{{ Form::close() }}
 

@@ -19,6 +19,7 @@
     
     Route::get('about-us', 'AboutUsController@index')->name('about-us');
     Route::get('contact-us', 'ContanUsController@index')->name('contact-us');
+    Route::post('contact-form', 'ContanUsController@store');
     Route::get('donation', 'DonationController@index')->name('donation');
 
     Route::get('document/{document}', 'DocumentController@show')->name('document.show');
