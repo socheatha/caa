@@ -6,7 +6,7 @@ $('.btn_copy_link').click( function() {
 
 function copyToClipboard(value) {
 	
-	$('body').append('<textarea id="copy_to_textarea" class="sr_only" readonly>'+ value +'</textarea>');
+	$('body').append('<textarea id="copy_to_textarea" class="sr-only" readonly>'+ value +'</textarea>');
 	$('#copy_to_textarea').select();
 	document.execCommand('copy');
 	Swal.fire({

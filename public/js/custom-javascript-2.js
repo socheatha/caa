@@ -39,6 +39,11 @@ $(document).ready(function(){
   });
 });
 
+  $('#header-top').css({ 'background' : $('span.web_config').data('header_color')});
+  $('#navbar-2 .nav-item.active span.highlight').css({ 'background' : $('span.web_config').data('menu_active_color')});
+  $('body').css({ 'background' : $('span.web_config').data('body_color')});
+  $('#top-footer').css({ 'background' : $('span.web_config').data('footer_color')});
+  // $('body *').css({ 'color' : $('span.web_config').data('text_color')});
 
 
 

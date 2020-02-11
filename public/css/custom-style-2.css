@@ -58,18 +58,18 @@ body{ background: #f9f9f9;}
 	display: block;
 	padding: 20px 15px;
 }
-#navbar-2 .nav-item:after{
-	content: '';
-	background: #EA0000;
-	width: 0;
-	height: 4px;
+#navbar-2 .nav-item span.highlight{
+	background: blue;
+	display: block;
 	position: absolute;
 	left: 0;
-	bottom: 0px;
+	bottom: 0;
+	width: 0;
+	height: 4px;
 	transition: 0.3s ease-in;
 }
-#navbar-2 .nav-item.active:after{
-	width: 100%;
+#navbar-2 .nav-item.active > span.highlight{
+	width: 99%;
 }
 #navbar-2 .nav-item > .dropdown-menu.show{
 	border-radius: 0;

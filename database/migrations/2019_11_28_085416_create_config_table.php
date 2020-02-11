@@ -16,15 +16,15 @@ class CreateConfigTable extends Migration
         Schema::create('config', function (Blueprint $table) {
             $table->increments('id');
             $table->string('logo')->nullable();
-            $table->string('title_en')->nullable();
-            $table->string('title_kh')->nullable();
-            $table->string('title_my')->nullable();
-            $table->string('title_sa')->nullable();
-            $table->string('keyword')->nullable();
-            $table->string('description_en')->nullable();
-            $table->string('description_kh')->nullable();
-            $table->string('description_my')->nullable();
-            $table->string('description_sa')->nullable();
+            $table->string('title_en', 255)->nullable();
+            $table->string('title_kh', 255)->nullable();
+            $table->string('title_my', 255)->nullable();
+            $table->string('title_sa', 255)->nullable();
+            $table->string('keyword', 255)->nullable();
+            $table->string('description_en', 255)->nullable();
+            $table->string('description_kh', 255)->nullable();
+            $table->string('description_my', 255)->nullable();
+            $table->string('description_sa', 255)->nullable();
             
             $table->string('header_color')->nullable();
             $table->string('text_color')->nullable();
@@ -32,11 +32,11 @@ class CreateConfigTable extends Migration
             $table->string('body_color')->nullable();
             $table->string('footer_color')->nullable();
             
-            $table->string('email')->nullable();
-            $table->string('fb_url')->nullable();
-            $table->string('instagram_url')->nullable(); 
-            $table->string('tw_url')->nullable();
-            $table->string('linkedin_url')->nullable();
+            $table->string('email', 255)->nullable();
+            $table->string('fb_url', 255)->nullable();
+            $table->string('instagram_url', 255)->nullable(); 
+            $table->string('tw_url', 255)->nullable();
+            $table->string('linkedin_url', 255)->nullable();
             $table->text('map_location')->nullable();
 
             $table->text('welcome_message_en')->nullable();
@@ -49,15 +49,15 @@ class CreateConfigTable extends Migration
             $table->string('phone_my')->nullable();
             $table->string('phone_sa')->nullable();
 
-            $table->string('address_en')->nullable();
-            $table->string('address_kh')->nullable();
-            $table->string('address_my')->nullable();
-            $table->string('address_sa')->nullable();
+            $table->string('address_en', 255)->nullable();
+            $table->string('address_kh', 255)->nullable();
+            $table->string('address_my', 255)->nullable();
+            $table->string('address_sa', 255)->nullable();
 
-            $table->string('copyright_en')->nullable();
-            $table->string('copyright_kh')->nullable();
-            $table->string('copyright_my')->nullable();
-            $table->string('copyright_sa')->nullable();
+            $table->string('copyright_en', 255)->nullable();
+            $table->string('copyright_kh', 255)->nullable();
+            $table->string('copyright_my', 255)->nullable();
+            $table->string('copyright_sa', 255)->nullable();
 
             $table->text('sidebar_right')->nullable();
 

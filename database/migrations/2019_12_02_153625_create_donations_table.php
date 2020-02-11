@@ -19,10 +19,10 @@ class CreateDonationsTable extends Migration
             $table->string('seo_keywords');
             $table->string('seo_description');
 
-            $table->text('detail_en');
-            $table->text('detail_kh');
-            $table->text('detail_my');
-            $table->text('detail_sa');
+            $table->text('detail_en')->nullable();
+            $table->text('detail_kh')->nullable();
+            $table->text('detail_my')->nullable();
+            $table->text('detail_sa')->nullable();
 
             $table->timestamps();
         });

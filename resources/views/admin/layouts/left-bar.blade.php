@@ -74,6 +74,13 @@
 
       <li class="{{ ((Auth::user()->sidebarActive() == 'user' )? 'active':'') }}"><a href="{{ route('admin.user.index') }}"><i class="fa fa-user-friends"></i> Users</a></li>
 
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
 {{-- 
       <li class="header">LABELS</li>
       <li><a href="#"><i class="far fa-circle text-red"></i> <span>Logout</span></a></li> --}}

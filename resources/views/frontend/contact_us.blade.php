@@ -2,7 +2,7 @@
 
 @section('css')
 	<style>
-		.nav_contact li i{
+		/* .nav_contact li i{
 			width: 20px;
 		}
 
@@ -19,14 +19,14 @@
 		.btn{
 			border-radius: 0;
 			margin-bottom: 20px;
-		}
+		} */
 
 	</style>
 @endsection
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 
-{!! NoCaptcha::renderJs() !!}
+{{-- {!! NoCaptcha::renderJs() !!} --}}
 @section('content')
 
 	<div class="map">

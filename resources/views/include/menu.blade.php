@@ -18,6 +18,7 @@
 											@if ($sub_menu->SubSubMenu->count() > 0 )
 												<li class="dropdown-submenu">
 													<a href="{{ $sub_menu->url }}" class="dropdown-item dropdown-toggle">{{ $sub_menu->$name }}</a>
+													<span class="highlight"></span>
 													<ul class="dropdown-menu">
 														@foreach ($sub_menu->SubSubMenu as $a)
 															<li>
@@ -37,6 +38,7 @@
 							@else
 							<li class="nav-item {{ ((isset($routename[0]) && $routename[0] == strtolower(str_replace(" ","-","$menu->name_en")))? 'active' : '') }}">
 								<a class="nav-link" href="{{ $menu->url }}">{{ $menu->$name }}</a>
+								<span class="highlight"></span>
 							</li>
 							@endif
 					@endforeach
