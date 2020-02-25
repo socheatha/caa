@@ -24,11 +24,9 @@
 	</style>
 @endsection
 
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
-
 {{-- {!! NoCaptcha::renderJs() !!} --}}
 @section('content')
-
+<script src="https://www.google.com/recaptcha/api.js?" async defer></script>
 	<div class="map">
 		{{-- <h3>{{ __('frontend.contact_us.') }}</h3> --}}
 		<div class="map-container">
@@ -82,5 +80,5 @@
 				@include('include.side_bar_right')
 			</div>
 		</div>
-	</div>
+	</div><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 @endsection

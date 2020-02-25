@@ -30,17 +30,24 @@ class ContanUsController extends Controller
 	}
 	public function store(Request $request)
     {
-        // $request->validate([
-        //     'g-recaptcha-response' => 'required|captcha',
-				// ]);
-				$data=request()->validate([
-					'name'	=>	'required',
-					'email'	=>	'required|email',
-					'message'	=>	'required',
-					'g-recaptcha-response' => 'required|captcha',
-				]);
+        // $response = (new \ReCaptcha\ReCaptcha($secret))
+        // ->setExpectedAction('contact_form')
+        // ->verify($request->input('_recaptcha'), $request->ip());
 
-				Mail::to('test@test.com')->send(new ContactFormMail($data));
-				return redirect('contact-us');
+		// if (!$response->isSuccess()) {
+		// 	abort();
+		// }
+		// if ($response->getScore() < 0.6) {
+		// return response()->view('challenge');
+		// }
+		$data=request()->validate([
+			'name'	=>	'required',
+			'email'	=>	'required|email',
+			'message'	=>	'required',
+			'g-recaptcha-response' => 'required|captcha',
+		]);
+
+		Mail::to('test@test.com')->send(new ContactFormMail($data));
+		return redirect('contact-us');
     }
 }
