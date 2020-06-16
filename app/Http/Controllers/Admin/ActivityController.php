@@ -68,7 +68,7 @@ class ActivityController extends Controller
 															'updated_by' => Auth::user()->id,
 														]);
 
-			$path = $this->path. $activity->id .'/';
+			$path = $this->path;
 			if (!file_exists($path)) {
 					mkdir($path, 666, true);
 			}
@@ -127,7 +127,7 @@ class ActivityController extends Controller
 	{
 		if ($request->file('thumbnail')) {
 
-			$path = $this->path. $activity->id .'/';
+			$path = $this->path;
 			if (!file_exists($path)) {
 					mkdir($path, 666, true);
 			}
@@ -149,7 +149,7 @@ class ActivityController extends Controller
 	public function destroy(Activity $activity)
 	{
 
-		$path = $this->path. $activity->id .'/';
+		$path = $this->path;
 		$name = $activity->name_en;
 		$thumbnail = $activity->thumbnail;
 

@@ -65,7 +65,7 @@
 						<tr>
 							<td>{{ ++$i }}</td>
 							<td>
-								<div class="thumbnail" style="background: url('/images/activities/{{ $activity->id }}/thumb_{{ $activity->thumbnail }}') center center; background-size: cover;"></div>
+								<div class="thumbnail" style="background: url('/images/activities/thumb_{{ $activity->thumbnail }}') center center; background-size: cover;"></div>
 							</td>
 							<td>{{ $activity->name_en .' : '. $activity->name_kh .' : '. $activity->name_my .' : '. $activity->name_sa }}</td>
 							<td>{{ $activity->index }}</td>
@@ -75,7 +75,7 @@
 							<td class="td-action text-right">
 
 								{{-- Copy Link Button --}}
-								<button type="button" class="btn btn-primary btn_copy_link" data-url="{{ route('projects.detail', $project->id) }}"><i class="fa fa-copy"></i></button>
+								<button type="button" class="btn btn-primary btn_copy_link" data-url="{{ route('activities.detail', $activity->id) }}"><i class="fa fa-copy"></i></button>
 
 								{{-- Edit Button --}}
 								<button class="btn btn-warning btnImage" data-url="" data-src="{{ $activity->thumbnail }}" data-id="{{ $activity->id }}"><i class="fa fa-image"></i></button>
@@ -143,8 +143,8 @@
 		$('.btnImage').click(function () {
 
 			$('#ActivityImg').attr({
-															"data-src": "/images/activities/"+ $(this).data('id') + "/thumb_"+ $(this).data('src'),
-															"src": "/images/activities/"+ $(this).data('id') + "/thumb_"+ $(this).data('src')
+															"data-src": "/images/activities/thumb_"+ $(this).data('src'),
+															"src": "/images/activities/thumb_"+ $(this).data('src')
 														});
 
 			$('#imageForm').attr('action',$(this).data('url'));

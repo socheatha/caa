@@ -65,7 +65,7 @@
 						<tr>
 							<td>{{ ++$i }}</td>
 							<td>
-								<div class="thumbnail" style="background: url('/images/projects/{{ $project->id }}/thumb_{{ $project->thumbnail }}') center center; background-size: cover;"></div>
+								<div class="thumbnail" style="background: url('/images/projects/thumb_{{ $project->thumbnail }}') center center; background-size: cover;"></div>
 							</td>
 							<td>{{ $project->name_en .' : '. $project->name_kh .' : '. $project->name_my .' : '. $project->name_sa }}</td>
 							<td>{{ $project->index }}</td>
@@ -142,8 +142,8 @@
 		$('.btnImage').click(function () {
 
 			$('#ProjectImg').attr({
-															"data-src": "/images/projects/"+ $(this).data('id') + "/thumb_"+ $(this).data('src'),
-															"src": "/images/projects/"+ $(this).data('id') + "/thumb_"+ $(this).data('src')
+															"data-src": "/images/projects/thumb_"+ $(this).data('src'),
+															"src": "/images/projects/thumb_"+ $(this).data('src')
 														});
 
 			$('#imageForm').attr('action',$(this).data('url'));

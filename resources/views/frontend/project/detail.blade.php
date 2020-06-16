@@ -11,7 +11,7 @@
                     <li class="list-inline-item"></li> --}}
                 </ul>
                 <hr style="margin-top: -8px;"/>
-                <img src="/images/projects/{!! $project->id !!}/{!! $project->thumbnail !!}" alt="">
+                <img src="/images/projects/{!! $project->thumbnail !!}" alt="">
                 <br/>
                 <br/>
                 {!! $project->$detail !!}

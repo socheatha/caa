@@ -69,7 +69,7 @@ class ProjectController extends Controller
 															'updated_by' => Auth::user()->id,
 														]);
 
-			$path = $this->path. $project->id .'/';
+			$path = $this->path;
 			if (!file_exists($path)) {
 					mkdir($path, 666, true);
 			}
@@ -128,7 +128,7 @@ class ProjectController extends Controller
 	{
 		if ($request->file('thumbnail')) {
 
-			$path = $this->path. $project->id .'/';
+			$path = $this->path;
 			if (!file_exists($path)) {
 					mkdir($path, 666, true);
 			}
@@ -150,7 +150,7 @@ class ProjectController extends Controller
 	public function destroy(Project $project)
 	{
 
-		$path = $this->path. $project->id .'/';
+		$path = $this->path;
 		$name = $project->name_en;
 		$thumbnail = $project->thumbnail;
 

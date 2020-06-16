@@ -8,7 +8,7 @@
                     <div class="block-category">
                         <div class="row">
                             <div class="col-sm-5">
-                                <div class="img" style="background: url('/images/activities/{{ $activity->id }}/thumb_{{ $activity->thumbnail }}') center center; background-size: cover;"></div>
+                                <div class="img" style="background: url('/images/activities/thumb_{{ $activity->thumbnail }}') center center; background-size: cover;"></div>
                             </div>
                             <div class="col-sm-7">
                                 <h4><a href="{{ route('activities.detail', $activity->id) }}">{{ $activity->$name }}</a></h4>

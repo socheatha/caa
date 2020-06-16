@@ -83,7 +83,7 @@
 									<div class="col-lg-5">
 										<div class="big-article">
 											<a href="{{ route('projects.detail', $project_category->projects[0]->id) }}">
-												<div class="img" style="background: url('/images/projects/{{ $project_category->projects[0]->id }}/{{ 'thumb_'. $project_category->projects[0]->thumbnail }}') center center; background-size: cover;"></div>
+												<div class="img" style="background: url('/images/projects/{{ 'thumb_'. $project_category->projects[0]->thumbnail }}') center center; background-size: cover;"></div>
 												<footer>
 													<h4>{{ $project_category->projects[0]->$name }}</h4>
 												</footer>
@@ -98,7 +98,7 @@
 													<div class="col-md-4 col-sm-6">
 														<div class="small-article mb-2">
 															<a href="{{ route('projects.detail', $project->id) }}">
-															<div class="img" style="background: url('/images/projects/{{ $project->id }}/{{ 'thumb_'. $project->thumbnail }}') center center; background-size: cover;"></div>
+															<div class="img" style="background: url('/images/projects/{{ 'thumb_'. $project->thumbnail }}') center center; background-size: cover;"></div>
 																<footer>
 																	<h6>{{ $project->$name }}</h6>
 																</footer>
@@ -140,7 +140,7 @@
 									<div class="col-lg-5">
 										<div class="big-article">
 											<a href="{{ route('activities.detail', $activity_category->activities[0]->id) }}">
-												<div class="img" style="background: url('/images/activities/{{ $activity_category->activities[0]->id }}/{{ 'thumb_'. $activity_category->activities[0]->thumbnail }}') center center; background-size: cover;"></div>
+												<div class="img" style="background: url('/images/activities/{{ 'thumb_'. $activity_category->activities[0]->thumbnail }}') center center; background-size: cover;"></div>
 												<footer>
 													<h4>{{ $activity_category->activities[0]->$name }}</h4>
 												</footer>
@@ -155,7 +155,7 @@
 													<div class="col-sm-4">
 														<div class="small-article mb-2">
 															<a href="{{ route('activities.detail', $activity->id) }}">
-															<div class="img" style="background: url('/images/activities/{{ $activity->id }}/{{ 'thumb_'. $activity->thumbnail }}') center center; background-size: cover;"></div>
+															<div class="img" style="background: url('/images/activities/{{ 'thumb_'. $activity->thumbnail }}') center center; background-size: cover;"></div>
 																<footer>
 																	<h6>{{ $activity->$name }}</h6>
 																</footer>
