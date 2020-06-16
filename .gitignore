@@ -1,9 +1,16 @@
 /node_modules
 /public/hot
 /public/storage
+/public/images/*.png
+/public/images/activities/*.png
+/public/images/projects/*.png
+/public/images/slide_shows/*.png
+/public/images/sliders/*.png
+/public/images/config/*.png
 /storage/*.key
 /storage/*.log
 /vendor
+.htaccess
 .env
 .env.backup
 .phpunit.result.cache
