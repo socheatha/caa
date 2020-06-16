@@ -150,12 +150,10 @@ class ProjectController extends Controller
 	public function destroy(Project $project)
 	{
 
-		$path = $this->path;
 		$name = $project->name_en;
 		$thumbnail = $project->thumbnail;
 
 		if ($project->delete()){
-			File::deleteDirectory($path);
 			// Redirect
 			return redirect()->route('admin.project.index')
 				->with('success', '<strong>' . $name . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));

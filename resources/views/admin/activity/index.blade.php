@@ -141,8 +141,6 @@
 	<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
 	<script type="text/javascript">
 		$('.btnImage').click(function () {
-			alert($(this).data('url'));
-
 			$('#ActivityImg').attr({
 															"data-src": "/images/activities/thumb_"+ $(this).data('src'),
 															"src": "/images/activities/thumb_"+ $(this).data('src')

@@ -149,12 +149,10 @@ class ActivityController extends Controller
 	public function destroy(Activity $activity)
 	{
 
-		$path = $this->path;
 		$name = $activity->name_en;
 		$thumbnail = $activity->thumbnail;
 
 		if ($activity->delete()){
-			File::deleteDirectory($path);
 			// Redirect
 			return redirect()->route('admin.activity.index')
 				->with('success', '<strong>' . $name . '</strong> ' . __('alert.crud.success.delete', ['name' => Auth::user()->module()]));
