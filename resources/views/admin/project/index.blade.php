@@ -140,7 +140,7 @@
 	<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
 	<script type="text/javascript">
 		$('.btnImage').click(function () {
-
+			alert($(this).data('url'));
 			$('#ProjectImg').attr({
 															"data-src": "/images/projects/thumb_"+ $(this).data('src'),
 															"src": "/images/projects/thumb_"+ $(this).data('src')

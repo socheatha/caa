@@ -78,7 +78,7 @@
 								<button type="button" class="btn btn-primary btn_copy_link" data-url="{{ route('activities.detail', $activity->id) }}"><i class="fa fa-copy"></i></button>
 
 								{{-- Edit Button --}}
-								<button class="btn btn-warning btnImage" data-url="" data-src="{{ $activity->thumbnail }}" data-id="{{ $activity->id }}"><i class="fa fa-image"></i></button>
+								<button class="btn btn-warning btnImage" data-url="{{ route('admin.activity.update_image', $activity->id) }}" data-src="{{ $activity->thumbnail }}" data-id="{{ $activity->id }}"><i class="fa fa-image"></i></button>
 								{{-- Edit Button --}}
 								<a href="{{ route('admin.activity.edit',$activity->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 								{{-- Delete Button --}}
@@ -141,6 +141,7 @@
 	<script src="{{ asset('admin_asset/js/jasny-bootstrap.min.js') }}"></script>
 	<script type="text/javascript">
 		$('.btnImage').click(function () {
+			alert($(this).data('url'));
 
 			$('#ActivityImg').attr({
 															"data-src": "/images/activities/thumb_"+ $(this).data('src'),
