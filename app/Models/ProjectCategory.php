@@ -23,7 +23,7 @@ class ProjectCategory extends BaseModel
 
 
 	public function Projects(){
-		return $this->hasMany(Project::class,'category_id');
+		return $this->hasMany(Project::class,'category_id')->orderBy('index', 'desc');
 	}
 	public function CreatedBy(){
 		return $this->belongsTo(User::class,'created_by');

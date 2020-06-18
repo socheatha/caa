@@ -26,7 +26,7 @@ class ProjectController extends Controller
 	public function index()
 	{
 		$this->data = [
-			'projects' => Project::orderBy('index', 'asc')->get(),
+			'projects' => Project::orderBy('index', 'desc')->get(),
 		];
 	
 		return view('admin.project.index', $this->data);

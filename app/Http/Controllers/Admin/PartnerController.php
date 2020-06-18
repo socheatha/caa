@@ -23,7 +23,7 @@ class PartnerController extends Controller
 	public function index()
 	{
 		$this->data = [
-			'partners' => Partner::orderBy('index', 'asc')->get(),
+			'partners' => Partner::orderBy('index', 'desc')->get(),
 		];
 	
 		return view('admin.partner.index', $this->data);

@@ -13,7 +13,7 @@ class ProjectCategoryController extends Controller
 	
 	public function index()
 	{
-		$projectCategorys = ProjectCategory::orderBy('index', 'asc')->get();
+		$projectCategorys = ProjectCategory::orderBy('index', 'desc')->get();
 		return view('admin.project_category.index')->with(compact('projectCategorys'));
 	}
 

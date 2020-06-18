@@ -24,7 +24,7 @@ class ActivityCategory extends BaseModel
 
 
 	public function Activities(){
-		return $this->hasMany(Activity::class,'category_id');
+		return $this->hasMany(Activity::class,'category_id')->orderBy('index', 'desc');
 	}
 	public function CreatedBy(){
 		return $this->belongsTo(User::class,'created_by');

@@ -12,7 +12,7 @@ class ActivityCategoryController extends Controller
 {
 	public function index()
 	{
-		$activityCategorys = ActivityCategory::orderBy('index', 'asc')->get();
+		$activityCategorys = ActivityCategory::orderBy('index', 'desc')->get();
 		return view('admin.activity_category.index')->with(compact('activityCategorys'));
 	}
 
