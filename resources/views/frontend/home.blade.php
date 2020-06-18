@@ -121,7 +121,7 @@
 				{{-- Block Content --}}
 				@foreach ($activity_categories as $activity_category)
 					@if (count($activity_category->activities) > 0)
-						<section id="block-front-latest-news" class="block-content" data-color="darkblue">
+						<section id="block-front-latest-news" class="block-content" data-color="{{ $activity_category->color }}">
 							<div class="title-block">
 								<h4 class="title">
 									<div>

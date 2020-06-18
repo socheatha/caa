@@ -48,6 +48,9 @@ body{ background: #f9f9f9;}
 	margin-top:-6px;
 }
 
+#navbar-2.sticky-top{
+	box-shadow: 1px 1px 8px rgba(000, 000, 000, 0.1);
+}
 #navbar-2{
 	padding: 0;
 }

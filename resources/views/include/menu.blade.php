@@ -1,4 +1,4 @@
-	<nav id="navbar-2" class="navbar navbar-expand-sm navbar-light bg-white">
+	<nav id="navbar-2" class="navbar navbar-expand-sm navbar-light bg-white animated">
 		<div class="container">
 			<a class="navbar-brand sr-only" style="width: 210px;" href="{{ route('home') }}">
 				<img src="/images/logo.png" alt="..." />
