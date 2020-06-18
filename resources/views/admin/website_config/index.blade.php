@@ -170,82 +170,84 @@
 			<br>
 			<br>
 			<a  href="#" class="btn btn-primary" data-toggle="modal" data-target="#_modal_color_and_background">Color and Background <i class="fa fa-edit"></i></a>
-			<table class="table table-bordered table-hover table-striped">
-				<thead>
-					<tr>
-					<th width="5%">N&deg;</th>
-					<th>Position</th>
-					<th>Name</th>
-					<th class="text-center">Color</th>
-					<th>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-						$color = '#444';
-					?>
-					<tr>
-						<td class="text-center">1</td>
-						<td>Header</td>
-						<td>header bg</td>
-						<td width="150px" style="color: #000A19;">
-							<svg width="30" height="10">
-								<rect width="30" height="10" style="fill:{{!empty($config->header_color)?$config->header_color:'none'}};" />
-							</svg>
-							{{!empty($config->header_color)?$config->header_color:'default'}}
-						</td>
-						<td>background color at header</td>
-					</tr>
-					<tr>
-						<td class="text-center">2</td>
-						<td>Header</td>
-						<td>menu active color</td>
-						<td width="150px">
-							<svg width="30" height="10">
-								<rect width="30" height="10" style="fill:{{!empty($config->menu_active_color)?$config->menu_active_color:'none'}};" />
-							</svg>
-							{{!empty($config->menu_active_color)?$config->menu_active_color:'default'}}
-						</td>
-						<td>text color at header when menu active</td>
-					</tr>
-					<tr>
-						<td class="text-center">3</td>
-						<td>Header+Body+Footer</td>
-						<td>text color</td>
-						<td width="150px">
-							<svg width="30" height="10">
-								<rect width="30" height="10" style="fill:{{!empty($config->text_color)?$config->text_color:'none'}};" />
-							</svg>
-							{{!empty($config->text_color)?$config->text_color:'default'}}
-						</td>
-						<td>tde color of text in website</td>
-					</tr>
-					<tr>
-						<td class="text-center">4</td>
-						<td>Body</td>
-						<td>body bg</td>
-						<td width="150px">
-							<svg width="30" height="10">
-								<rect width="30" height="10" style="fill:{{!empty($config->body_color)?$config->body_color:'none'}};" />
-							</svg>
-							{{!empty($config->body_color)?$config->body_color:'default'}}
-						</td>
-						<td>background color of body</td>
-					</tr>
-					<tr>
-						<td class="text-center">5</td>
-						<td>Footer</td>
-						<td>footer bg</td>
-						<td width="150px">
-							<svg width="30" height="10">
-								<rect width="30" height="10" style="fill:{{!empty($config->footer_color)?$config->footer_color:'none'}};" />
-							</svg>
-							{{!empty($config->footer_color)?$config->footer_color:'default'}}
-						</td>
-						<td>background color of footer</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class = "table-responsive">
+				<table class="table table-bordered table-hover table-striped" width="100%">
+					<thead>
+						<tr>
+						<th width="5%">N&deg;</th>
+						<th>Position</th>
+						<th>Name</th>
+						<th class="text-center">Color</th>
+						<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							$color = '#444';
+						?>
+						<tr>
+							<td class="text-center">1</td>
+							<td>Header</td>
+							<td>header bg</td>
+							<td width="150px" style="color: #000A19;">
+								<svg width="30" height="10">
+									<rect width="30" height="10" style="fill:{{!empty($config->header_color)?$config->header_color:'none'}};" />
+								</svg>
+								{{!empty($config->header_color)?$config->header_color:'default'}}
+							</td>
+							<td>background color at header</td>
+						</tr>
+						<tr>
+							<td class="text-center">2</td>
+							<td>Header</td>
+							<td>menu active color</td>
+							<td width="150px">
+								<svg width="30" height="10">
+									<rect width="30" height="10" style="fill:{{!empty($config->menu_active_color)?$config->menu_active_color:'none'}};" />
+								</svg>
+								{{!empty($config->menu_active_color)?$config->menu_active_color:'default'}}
+							</td>
+							<td>text color at header when menu active</td>
+						</tr>
+						<tr>
+							<td class="text-center">3</td>
+							<td>Header+Body+Footer</td>
+							<td>text color</td>
+							<td width="150px">
+								<svg width="30" height="10">
+									<rect width="30" height="10" style="fill:{{!empty($config->text_color)?$config->text_color:'none'}};" />
+								</svg>
+								{{!empty($config->text_color)?$config->text_color:'default'}}
+							</td>
+							<td>tde color of text in website</td>
+						</tr>
+						<tr>
+							<td class="text-center">4</td>
+							<td>Body</td>
+							<td>body bg</td>
+							<td width="150px">
+								<svg width="30" height="10">
+									<rect width="30" height="10" style="fill:{{!empty($config->body_color)?$config->body_color:'none'}};" />
+								</svg>
+								{{!empty($config->body_color)?$config->body_color:'default'}}
+							</td>
+							<td>background color of body</td>
+						</tr>
+						<tr>
+							<td class="text-center">5</td>
+							<td>Footer</td>
+							<td>footer bg</td>
+							<td width="150px">
+								<svg width="30" height="10">
+									<rect width="30" height="10" style="fill:{{!empty($config->footer_color)?$config->footer_color:'none'}};" />
+								</svg>
+								{{!empty($config->footer_color)?$config->footer_color:'default'}}
+							</td>
+							<td>background color of footer</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<div class="modal fade" id="_modal_color_and_background" tabindex="-1" role="dialog" aria-labelledby="main_menuModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content" style="margin-top: 80px;">
@@ -311,80 +313,84 @@
 			<br>
 			<br>
 			<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#_modal_text_and_label">Text and Label <i class="fa fa-edit"></i></a>
-			<table class="table table-bordered table-striped">
-				<tbody>
-					<tr>
-						<th class="text-center">N&deg;</th>
-						<th width="150px">Title</th>
-						<th>Translate in En</th>
-						<th>Translate in Kh</th>
-						<th>Translate in My</th>
-						<th>Translate in Sa</th>
-					</tr>
-					<tr>
-						<td class="text-center">1</td>
-						<th>welcome message</th>
-						<td>{{!empty($config->welcome_message_en)? $config->welcome_message_en:'---'}}</td>
-						<td>{{!empty($config->welcome_message_kh)? $config->welcome_message_kh:'---'}}</td>
-						<td>{{!empty($config->welcome_message_my)? $config->welcome_message_my:'---'}}</td>
-						<td>{{!empty($config->welcome_message_sa)? $config->welcome_message_sa:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">2</td>
-						<th>phone</th>
-						<td>{{!empty($config->phone_en)? $config->phone_en:'---'}}</td>
-						<td>{{!empty($config->phone_kh)? $config->phone_kh:'---'}}</td>
-						<td>{{!empty($config->phone_my)? $config->phone_my:'---'}}</td>
-						<td>{{!empty($config->phone_sa)? $config->phone_sa:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">3</td>
-						<th>address</th>
-						<td>{{!empty($config->address_en)? $config->address_en:'---'}}</td>
-						<td>{{!empty($config->address_kh)? $config->address_kh:'---'}}</td>
-						<td>{{!empty($config->address_my)? $config->address_my:'---'}}</td>
-						<td>{{!empty($config->address_sa)? $config->address_sa:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">4</td>
-						<th>copy right text</th>
-						<td>{{!empty($config->copyright_en)? $config->copyright_en:'---'}}</td>
-						<td>{{!empty($config->copyright_kh)? $config->copyright_kh:'---'}}</td>
-						<td>{{!empty($config->copyright_my)? $config->copyright_my:'---'}}</td>
-						<td>{{!empty($config->copyright_sa)? $config->copyright_sa:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">5</td>
-						<th>Map Location</th>
-						<td colspan="4">{{!empty($config->map_location)? $config->map_location:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">6</td>
-						<th>email address</th>
-						<td colspan="4">{{!empty($config->email)? $config->email:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">7</td>
-						<th>facebook url</th>
-						<td colspan="4">{{!empty($config->fb_url)? $config->fb_url:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">8</td>
-						<th>instagram url</th>
-						<td colspan="4">{{!empty($config->instagram_url)? $config->instagram_url:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">9</td>
-						<th>tweeter url</th>
-						<td colspan="4">{{!empty($config->tw_url)? $config->tw_url:'---'}}</td>
-					</tr>
-					<tr>
-						<td class="text-center">10</td>
-						<th>linkedin url</th>
-						<td colspan="4">{{!empty($config->linkedin_url)? $config->linkedin_url:'---'}}</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class = "table-responsive">
+				<table class="table table-bordered table-striped" width="100%">
+					<tbody>
+						<tr>
+							<th class="text-center">N&deg;</th>
+							<th width="150px">Title</th>
+							<th>Translate in En</th>
+							<th>Translate in Kh</th>
+							<th>Translate in My</th>
+							<th>Translate in Sa</th>
+						</tr>
+						<tr>
+							<td class="text-center">1</td>
+							<th>welcome message</th>
+							<td>{{!empty($config->welcome_message_en)? $config->welcome_message_en:'---'}}</td>
+							<td>{{!empty($config->welcome_message_kh)? $config->welcome_message_kh:'---'}}</td>
+							<td>{{!empty($config->welcome_message_my)? $config->welcome_message_my:'---'}}</td>
+							<td>{{!empty($config->welcome_message_sa)? $config->welcome_message_sa:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">2</td>
+							<th>phone</th>
+							<td>{{!empty($config->phone_en)? $config->phone_en:'---'}}</td>
+							<td>{{!empty($config->phone_kh)? $config->phone_kh:'---'}}</td>
+							<td>{{!empty($config->phone_my)? $config->phone_my:'---'}}</td>
+							<td>{{!empty($config->phone_sa)? $config->phone_sa:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">3</td>
+							<th>address</th>
+							<td>{{!empty($config->address_en)? $config->address_en:'---'}}</td>
+							<td>{{!empty($config->address_kh)? $config->address_kh:'---'}}</td>
+							<td>{{!empty($config->address_my)? $config->address_my:'---'}}</td>
+							<td>{{!empty($config->address_sa)? $config->address_sa:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">4</td>
+							<th>copy right text</th>
+							<td>{{!empty($config->copyright_en)? $config->copyright_en:'---'}}</td>
+							<td>{{!empty($config->copyright_kh)? $config->copyright_kh:'---'}}</td>
+							<td>{{!empty($config->copyright_my)? $config->copyright_my:'---'}}</td>
+							<td>{{!empty($config->copyright_sa)? $config->copyright_sa:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">5</td>
+							<th>Map Location</th>
+							<td colspan="4">
+								<div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 350px;">{{!empty($config->map_location)? $config->map_location:'---'}}</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="text-center">6</td>
+							<th>email address</th>
+							<td colspan="4">{{!empty($config->email)? $config->email:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">7</td>
+							<th>facebook url</th>
+							<td colspan="4">{{!empty($config->fb_url)? $config->fb_url:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">8</td>
+							<th>instagram url</th>
+							<td colspan="4">{{!empty($config->instagram_url)? $config->instagram_url:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">9</td>
+							<th>tweeter url</th>
+							<td colspan="4">{{!empty($config->tw_url)? $config->tw_url:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">10</td>
+							<th>linkedin url</th>
+							<td colspan="4">{{!empty($config->linkedin_url)? $config->linkedin_url:'---'}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<div class="modal fade" id="_modal_text_and_label" tabindex="-1" role="dialog" aria-labelledby="main_menuModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content" style="margin-top: 80px;">
