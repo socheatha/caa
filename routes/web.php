@@ -34,8 +34,8 @@
 
   // block Activity
   Route::group(['prefix' => 'activity', 'as' => 'activities.','namespace' => 'Frontend'], function () {
-    Route::get('{activity}', 'activityController@getactivityDetail')->name('detail');
-    Route::get('activity_category/{activity_category}', 'activityController@activity_category')->name('activity_category');
+    Route::get('{activity}', 'ActivityController@getactivityDetail')->name('detail');
+    Route::get('activity_category/{activity_category}', 'ActivityController@activity_category')->name('activity_category');
   });
 
   Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
