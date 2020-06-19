@@ -24,8 +24,8 @@ class AboutUsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en' => 'required|unique:about_us,name_en,'.((isset($this->aboutUs))? $this->aboutUs->id : ''),
-            'index' => 'required|unique:about_us,index,'.((isset($this->aboutUs))? $this->aboutUs->id : ''),
+            'name_en' => 'required|unique:about_us,name_en,'.((isset($this->about_us))? $this->about_us->id : ''),
+            'index' => 'required|unique:about_us,index,'.((isset($this->about_us))? $this->about_us->id : ''),
             'seo_keywords' => 'required',
             'seo_description' => 'required',
         ];
