@@ -20,7 +20,7 @@
 						<div class="tab-content">
 
               @foreach ($about_us as $i => $about)
-                <div role="tabpanel" class="tab-pane fade show {{ (($i==0)? 'active' : '') }}" id="#tab-{{ $about->id }}">
+                <div role="tabpanel" class="tab-pane fade show {{ (($i==0)? 'active' : '') }}" id="tab-{{ $about->id }}">
                   {!! $about->$detail !!}
                 </div>
               @endforeach
