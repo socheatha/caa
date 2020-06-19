@@ -43,6 +43,7 @@ class ProjectController extends Controller
 						'phone' => 'phone_'.$web_lang,
 						'address' => 'address_'.$web_lang,
                         'project_category' => $projectCategory,
+                        'title' => 'title_'.$web_lang,
 						'web_config' => Config::first(),
 						'documents' => Document::orderBy('created_at', 'desc')->get(),
                     ];  
