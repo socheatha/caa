@@ -25,7 +25,7 @@ class AboutUsController extends Controller
 						'address' => 'address_'.$web_lang,
 						'web_config' => Config::first(),
 						'documents' => Document::orderBy('created_at', 'desc')->get(),
-						'about_us' => AboutUs::orderBy('created_at', 'desc')->get(),
+						'about_us' => AboutUs::orderBy('created_at', 'asc')->get(),
 					];
 		return view('frontend.about_us', $this->data);
 	}
