@@ -23,6 +23,7 @@ class AboutUsController extends Controller
 						'copyright' => 'copyright_'.$web_lang,
 						'phone' => 'phone_'.$web_lang,
 						'address' => 'address_'.$web_lang,
+						'title' => 'title_'.$web_lang,
 						'web_config' => Config::first(),
 						'documents' => Document::orderBy('created_at', 'desc')->get(),
 						'about_us' => AboutUs::orderBy('created_at', 'asc')->get(),

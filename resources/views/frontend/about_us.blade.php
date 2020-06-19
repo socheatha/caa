@@ -11,7 +11,7 @@
               
               @foreach ($about_us as $i => $about)
                 <li class="nav-item">
-                  <a class="nav-link show {{ (($i==0)? 'active' : '') }}" href="#tab-{{ $about->id }}" role="tab" data-toggle="tab" aria-selected="true">{{ $about->$name }}</a>
+                  <a class="nav-link show {{ (($i==0)? 'active' : '') }}" title="{{ $about->$name }}" href="#tab-{{ $about->id }}" role="tab" data-toggle="tab" aria-selected="true">{{ $about->$name }}</a>
                 </li>
               @endforeach
 

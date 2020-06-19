@@ -47,6 +47,10 @@ class ConfigController extends Controller
                 'copyright_kh'=>'1',
                 'copyright_my'=>'1',
                 'copyright_sa'=>'1',
+                'welcome_title_en'=>'1',
+                'welcome_title_kh'=>'1',
+                'welcome_title_my'=>'1',
+                'welcome_title_sa'=>'1',
                 'welcome_message_en'=>'1',
                 'welcome_message_kh'=>'1',
                 'welcome_message_my'=>'1',
@@ -148,6 +152,11 @@ class ConfigController extends Controller
             'tw_url' => !empty($request->tw_url)?$request->tw_url:$config->tw_url,
             'linkedin_url' => !empty($request->linkedin_url)?$request->linkedin_url:$config->linkedin_url,
             'map_location' => !empty($request->map_location)?$request->map_location:$config->map_location,
+
+            'welcome_title_en' => !empty($request->welcome_title_en)?$request->welcome_title_en:$config->welcome_title_en,
+            'welcome_title_kh' => !empty((($request->welcome_title_kh)? $request->welcome_title_kh : $request->welcome_title_en))?(($request->welcome_title_kh)? $request->welcome_title_kh : $request->welcome_title_en):$config->welcome_title_kh,
+            'welcome_title_my' => !empty((($request->welcome_title_my)? $request->welcome_title_my : $request->welcome_title_en))?(($request->welcome_title_my)? $request->welcome_title_my : $request->welcome_title_en):$config->welcome_title_my,
+            'welcome_title_sa' => !empty((($request->welcome_title_sa)? $request->welcome_title_sa : $request->welcome_title_en))?(($request->welcome_title_sa)? $request->welcome_title_sa : $request->welcome_title_en):$config->welcome_title_sa,
 
             'welcome_message_en' => !empty($request->welcome_message_en)?$request->welcome_message_en:$config->welcome_message_en,
             'welcome_message_kh' => !empty((($request->welcome_message_kh)? $request->welcome_message_kh : $request->welcome_message_en))?(($request->welcome_message_kh)? $request->welcome_message_kh : $request->welcome_message_en):$config->welcome_message_kh,

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container detail-container">
         <div class="row">
             <div class="col-sm-8">
-                <h3 class="my-3"> {!! $activity->$name !!}</h3>
+                <h3 title="{!! $activity->$name !!}" class="my-3"> {!! $activity->$name !!}</h3>
                 <ul class="list-inline">
                     <li class="list-inline-item" style="color: #777;"><i class="far fa-clock"></i> <span class="publish_time">{!! $activity->created_at->format('Y-m-d') !!}</span></li>
                     {{-- <li class="list-inline-item"> | </li>

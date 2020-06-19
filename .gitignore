@@ -2,11 +2,13 @@
 /public/hot
 /public/storage
 /public/images/*.png
+/public/images/document/*.pdf
 /public/images/activities/*.png
 /public/images/projects/*.png
 /public/images/slide_shows/*.png
 /public/images/sliders/*.png
 /public/images/config/*.png
+/public/images/partners/*.png
 /storage/*.key
 /storage/*.log
 /vendor

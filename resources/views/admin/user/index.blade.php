@@ -64,11 +64,11 @@
 								<a href="{{ route('admin.user.edit',$user->id) }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
 
 								{{-- Delete Button --}}
-								<button class="btn btn-danger BtnDeleteConfirm" value="{{ $user->id }}"><i class="fa fa-trash-alt"></i></button>
+								{{-- <button class="btn btn-danger BtnDeleteConfirm" value="{{ $user->id }}"><i class="fa fa-trash-alt"></i></button>
 								{{ Form::open(['url'=>route('admin.user.destroy', $user->id), 'id' => 'form-item-'.$user->id, 'class' => 'sr-only']) }}
 								{{ Form::hidden('_method','DELETE') }}
 								{{ Form::hidden('passwordDelete','') }}
-								{{ Form::close() }}
+								{{ Form::close() }} --}}
 
 							</td>
 						</tr>

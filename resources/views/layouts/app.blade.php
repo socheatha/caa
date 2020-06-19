@@ -1,3 +1,19 @@
+<?php
+	
+	use App\Models\MainMenu;
+	use App\Models\Partner;
+	use App\Models\Language;
+	
+	$routename = explode('.', Route::currentRouteName());
+
+	$menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
+	$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
+	$languages = Language::all();
+	$language = Language::where('nationality', $web_lang)->first();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -7,7 +23,7 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<title>{{ config('app.name', 'Laravel') }}</title>
+	<title>{{ $web_config->$title }}</title>
 
 	<!-- Fonts -->
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,22 +37,6 @@
 
   </head>
 <body>
-
-	<?php
-	
-			use App\Models\MainMenu;
-			use App\Models\Partner;
-			use App\Models\Language;
-			
-			$routename = explode('.', Route::currentRouteName());
-
-			$menus = MainMenu::where('status','1')->orderBy('index', 'asc')->get();
-			$partners = Partner::where('status','1')->orderBy('index', 'asc')->get();
-			$languages = Language::all();
-			$language = Language::where('nationality', $web_lang)->first();
-
-
-	?>
 	
 	<span class="sr-only web_config" data-text_color="{{ $web_config->text_color }}" data-footer_color="{{ $web_config->footer_color}}" data-body_color="{{ $web_config->body_color }}" data-menu_active_color="{{ $web_config->menu_active_color }}" data-header_color="{{ $web_config->header_color }}"></span>
 

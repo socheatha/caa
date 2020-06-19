@@ -5,7 +5,7 @@
 		
 		@foreach ($partners as $partner)
 			<div class="slide">
-				<a href="{{ $partner->url }}">
+				<a href="{{ $partner->url }}" target="_blanK">
 					<img src="/images/partners/{{ $partner->thumbnail }}" alt="{{ $partner->url }}">
 				</a>
 			</div>

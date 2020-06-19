@@ -37,7 +37,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8">
-				<hr>
 				<h3 class="mb-2">{{ __('frontend.contact_us.get_in_touch') }}</h3>
 				<div class="text-mute">{{ __('frontend.contact_us.get_in_touch_text') }}</div>
 				<div class="clearfixed"></div>

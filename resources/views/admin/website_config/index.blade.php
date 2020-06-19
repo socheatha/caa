@@ -326,6 +326,14 @@
 						</tr>
 						<tr>
 							<td class="text-center">1</td>
+							<th>welcome title</th>
+							<td>{{!empty($config->welcome_title_en)? $config->welcome_title_en:'---'}}</td>
+							<td>{{!empty($config->welcome_title_kh)? $config->welcome_title_kh:'---'}}</td>
+							<td>{{!empty($config->welcome_title_my)? $config->welcome_title_my:'---'}}</td>
+							<td>{{!empty($config->welcome_title_sa)? $config->welcome_title_sa:'---'}}</td>
+						</tr>
+						<tr>
+							<td class="text-center">1</td>
 							<th>welcome message</th>
 							<td>{{!empty($config->welcome_message_en)? $config->welcome_message_en:'---'}}</td>
 							<td>{{!empty($config->welcome_message_kh)? $config->welcome_message_kh:'---'}}</td>
@@ -436,6 +444,10 @@
 								@component('admin.components.languageTab',['unique_tab'=>'3'])
 									@slot('tab_en')
 										<div class="form-group">
+											<label for="" class="form-label">welcome Title En:</label>
+											<input type="text" class="form-control" name="welcome_title_en" value="{{!empty($config->welcome_title_en)? $config->welcome_title_en:''}}" />
+										</div>
+										<div class="form-group">
 											<label for="" class="form-label">welcome message En:</label>
 											<input type="text" class="form-control" name="welcome_message_en" value="{{!empty($config->welcome_message_en)? $config->welcome_message_en:''}}" />
 										</div>
@@ -453,6 +465,10 @@
 										</div>
 									@endslot
 									@slot('tab_kh')
+										<div class="form-group">
+											<label for="" class="form-label">welcome Title Kh:</label>
+											<input type="text" class="form-control" name="welcome_title_kh" value="{{!empty($config->welcome_title_kh)? $config->welcome_title_kh:''}}" />
+										</div>
 										<div class="form-group">
 											<label for="" class="form-label">welcome message Kh:</label>
 											<input type="text" class="form-control" name="welcome_message_kh" value="{{!empty($config->welcome_message_kh)? $config->welcome_message_kh:''}}" />
@@ -472,6 +488,10 @@
 									@endslot
 									@slot('tab_my')
 										<div class="form-group">
+											<label for="" class="form-label">welcome Title My:</label>
+											<input type="text" class="form-control" name="welcome_title_my" value="{{!empty($config->welcome_title_my)? $config->welcome_title_my:''}}" />
+										</div>
+										<div class="form-group">
 											<label for="" class="form-label">welcome message My:</label>
 											<input type="text" class="form-control" name="welcome_message_my" value="{{!empty($config->welcome_message_my)? $config->welcome_message_my:''}}" />
 										</div>
@@ -489,6 +509,10 @@
 										</div>
 									@endslot
 									@slot('tab_sa')
+										<div class="form-group">
+											<label for="" class="form-label">welcome Title Sa:</label>
+											<input type="text" class="form-control" name="welcome_title_sa" value="{{!empty($config->welcome_title_sa)? $config->welcome_title_sa:''}}" />
+										</div>
 										<div class="form-group">
 											<label for="" class="form-label">welcome message Sa:</label>
 											<input type="text" class="form-control" name="welcome_message_sa" value="{{!empty($config->welcome_message_sa)? $config->welcome_message_sa:''}}" />

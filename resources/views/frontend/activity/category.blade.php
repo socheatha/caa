@@ -11,7 +11,7 @@
                                 <div class="img" style="background: url('/images/activities/thumb_{{ $activity->thumbnail }}') center center; background-size: cover;"></div>
                             </div>
                             <div class="col-sm-7">
-                                <h4><a href="{{ route('activities.detail', $activity->id) }}">{{ $activity->$name }}</a></h4>
+                                <h4 title="{{ $activity->$name }}"><a href="{{ route('activities.detail', $activity->id) }}">{{ $activity->$name }}</a></h4>
                                 <small class="time"><i class="far fa-clock"></i> {{ $activity->created_at->format('Y-m-d') }}</small>
                                 <p>{{ $activity->$short_desc }}</p>
                             </div>

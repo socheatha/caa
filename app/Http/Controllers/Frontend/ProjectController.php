@@ -23,6 +23,7 @@ class ProjectController extends Controller
 						'copyright' => 'copyright_'.$web_lang,
 						'phone' => 'phone_'.$web_lang,
 						'address' => 'address_'.$web_lang,
+						'title' => 'title_'.$web_lang,
                         'project' => $project,
 						'web_config' => Config::first(),
 						'documents' => Document::orderBy('created_at', 'desc')->get(),

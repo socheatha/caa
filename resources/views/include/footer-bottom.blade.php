@@ -10,9 +10,11 @@
       <div class="col-sm-6 text-right">
         <ul class="list-inline footer-menu mb-0">
           @foreach ($menus as $menu)
-            <li class="list-inline-item">
-                <a href="{{ $menu->url }}">{{ $menu->$name }}</a>
-            </li>
+            @if ($menu->$name == 'Home' || $menu->$name == 'About Us' || $menu->$name == 'Donation' || $menu->$name == 'Contact Us')
+              <li class="list-inline-item">
+                  <a href="{{ $menu->url }}">{{ $menu->$name }}</a>
+              </li>
+            @endif
           @endforeach
         </ul>
         <div class="footer-copyright mb-0">{!! $web_config->$copyright !!}</div>

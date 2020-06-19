@@ -11,7 +11,7 @@
                                 <div class="img" style="background: url('/images/projects/thumb_{{ $project->thumbnail }}') center center; background-size: cover;"></div>
                             </div>
                             <div class="col-md-7">
-                                <h4><a href="{{ route('projects.detail', $project->id) }}">{{ $project->$name }}</a></h4>
+                                <h4 title="{{ $project->$name }}"><a href="{{ route('projects.detail', $project->id) }}">{{ $project->$name }}</a></h4>
                                 <small class="time"><i class="far fa-clock"></i> {{ $project->created_at->format('Y-m-d') }}</small>
                                 <p>{{ $project->$short_desc }}</p>
                             </div>

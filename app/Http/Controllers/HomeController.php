@@ -21,6 +21,7 @@ class HomeController extends Controller
 						'name' => 'name_'.$web_lang,
 						'detail' => 'detail_'.$web_lang,
 						'short_desc' => 'short_desc_'.$web_lang,
+						'welcome_title' => 'welcome_title_'.$web_lang,
 						'welcome_message' => 'welcome_message_'.$web_lang,
 						'title' => 'title_'.$web_lang,
 						'copyright' => 'copyright_'.$web_lang,
