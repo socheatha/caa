@@ -52,13 +52,6 @@
           {!! $errors->first('name_en', '<span class="help-block">:message</span>') !!}
         </div>
       </div>
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('detail_en'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('detail_en', "English Detail <small>*</small>")) !!}
-          {!! Form::textarea('detail_en', ((isset($document->detail_en))? $document->detail_en : '' ), ['class' => 'form-control my-editor','id' => 'detail_en','placeholder' => 'detail in english','required']) !!}
-          {!! $errors->first('detail_en', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
     @endslot
     @slot('tab_kh')
       <div class="col-sm-12">
@@ -69,13 +62,6 @@
         </div>
       </div>
       
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('detail_kh'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('detail_kh', "Detail in Khmer")) !!}
-          {!! Form::textarea('detail_kh', ((isset($document->detail_kh))? $document->detail_kh : '' ), ['class' => 'form-control my-editor','id' => 'detail_kh','placeholder' => 'detail in khmer']) !!}
-          {!! $errors->first('detail_kh', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
     @endslot
     @slot('tab_my')
       <div class="col-sm-12">
@@ -86,13 +72,6 @@
         </div>
       </div>
       
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('detail_my'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('detail_my', "Detail in Malay")) !!}
-          {!! Form::textarea('detail_my', ((isset($document->detail_my))? $document->detail_my : '' ), ['class' => 'form-control my-editor','id' => 'detail_my','placeholder' => 'detail in malay']) !!}
-          {!! $errors->first('detail_my', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
     @endslot
     @slot('tab_sa')
       <div class="col-sm-12">
@@ -103,13 +82,6 @@
         </div>
       </div>
       
-      <div class="col-sm-12">
-        <div class="form-group {!! (($errors->has('detail_sa'))? 'has-error':'') !!}">
-          {!! Html::decode(Form::label('detail_sa', "Detail in Arab")) !!}
-          {!! Form::textarea('detail_sa', ((isset($document->detail_sa))? $document->detail_sa : '' ), ['class' => 'form-control my-editor','id' => 'detail_sa','placeholder' => 'detail in arab']) !!}
-          {!! $errors->first('detail_sa', '<span class="help-block">:message</span>') !!}
-        </div>
-      </div>
     @endslot
   @endcomponent
 

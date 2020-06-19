@@ -55,7 +55,6 @@
 	          <th>Name</th>
 	          <th>SEO Keywords</th>
 	          <th>SEO Description</th>
-	          <th>Detail</th>
 	          <th width="10%">Action</th>
 	        </tr>
         </thead>
@@ -72,12 +71,6 @@
 							</td>
 							<td>{{!empty($document->seo_keywords)?$document->seo_keywords:''}}</td>
 							<td>{{!empty($document->seo_description)?$document->seo_description:''}}</td>
-							<td>
-								<small>EN:</small> {{!empty($document->detail_en)?$document->detail_en:''}}<br>
-								<small>KH:</small> {{!empty($document->detail_kh)?$document->detail_kh:''}}<br>
-								<small>MY:</small> {{!empty($document->detail_my)?$document->detail_my:''}}<br>
-								<small>SA:</small> {{!empty($document->detail_sa)?$document->detail_sa:''}}<br>
-							</td>
 							<td class="td-action text-right">
 								{{-- Edit Button --}}
 								<a href="{{ route('admin.documents.edit',!empty($document->id)?$document->id:'') }}" class="btn btn-info"><i class="fa fa-pencil-alt"></i></a>
