@@ -2,6 +2,6 @@
 
 return [
 
-    'welcome' => 'សូមស្វាគមន៍',
+    'welcome' => 'Welcome',
 
 ];

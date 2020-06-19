@@ -2,155 +2,154 @@
 
 return [
     
-  'verified' => 'ទន្នន័យពុំទាន់ត្រូវបានពិនិត្យចប់សពគ្រប់ឡើយ',
+  'verified' => 'The Data has not yet been reviewed.',
 
   'taxtype' => [
 
-    'small' => 'គ្រុមហ៊ុនអ្នកគឺជាក្រុមហ៊ុនប្រភេទតូច',
-    'medium' => 'គ្រុមហ៊ុនអ្នកគឺជាក្រុមហ៊ុនប្រភេទមធ្រម',
-    'large' => 'គ្រុមហ៊ុនអ្នកគឺជាក្រុមហ៊ុនប្រភេទធំ',
+    'small' => 'This Company is a small tax payer.',
+    'medium' => 'This Company is a medium tax payer.',
+    'large' => 'This Company is a large tax payer.',
 
   ],
 
   'crud' => [
 
     'success' => [
-      'create' => ':name ត្រូវបានបង្កើតថ្មីដោយជោគជ័យ៖ ',
-      'update' => ':name ត្រូវបានកែប្រែដោយជោគជ័យ៖ ',
-      'delete' => ':name ត្រូវបានលុបចោលដោយជោគជ័យ៖ ',
-      'remove' => ':name ត្រូវបានដកចេញដោយជោគជ័យ៖ ',
-      'submit' => 'ទន្នន័យត្រូវបានស្នើសុំដោយជោគជ័យ',
-      'resubmit' => 'ទន្នន័យត្រូវបានដាក់ឱ្យពិនិត្យឡើងវិញដោយជោគជ័យ',
+      'create' => ':name has been created successfully.',
+      'update' => ':name has been updated successfully.',
+      'delete' => ':name has been deleted successfully.',
+      'remove' => ':name has been removed successfully.',
+      'submit' => 'Data has been submitted.',
+      'resubmit' => 'Data has been sent to re-check.',
     ],
 
     'error' => [
-      'wrongpass' => 'ពាក្យសម្ងាត់របស់ពុំត្រឹមត្រូវឡើយ!',
-      'delete' => ':name ពុំអាចលុបលុបចោលបានឡើយ៖ ',
+      'wrongpass' => 'Your password is not correct!',
+      'delete' => ':name can not be deleted',
     ],
   ],
 
 	'alert' => [
 
     'title' => [
-      'disabled_action' => 'សកម្មភាពពុំដំណើរការ!',
+      'disabled_action' => 'The action has been disabled!',
     ],
     'text' => [
-      'disabled_form' => 'មិនអាចបញ្ចូលទិន្នន័យបានក្រោយពេលដាក់ស្នើសុំឡើយ!',
+      'disabled_form' => 'Can not insert the data after submitted!',
     ],
 	],
 
   'swal' => [
     'title' => [
-      'save' => 'រក្សាទុក?',
-      'offline' => 'អ្នកនៅក្រៅបណ្ដាញយូរពេក',
-      'empty_field' => 'សូមបញ្ចូលទិន្នន័យជាមុនសិន',
-      'empty' => 'ពុំទាន់មានទិន្នន័យនៅឡើយ',
-      'sure' => 'តើ​អ្នក​ប្រាកដ​ឬ​អត់?',
-      'delete' => 'តើ​អ្នកចង់លុប :name នេះ​ប្រាកដ​ឬ​អត់?',
-      'edit' => 'តើ​អ្នកចង់កែប្រែ :name នេះ​ប្រាកដ​ឬ​អត់?',
-      'submit' => 'តើអ្នកពិតជាចង់ធ្វើការស្នើសុំមែនឬទេ?',
-      'resubmit' => 'តើអ្នកពិតជាចង់ឱ្យឆែកឡើងវិញមែនទេ?',
-      'no_one_percent_tax' => 'តើមានការអនុគ្រោះពន្ធដែរទេ?',
+      'save' => 'Do you want to save?',
+      'offline' => 'You have been offline for too long!',
+      'empty_field' => 'Please in input require field first.',
+      'empty' => 'Field can not be empty.',
+      'sure' => 'Are you sure?',
+      'delete' => 'Are you sure to delete :name ?',
+      'edit' => 'Are you sure to edit :name ?',
+      'submit' => 'Are you sure to submit?',
+      'resubmit' => 'Are you sure to send to re-check?',
+      'no_one_percent_tax' => 'Do you want to enable 1% TAX NOT INCLUDED?',
     ],
     'text' => [
-      'save' => 'តើអ្នកចង់រក្សាទុកមែនទេ?',
-      'no_one_percent_tax' => 'ក្រុមហ៊ុននេះមានការអនុគ្រោះពន្ធកាលពីខែមុ តើអ្នកចង់បើកការអនុគ្រោះពន្ធក្នុងខែនេះដែរទេ?',
-      'offline' => 'សូមចុចយល់ព្រមដើម្បីផ្ទុកឡើងវិញម្ដងទៀត',
-      'empty_field' => 'សូមបញ្ចូលទិន្នន័យដែលមានសញ្ញាផ្កាយជាដាច់ខាត',
-      'unrevertible' => 'អ្នកនឹងមិនអាចត្រឡប់វាវិញបានទេ!',
-      'revertible' => 'អ្នកនឹងអាចត្រឡប់វាវិញបានគ្រប់ពេល!',
-      'submit' => 'សូមមេត្តាពិនិត្យឱ្យច្បាស់មុនពេលធ្វើការស្នើសុំ',
-      'resubmit' => 'សូមមេត្តាពិនិត្យឱ្យច្បាស់មុនពេលឱ្យឆែកមើលឡើងវិញ',
+      'save' => 'Do you want to save?',
+      'offline' => 'Please press Okay to reload.',
+      'empty_field' => 'Please input all require field.',
+      'unrevertible' => 'This action can not be reverted!',
+      'revertible' => 'This action can be reverted back!',
+      'submit' => 'Please check all to make sure before submit',
+      'resubmit' => 'Please check all to make sure before send to re-check',
+      'no_one_percent_tax' => '1% TAX NOT INCLUDED was enabled last month, Do you want to enable it this month?',
     ],
     'button' => [
-      'recheck' => 'ពិនិត្យឡើងវិញ',
-      'submit_next' => 'ស្នើសុំបន្ត',
-      'no' => 'មិនយល់ព្រម',
-      'yes' => 'យល់ព្រម',
+      'recheck' => 'Re-check',
+      'submit_next' => 'Submit Next',
+      'no' => 'No',
+      'yes' => 'Yes',
     ],
     'result' => [
       'title' => [
-        'save' => 'រក្សាទុកដោយជោគជ័យ',
-        'wrong' => ':name ពុំត្រឹមត្រូវឡើយ!',
-        'success' => 'ជោគជ័យ',
+        'save' => 'Save successfully',
+        'wrong' => ':name is not correct!',
+        'success' => 'Successful',
       ],
       'text' => [
-        'submit' => 'ការស្នើសុំត្រូបានដាក់ស្នើដោយជោគជ័យ',
-        'resubmit' => 'ការដាក់ឱ្យឆែកមើលឡើងវិញដោយជោគជ័យ',
-        'delete' => ':name ត្រូវបានលុបចោលដោយជោគជ័យ',
-        'save' => ':name ត្រូវបានរក្សាទុក',
-        'duplicate' => 'ពុំអាចបញ្ចូលលេខវិក្កយបត្រដូចគ្នាក្នុងឆ្នាំតែមួយបានទេ',
-        'duplicate1' => 'ទិន្ន័យជាន់គ្នាមិនអាចបញ្ចូលបាន',
-        'no_one_percent_tax' => 'ការអនុគ្រោះពន្ធបានបើកដោយជោគជ័យ',
+        'submit' => 'Data has been submitted.',
+        'resubmit' => 'Data has been sent to re-check.',
+        'delete' => ':name has been deleted.',
+        'save' => ':name has been saved.',
+        'duplicate' => 'Can not insert duplicated Invoice number in the same year.',
+        'duplicate1' => 'Duplicate data can not be inserted.',
+        'no_one_percent_tax' => '1% TAX NOT INCLUDED has been enabled',
       ],
       'button' => [
-        'no' => 'មិនយល់ព្រម',
-        'yes' => 'យល់ព្រម',
+        'no' => 'No',
+        'yes' => 'Yes',
       ],
     ],
   ],
 
   'swaljs' => [
   	'title' => [
-      'empty_field' => 'សូមបញ្ចូលទិន្នន័យជាមុនសិន',
-      'empty' => 'ពុំទាន់មានទិន្នន័យនៅឡើយ',
-    	'sure' => 'តើ​អ្នក​ប្រាកដ​ឬ​អត់?',
-      'edit' => 'តើ​អ្នកចង់កែប្រែ :name នេះ​ប្រាកដ​ឬ​អត់?',
-      'delete' => 'តើ​អ្នកចង់លុប :name នេះ​ប្រាកដ​ឬ​អត់?',
+      'save' => 'Do you want to save?',
+      'offline' => 'You have been offline for too long!',
+      'empty_field' => 'Please in input require field first.',
+      'empty' => 'Field can not be empty.',
+      'sure' => 'Are you sure?',
+      'delete' => 'Are you sure to delete :name ?',
+      'edit' => 'Are you sure to edit :name ?',
       
-      'delete_purchase' => 'តើ​អ្នកចង់លុប ការទិញ នេះ​ប្រាកដ​ឬ​អត់?',
-      'delete_sale' => 'តើ​អ្នកចង់លុប ការលក់ នេះ​ប្រាកដ​ឬ​អត់?',
-      'delete_salary' => 'តើ​អ្នកចង់លុប ប្រាក់ខែ នេះ​ប្រាកដ​ឬ​អត់?',
+      'delete_purchase' => 'Are you sure to delete this purchase?',
+      'delete_sale' => 'Are you sure to delete this Sale?',
+      'delete_salary' => 'Are you sure to delete this Salary?',
   	],
     'text' => [
-      'empty_field' => 'សូមបញ្ចូលទិន្នន័យដែលមានសញ្ញាផ្កាយជាដាច់ខាត',
-    	'unrevertible' => 'អ្នកនឹងមិនអាចត្រឡប់វាវិញបានទេ!',
-    	'revertible' => 'អ្នកនឹងអាចត្រឡប់វាវិញបានគ្រប់ពេល!',
+      'empty_field' => 'Please input all require field.',
+      'unrevertible' => 'This action can not be reverted!',
+      'revertible' => 'This action can be reverted back!',
     ],
     'button' => [
-	    'no' => 'មិនយល់ព្រម',
-	    'yes' => 'យល់ព្រម',
+      'no' => 'No',
+      'yes' => 'Yes',
     ],
     'result' => [
-	  	'title' => [
-        'wrong' => ':name ពុំត្រឹមត្រូវឡើយ!',
-        'success' => 'ជោគជ័យ',
-        
-        'no_selected_id' => 'ចុចជ្រើសរើសយ៉ាងតិចមួយដើម្បីលុប!',
-	  	],
-	    'text' => [
-	    	'delete' => 'ទិន្នន័យត្រូវបានលុបចោលដោយជោគជ័យ',
-	    	'save' => 'ទិន្នន័យត្រូវបានរក្សាទុក',
-	    ],
-	    'button' => [
-		    'no' => 'មិនយល់ព្រម',
-		    'yes' => 'យល់ព្រម',
-	    ],
+      'title' => [
+        'save' => 'Save successfully',
+        'wrong' => ':name is not correct!',
+        'success' => 'Successful',
+
+        'no_selected_id' => 'Check at least one row to delete!',
+      ],
+      'text' => [
+        'delete' => ':name has been deleted.',
+        'save' => ':name has been saved.',
+      ],
     ],
   ],
 
   'modal' => [
     'title' => [
-      'add_business_objective' => 'បង្កើតសកម្មភាពអាជីវកម្ម',
-      'add_user' => 'បង្កើតអ្នកប្រើប្រាស់',
-      'change_password' => 'ផ្លាស់ប្ដូរពាក្យសម្ងាត់',
-      'password_confirm' => 'បញ្ជាក់ពាក្យសម្ងាត់',
-      'choose_year' => 'សូមជ្រើសរើសឆ្នាំ',
-      'choose_print_date' => 'សូមជ្រើសរើសថ្ងៃខែបោះពុម្ភ',
-      'purchase' => 'ទិនានុប្បវត្តិទិញ',
-      'sale' => 'ទិនានុប្បវត្តិលក់',
-      'salary' => 'ពន្ធកាត់ទុកលើប្រាក់ខែ',
-      'add_supplier' => 'បង្កើតអ្នកផ្គត់ផ្គង់',
-      'add_customer' => 'បង្កើតអ្នកអតិថិជន',
+      'edit_main_menu' => 'Edit Main Menu',
+      'add_user' => 'Create new User',
+      'change_password' => 'Change Password',
+      'password_confirm' => 'Confirm-Password',
+      'choose_year' => 'Choose Year',
+      'choose_print_date' => 'Choose Printing Date',
+      'purchase' => 'Purchase',
+      'sale' => 'Sale',
+      'salary' => 'Salary',
+      'add_supplier' => 'Create new Supplier',
+      'add_customer' => 'Create new Customer',
     ],
     'form' => [
-      'password_confirm' => 'បញ្ចូលពាក្យសម្ងាត់អ្នក',
-      'current_password' => 'ពាក្យសម្ងាត់បច្ចុប្បន្ន',
-      'new_password' => 'ពាក្យសម្ងាត់ថ្មី',
-      'confirm_password' => 'បញ្ជាក់-ពាក្យសម្ងាត់ថ្មី',
+      'password_confirm' => 'Input your password',
+      'current_password' => 'Current Password',
+      'new_password' => 'New Password',
+      'confirm_password' => 'Confirm Password',
     ],
     'button' => [
-      'close' => 'បិទ',
+      'close' => 'Close',
     ],
   ]
 

@@ -6,44 +6,42 @@ return [
 
 	'sidebar' => [
 			
-			
 		'header' => [
-			'data' => 'ទិន្ន័យ',
-			'setting' => 'ការកំណត់',
-			'other' => 'ផ្សេងៗ',
+			'data' => 'Data',
+			'setting' => 'Setting',
+			'other' => 'Other',
 		],
 
-		'dashboard' => 'ផ្ទាំងដើម',
+		'dashboard' => 'Dashboard',
 		
 		'main' => [
-			'main-menu' => 'ម៉េនុយមេ',
-			'project' => 'គ្រប់គ្រងគម្រោង',
-			'activity-category' => 'ប្រភេទសកម្មភាព',
+			'main_menu' => 'Main Menu',
+			'project' => 'Project',
+			'activity-category' => 'Activity Category',
 		],
 		'sub' => [
 			
-			'main-menu' => 'ម៉េនុយមេ',
-			'sub-menu' => 'ម៉េនុយកូន',
-			'other-menu' => 'ម៉េនុយផ្សេងទៀត',
+			'main_menu' => 'Main Menu',
+			'sub_menu' => 'Sub Menu',
+			'other-menu' => 'Other Menu',
 
-			'project-category' => 'ប្រភេទគម្រោង',
-			'project' => 'គម្រោង',
+			'project-category' => 'Project Category',
+			'project' => 'Project',
 
-			'activity-category' => 'ប្រភេទសកម្មភាព',
-			'activity' => 'កម្មភាព',
+			'activity-category' => 'Activity Category',
+			'activity' => 'Activity',
 
-			'user' => 'អ្នកគ្រប់គ្រង',
-			'permission' => 'សិទ្ធិអ្នកគ្រប់គ្រង',
-			'role' => 'ឋានៈអ្នកគ្រប់គ្រង',
+			'user' => 'Users',
+			'permission' => 'Permissions',
+			'role' => 'User Roles',
 
-			'config' => 'ការកំណត់',
-			'contact-us' => 'ទំនាក់ទំនងយើង',
-			'about-us' => 'អំពីយើង',
+			'config' => 'Config',
+			'contact-us' => 'Contact Us',
+			'about-us' => 'About Us',
 			'slide-show' => 'Slide Show',
 			'document' => 'Document',
 			'partner' => 'Partner',
 		],
-		
 	],
 
 	'general' => [
@@ -55,18 +53,19 @@ return [
 	'main_menu' => [
 		'table' => [
 			'no' => 'N&deg;',
-			'name_kh' => 'ឈ្មោះភាសាខ្មែរ',
-			'name_en' => 'ឈ្មោះភាសាអង់គ្លេស',
+			'name' => 'Name',
 			'index' => 'Index Sort',
 			'url' => 'URL',
+			'status' => 'Status',
+			'sub_menu' => 'Sub Menu',
 		],
 	],
 
 	'about_us' => [
 		'table' => [
 			'no' => 'N&deg;',
-			'name_kh' => 'ឈ្មោះភាសាខ្មែរ',
-			'name_en' => 'ឈ្មោះភាសាអង់គ្លេស',
+			'name_kh' => 'Khmer Name',
+			'name_en' => 'English Name',
 			'detail' => 'Detail',
 		],
 	],

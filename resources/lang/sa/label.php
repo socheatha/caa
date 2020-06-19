@@ -4,7 +4,7 @@ return [
     
   'content' => [
   	'header' => [
-      'title' => 'Manage',
+      'title' => 'Manage ',
       'index' => 'List of ',
       'create' => 'Create',
       'edit' => 'Edit',
@@ -15,16 +15,32 @@ return [
   	],
 
     'main' => 'ទីតាំង',
+    'config'  =>  'Website Config',
+    'documents'  =>  'Documents',
+    'about_us'  =>  'About Us',
   ],
 
   'routename' => [
   	'home' => 'Dashboard',
+  	'admin' => 'Administrator',
+    'list' => 'List',
+    'main_menu' => 'Main Menu',
+    'sub_menu' => 'Sub Menu',
+    'extra_menu' => 'Extra Menu',
+    'sub_sub_menu' => 'Sub Sub-Menu',
   	'slide_show' => 'Slide Show',
     'partner' => 'Partner',
-    'list' => 'List',
-    'main-menu' => 'ម៉េនុយមេ',
-    'sub-menu' => 'ម៉េនុយកូន',
-    'other-menu' => 'ម៉េនុយផ្សេងទៀត',
+    'user' => 'User',
+
+    'project_category' => 'Project Category',
+    'project' => 'Project',
+
+    'activity_category' => 'Activity Category',
+    'activity' => 'Activity',
+    'about_us' => 'About Us',
+
+    'config'  =>  'Website Config',
+    'documents'  =>  'Documents',
     
   ],
 
@@ -41,17 +57,29 @@ return [
   	],
   	
 	  'routename' => [
-      'admin' => 'អ្នកគ្រប់គ្រង',
+      'admin' => 'Administrator',
+      'home' => 'Dashboard',
+      'user' => 'User',
+      'show' => 'Show',
+      
+      'main_menu' => 'Main Menu',
+      'sub_menu' => 'Sub Menu',
+      'sub_sub_menu' => 'Sub Sub-Menu',
+      'extra_menu' => 'Extra Menu',
       'slide_show' => 'Slide Show',
       'partner' => 'Partner',
-      'home' => 'ផ្ទះដើម',
-      
-      'main-menu' => 'ម៉េនុយមេ',
-      'sub-menu' => 'ម៉េនុយកូន',
-      'other-menu' => 'ម៉េនុយផ្សេងទៀត',
 
-      'province' => 'ខេត្ត/ក្រុង',
-      'district' => 'ស្រុក/ខណ្ឌ',
+      'project_category' => 'Project Category',
+      'project' => 'Project',
+
+      'activity_category' => 'Activity Category',
+      'activity' => 'Activity',
+      'about_us' => 'About Us',
+
+      'province' => 'Provinces',
+      'district' => 'Districts',
+      'config'  =>  'Website Config',
+      'documents'  =>  'Documents',
 
 	  ],
   ],
@@ -64,6 +92,7 @@ return [
     'pdf' => 'PDF', 
     'print' => 'Print',
     'import' => 'Import',
+    'language' => 'Language',
 
     'list' => 'Listing',
     'select' => 'Select',
@@ -95,6 +124,20 @@ return [
     'male' => 'Male',
     'female' => 'Female',
     'other' => 'Others',
+
+    'main_menu' => [
+      'name' => 'Name',
+      'name_kh' => 'Name in Khmer',
+      'name_my' => 'Name in Malay',
+      'name_sa' => 'Name in Arab',
+      'detail_en' => 'Detail English',
+      'detail_kh' => 'Detail Khmer',
+      'detail_my' => 'Detail Malay',
+      'detail_sa' => 'Detail Arab',
+      'index' => 'Index',
+      'status' => 'Status',
+      'url' => 'URL',
+    ], 
 
     'user' => [
       'name' => 'Name',

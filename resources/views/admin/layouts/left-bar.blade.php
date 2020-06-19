@@ -6,7 +6,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="{{ ((Auth::user()->sidebarActive() == 'admin' )? 'active':'') }}">
-        <a href="{{ route('admin.home') }}"><i class="fa fa-home"></i> <span>{{ __('module.sidebar.dashboard') }}</span></a>
+        <a href="{{ route('admin.home') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a>
       </li>
 
       <li class="header">Data Management</li>
